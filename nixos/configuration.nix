@@ -12,13 +12,8 @@
   
   nixpkgs = {
     config.allowUnfree = true;
-    # overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
-      # outputs.overlays.additions
-      # outputs.overlays.modifications
-      # outputs.overlays.unstable-packages
-      
-     # You can also add overlays exported from other flakes:
+     overlays = [
+     # You can add overlays exported from other flakes:
      # neovim-nightly-overlay.overlays.default
       
      # Or define it inline, for example:
@@ -27,7 +22,7 @@
      #     patches = [ /change-hello-to-hi.patch ];
      #   });
      # })
-    # ];
+     ];
   };
   
   nix = {
@@ -44,7 +39,6 @@
       auto-optimise-store = true;
       # Allow users of wheel group to also set substituters
       trusted-users = [ "root" "@wheel" ];
-      
     };
   };
 
@@ -68,7 +62,7 @@
     minidlna = {
       extraGroups = [ "users" ]; # Allow access to directories (can't do /home)
     };
- }; 
+  }; 
   
   # Set your time zone.
   time.timeZone = "Europe/London";
@@ -91,8 +85,10 @@
   services.xserver = {
     layout = "gb";
     xkbVariant = "";
+
     # Enable X11 windowing system
     enable = true;
+
     # Enable the GNOME Desktop Environment.
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
@@ -104,12 +100,15 @@
   # add shells to /etc/shells 
   environment.shells = with pkgs; [ fish ];  
 
-  # Enable networking with NetworkManager
-  networking.networkmanager.enable = true;
+  # Better for steam proton games
+  systemd.extraConfig = "DefaultLimitNOFILE=1048576";
 
   ##################
   # Enable things #
   #################
+
+  # Enable networking with NetworkManager
+  networking.networkmanager.enable = true;
 
   ## override to remove unused gnome packages ##
   environment.gnome.excludePackages = with pkgs; [
@@ -145,14 +144,9 @@
     pulse.enable = true;
   };
 
-
-  # Better for steam proton games
-  systemd.extraConfig = "DefaultLimitNOFILE=1048576";
-
   ##############################################
   # List packages installed in system profile. #
   ##############################################
-
   environment.systemPackages = with pkgs; [
     wget
     curl
