@@ -28,8 +28,9 @@
   };
   # Shell Aliases #
   home.shellAliases = {
-    l = "exa";
-    ll = "exa -la";
+    l = "exa --icons";
+    ll = "exa --icons -lagh";
+    lt = "exa --icons -TL";
   };
 
   # >>>>>>>>>>>>>><<<<<<<<<<<<<< #
