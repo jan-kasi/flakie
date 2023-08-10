@@ -42,6 +42,9 @@
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix-store
       auto-optimise-store = true;
+      # Allow users of wheel group to also set substituters
+      trusted-users = [ "root" "@wheel" ];
+      
     };
   };
 
@@ -84,32 +87,34 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Configure keymap in X11
+  # Configure X11/xorg server
   services.xserver = {
     layout = "gb";
     xkbVariant = "";
+    # Enable X11 windowing system
+    enable = true;
+    # Enable the GNOME Desktop Environment.
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
   # Configure console keymap
   console.keyMap = "uk";
 
-  ##################
-  # Enable things #
-  #################
+  # add shells to /etc/shells 
+  environment.shells = with pkgs; [ fish ];  
 
   # Enable networking with NetworkManager
   networking.networkmanager.enable = true;
 
+  ##################
+  # Enable things #
+  #################
+
   # Not sure if this is needed for hyprland portal package option? Look up online.
   #xdg.portal.wlr.enable = true   
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  ########### override to remove unused gnome packages
+  ## override to remove unused gnome packages ##
   environment.gnome.excludePackages = with pkgs.gnome; [
     cheese
     eog
@@ -126,6 +131,7 @@
     yelp
     totem
     geary
+    gnome-tour
   ];
   
   # Enable CUPS to print documents.
@@ -142,8 +148,6 @@
     pulse.enable = true;
   };
 
-  # add shells to /etc/shells 
-  environment.shells = with pkgs; [ fish ];  
 
   # Better for steam proton games
   systemd.extraConfig = "DefaultLimitNOFILE=1048576";
@@ -155,7 +159,6 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
-    transmission
   ];
   
   # Enable Mullvad-vpn daemon
@@ -179,6 +182,16 @@
     inotify = "yes";
     openFirewall = true;
   };
+
+  # ------------------- #
+  # Hyprland compositor #
+  # ------------------- #
+
+  programs.hyprland = {
+    enable = true
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
+
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

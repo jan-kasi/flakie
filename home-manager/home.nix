@@ -30,7 +30,6 @@
   home.shellAliases = {
     l = "exa";
     ll = "exa -la";
-    cat = "bat";
   };
 
   # >>>>>>>>>>>>>><<<<<<<<<<<<<< #
@@ -47,6 +46,9 @@
     meslo-lgs-nf
     mullvad-vpn
     transmission-gtk
+    logseq
+    bottles
+    steam-tui
   ];
 
   # Kitty terminal emulator
@@ -93,6 +95,10 @@
     vimAlias = true;
   };
 
+  programs.helix = {
+    enable = true;
+    package = helix.packages."${pkgs.system}".helix;
+  };
   # bat (cat clone)
   programs.bat = {
     enable = true;
@@ -115,7 +121,7 @@
     userEmail = "77466026+jan-kasi@users.noreply.github.com";
   };
 
-    # Firefox
+  # Firefox
   programs.firefox = {
     enable = true;
   };

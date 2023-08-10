@@ -1,5 +1,22 @@
 {
   description = "My first flakie for managing NixOS";
+  
+  nixConfig = {
+      experimental-features = [ "nix-command" "flakes" ];
+
+      # Cachix
+      substituters = [ 
+        "https://cache.nixos.org"
+      ];
+      extra-substituters = [
+        "https://hyprland.cachix.org"
+        "https://nix-community.cachix.org"
+      ];
+      extra-trusted-public-keys = [
+      "trustedhyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+  };
 
   inputs = {
     # Nixpkgs
@@ -12,8 +29,9 @@
     # Hardware
     hardware.url = "github:nixos/nixos-hardware";
     
-    # You can add other flakes you might need/want here (such as nixos-hardware above)
-    # look into the following?
+    # You can add other flakes you want here
+    hyprland.url = "github:hyprwm/Hyprland";
+    helix.url = "github:helix-editor/helix/23.05";
     # nix-colors.url =  "github:misterio77/nix-colors";
   };
 
@@ -38,7 +56,11 @@
 	extraSpecialArgs = { inherit inputs; }; # Pass flake output to out config
         
 	# >>> Your main home-manager configuration file <<< #
-	modules = [ ./home-manager/home.nix ];
+	modules = [ 
+	  ./home-manager/home.nix
+	  hyprland.homeManagerModules.default
+          {wayland.windowManager.hyprland.enable = true;}
+        ];
       };
     };
   };
