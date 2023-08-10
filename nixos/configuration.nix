@@ -111,26 +111,23 @@
   # Enable things #
   #################
 
-  # Not sure if this is needed for hyprland portal package option? Look up online.
-  #xdg.portal.wlr.enable = true   
-
   ## override to remove unused gnome packages ##
-  environment.gnome.excludePackages = with pkgs.gnome; [
-    cheese
-    eog
-    epiphany
-    evince
-    geary
-    gnome-characters
-    gnome-contacts
-    gnome-maps
-    gnome-music
-    gnome-software
-    gnome-system-monitor
-    gnome-weather
-    yelp
-    totem
-    geary
+  environment.gnome.excludePackages = with pkgs; [
+    gnome.cheese
+    gnome.eog
+    gnome.epiphany
+    gnome.evince
+    gnome.geary
+    gnome.gnome-characters
+    gnome.gnome-contacts
+    gnome.gnome-maps
+    gnome.gnome-music
+    gnome.gnome-software
+    gnome.gnome-system-monitor
+    gnome.gnome-weather
+    gnome.yelp
+    gnome.totem
+    gnome.geary
     gnome-tour
   ];
   
@@ -188,7 +185,7 @@
   # ------------------- #
 
   programs.hyprland = {
-    enable = true
+    enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 

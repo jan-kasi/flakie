@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ config, pkgs, inputs, lib, helix, ... }:
 
 {  
   home.username = "jankasi";
@@ -95,11 +95,12 @@
     vimAlias = true;
   };
 
+  # Helix
   programs.helix = {
     enable = true;
-    package = helix.packages."${pkgs.system}".helix;
   };
-  # bat (cat clone)
+
+  # Bat (cat clone)
   programs.bat = {
     enable = true;
     themes = {

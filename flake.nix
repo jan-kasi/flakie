@@ -35,7 +35,7 @@
     # nix-colors.url =  "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs: {
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#snow' (replace #snow with configurations name)
