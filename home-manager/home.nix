@@ -50,6 +50,8 @@
     logseq
     bottles
     steam-tui
+    glow
+    fff
   ];
 
   # Kitty terminal emulator
@@ -58,6 +60,22 @@
     shellIntegration.enableFishIntegration = true;
     theme = "Dracula";
     font.name = "Meslo LGS NF";
+    settings = {
+      allow_remote_control = true;
+      dynamic_backround_opacity = true;
+      mouse_hide_wait = 3.0;
+      focus_follows_mouse = true;
+      tab_bar_min_tabs = 1;
+      tab_bar_edge = "bottom";
+      tab_bar_style = "powerline";
+      tab_powerline_style = "slanted";
+      tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
+      inactive_text_alpha = 0.8;
+      bell_border_color = "#ff5555";
+      draw_minimal_borders = true;
+      window_padding_width = 2;
+
+    };
   };
   
   # Fish shell
