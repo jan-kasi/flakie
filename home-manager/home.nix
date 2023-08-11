@@ -239,7 +239,7 @@
       enableFishIntegration = true;
       settings = {
       };
-
+  };
   # TMUX
   programs.tmux = {
     enable = true;
