@@ -59,6 +59,12 @@
     enable = true;
     userName = "jan-kasi";
     userEmail = "77466026+jan-kasi@users.noreply.github.com";
+    extraConfig = {
+      core = {
+        editor = "nvim";
+      };
+      init.defaultBranch = "main";
+    };
   };
 
   # Kitty terminal emulator
@@ -210,7 +216,6 @@
   # TMUX
   programs.tmux = {
     enable = true;
-    newSession = true;
     mouse = true;
     keyMode = "emacs";
     plugins = with pkgs; [
@@ -244,6 +249,7 @@
     enable = true;
     config.theme = "Catppuccin-Mocha";
     config.pager = "less -FR";
+    extraPackages = with pkgs.bat-extras; [ batdiff batman batpipe ];
     themes = {
       dracula = builtins.readFile (pkgs.fetchFromGitHub {
         owner = "dracula";
