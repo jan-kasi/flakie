@@ -128,6 +128,7 @@
     gnome.totem
     gnome.geary
     gnome-tour
+    gnome-console
   ];
   
   # Enable CUPS to print documents.

@@ -47,12 +47,19 @@
     transmission-gtk
     logseq
     bottles
+    steamPackages.steamcmd
     steam-tui
     glow
-    fff
     bottom
     ikill
   ];
+
+  # Git
+  programs.git = {
+    enable = true;
+    userName = "jan-kasi";
+    userEmail = "77466026+jan-kasi@users.noreply.github.com";
+  };
 
   # Kitty terminal emulator
   programs.kitty = {
@@ -73,18 +80,70 @@
       tab_powerline_style = "slanted";
     };
   };
-
-  # Git
-  programs.git = {
+  
+  # Hyprland
+  wayland.windowManager.hyprland = {
     enable = true;
-    userName = "jan-kasi";
-    userEmail = "77466026+jan-kasi@users.noreply.github.com";
+    systemdIntegration = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    extraConfig = ''
+     $term = kitty
+
+     bind=SUPER,Return,exec,$term
+     bind=CTRLALT,Delete,exit,
+    '';
   };
 
   # Firefox
   programs.firefox = {
     enable = true;
   };
+  
+  # Qutebrowser
+  #programs.qutebrowser = {
+  #  enable = true;
+  #  keyBindings = {
+  #    normal = {
+  #      ",m" = "spawm umpv {url}";
+  #	",M" = "hint links spawn umpv {hint-url}";
+  #      ";M" = "hint --rapid links spawn umpv {hint-url}";
+  #    };
+  #  };
+  #  searchEngines = {
+  #    DEFAULT = "https://www.ecosia.org/search?method=index&q={}";
+  #    "!d" = "https:www.duckduckgo.com/?q={}";
+  #    "!fg" = "https://fitgirl-repacks.site/?s={}";
+  #    "!fh" = "https://flathub.org/apps/search?q={}";
+  #    "!gr" = "https://www.goodreads.com/search?q={}";
+  #    "!np" = "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={}";
+  #    "!no" = "https://search.nixos.org/options?channel=unstable&size=50&sort=relevance&type=packages&query={}";
+  #    "!hm" = "https://mipmip.github.io/home-manager-option-search/?query={}";
+  #  };
+  #  settings = {
+  #    url.start_pages = "qute://bookmarks";
+  #    url.default_page = "qute://bookmarks";
+  #  };
+  #  extraConfig = 
+  #  ''
+  #  import os
+  #  from urllib.request import urlopen
+  #
+  #  # load your autoconfig, use this, if the rest of your config is empty!
+  #  config.load_autoconfig()
+  #
+  #  if not os.path.exists(config.configdir / "theme.py"):
+  #      theme = "https://raw.githubusercontent.com/catppuccin/qutebrowser/main/setup.py"
+  #      with urlopen(theme) as themehtml:
+  #          with open(config.configdir / "theme.py", "a") as file:
+  #              file.writelines(themehtml.read().decode("utf-8"))
+  #
+  #  # choose the catppuccin flavour you'd like!
+  #  # valid options are 'latte', frappe', 'machiatto' and 'mocha'
+  #  if os.path.exists(config.configdir / "theme.py"):
+  #      import theme
+  #      theme.setup(c, 'mocha', True)
+  #  '';
+  #};
 
   # Fish shell
   programs.fish = {
@@ -127,9 +186,45 @@
   };
 
   # Starship prompt
-  programs.starship = {
+  programs.starship = 
+    let
+      flavour = "mocha"; # One of `latte`, `frappe`, `macchiato`, or `mocha`
+    in
+    {
+      enable = true;
+      enableFishIntegration = true;
+      settings = {
+        # Other config here
+        format = "$all"; # Remove this line to disable the default prompt format
+        palette = "catppuccin_${flavour}";
+      } // builtins.fromTOML (builtins.readFile
+        (pkgs.fetchFromGitHub
+          {
+            owner = "catppuccin";
+            repo = "starship";
+            rev = "5629d2356f62a9f2f8efad3ff37476c19969bd4f";
+            sha256 = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
+          } + /palettes/${flavour}.toml));
+    };
+
+  # TMUX
+  programs.tmux = {
     enable = true;
-    enableFishIntegration = true;
+    newSession = true;
+    mouse = true;
+    keyMode = "emacs";
+    plugins = with pkgs; [
+      { plugin = tmuxPlugins.tmux-fzf; }
+      {
+        plugin = tmuxPlugins.catppuccin;
+	extraConfig = "set -g @catppuccin_flavour 'mocha'";
+      }
+    ];
+  };
+
+  # MPV
+  programs.mpv = {
+    enable = true;
   };
 
   # Neovim  
@@ -172,7 +267,7 @@
     defaultOptions = [
       "--ansi"
       "--preview-window 'right:60%'"
-      "--preview 'bat --color=always --style=header,grid --line-range :300 {}'"];
+      "--preview 'bat --color=always --style=header,grid --line-range :200 {}'"];
     colors = {
       fg = "#f8f8f2";
       bg = "#282a36";
