@@ -8,11 +8,25 @@
 
   ## Configure nixpkgs ##
   nixpkgs = {
-    config = {
-      allowUnfree = true; 
-      allowUnfreePredicate = (_: true);
-    };
-   # >>> (if you switch to add overlays here) <<< #
+    config.allowUnfree = true; 
+    config.allowUnfreePredicate = (_: true);
+
+    # >>> (if you want add overlays here) <<< #
+    overlays = [
+      (final: prev: {
+        steam-tui = final.steam-tui.overrideAttrs (oldAttrs: {
+          version = "git";
+	  src = prev.fetchFromGitHub {
+	    owner = "dmadisetti";
+	    repo = "steam-tui";
+	    rev = "48bcd094b5b77336e20cc357d9172825475537e4";
+	    sha256 = "sha256-KLf8gMbgt4UstiNGbMW7BnyQJPqP2uL2+0gIdwRYV3w=";
+	  };
+        });
+      })
+    ];
+
+
   };
 
   ## Let home-manager install and manage itself ##
@@ -48,7 +62,6 @@
     logseq
     bottles
     steamPackages.steamcmd
-    steam-tui
     glow
     bottom
     ikill
@@ -157,6 +170,35 @@
     shellAbbrs = {
       nurl = "nix run nixpkgs#nurl ";
     };
+    shellInit = ''
+      set -g fish_color_normal cdd6f4
+      set -g fish_color_command 89b4fa
+      set -g fish_color_param f2cdcd
+      set -g fish_color_keyword f38ba8
+      set -g fish_color_quote a6e3a1
+      set -g fish_color_redirection f5c2e7
+      set -g fish_color_end fab387
+      set -g fish_color_comment 7f849c
+      set -g fish_color_error f38ba8
+      set -g fish_color_gray 6c7086
+      set -g fish_color_selection --background=313244
+      set -g fish_color_search_match --background=313244
+      set -g fish_color_option a6e3a1
+      set -g fish_color_operator f5c2e7
+      set -g fish_color_escape eba0ac
+      set -g fish_color_autosuggestion 6c7086
+      set -g fish_color_cancel f38ba8
+      set -g fish_color_cwd f9e2af
+      set -g fish_color_user 94e2d5
+      set -g fish_color_host 89b4fa
+      set -g fish_color_host_remote a6e3a1
+      set -g fish_color_status f38ba8
+      set -g fish_pager_color_progress 6c7086
+      set -g fish_pager_color_prefix f5c2e7
+      set -g fish_pager_color_completion cdd6f4
+      set -g fish_pager_color_description 6c7086
+    '';
+
     interactiveShellInit = ''
       starship init fish | source
     '';
@@ -192,26 +234,11 @@
   };
 
   # Starship prompt
-  programs.starship = 
-    let
-      flavour = "mocha"; # One of `latte`, `frappe`, `macchiato`, or `mocha`
-    in
-    {
+  programs.starship = {
       enable = true;
       enableFishIntegration = true;
       settings = {
-        # Other config here
-        format = "$all"; # Remove this line to disable the default prompt format
-        palette = "catppuccin_${flavour}";
-      } // builtins.fromTOML (builtins.readFile
-        (pkgs.fetchFromGitHub
-          {
-            owner = "catppuccin";
-            repo = "starship";
-            rev = "5629d2356f62a9f2f8efad3ff37476c19969bd4f";
-            sha256 = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
-          } + /palettes/${flavour}.toml));
-    };
+      };
 
   # TMUX
   programs.tmux = {

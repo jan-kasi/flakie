@@ -12,7 +12,7 @@
   
   nixpkgs = {
     config.allowUnfree = true;
-     overlays = [
+
      # You can add overlays exported from other flakes:
      # neovim-nightly-overlay.overlays.default
       
@@ -22,7 +22,6 @@
      #     patches = [ /change-hello-to-hi.patch ];
      #   });
      # })
-     ];
   };
   
   nix = {
