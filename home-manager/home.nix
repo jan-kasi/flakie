@@ -238,6 +238,76 @@
       enable = true;
       enableFishIntegration = true;
       settings = {
+        format = lib.concatStrings [
+          "$username"
+          "$hostname"
+          "$directory"
+          "$git_branch"
+          "$git_state"
+          "$git_status"
+          "$fill"
+          "$cmd_duration"
+          "$shlvl"
+          "$os"
+          "$line_break"
+          "$nix_shell"
+          "$python"
+          "$character"
+	      ];
+        fill = {
+          symbol = " ";
+        };
+        directory = { style = "blue"; };
+        character = {
+          success_symbol = "[[♥](blue) ❯](green)";
+          error_symbol = "[❯](red)";
+          vimcmd_symbol = "[❮](green)";
+        };
+        git_branch = {
+          format = "[$branch]($style)";
+          style = "bright-black";
+        }; 
+        git_status = {
+        format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
+        style = "cyan";
+        conflicted = "";
+        untracked = "*";
+        modified = "";
+        behind = "⇣";
+        ahead = "⇡";
+        staged = "";
+        renamed = "";
+        deleted = "";
+        stashed = "≡";
+        };
+        git_state = {
+          format = "\([$state( $progress_current/$progress_total)]($style)\) ";
+          style = "bright-black";
+        };
+        nix_shell = {
+          heuristic = false;
+          impure_msg = "[X](bold red)";
+          pure_msg = "[P](bold green)";
+          unknown_msg = "[?](bold yellow)";
+          format = "via [☃️  $state( \($name\))](bold blue)";
+        };
+        python = {
+          format = "[$virtualenv]($style) ";
+          style ="bright-black";
+        };
+
+        cmd_duration = {
+          format = "[$duration]($style) ";
+          style = "yellow";
+        };
+        os = { 
+          disabled = false;
+          format  = "[$symbol]($style) "; 
+        };
+        shlvl = {
+          threshold = 2;
+          disabled = false;
+        };       
       };
   };
   # TMUX
@@ -246,6 +316,7 @@
     mouse = true;
     keyMode = "emacs";
     plugins = with pkgs; [
+      tmuxPlugins.sensible
       { plugin = tmuxPlugins.tmux-fzf; }
       {
         plugin = tmuxPlugins.catppuccin;
