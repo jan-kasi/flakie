@@ -60,8 +60,10 @@
     mullvad-vpn
     transmission-gtk
     logseq
-    bottles
     steamPackages.steamcmd
+    bottles
+    lutris
+    cartridges
     glow
     bottom
     ikill
@@ -106,10 +108,66 @@
     systemdIntegration = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     extraConfig = ''
-     $term = kitty
-
-     bind=SUPER,Return,exec,$term
-     bind=CTRLALT,Delete,exit,
+      monitor=,preferred,auto,auto
+      env = XCURSOR_SIZE,24
+      input {
+        kb_layout = us
+        follow_mouse = 1
+        touchpad {
+          natural_scroll = true
+        }
+      }
+      general {
+        
+        gaps_in = 5
+        gaps_out = 20
+        border_size = 2
+        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+        col.inactive_border = rgba(595959aa)
+      
+        layout = dwindle
+      }
+      decoration {
+        rounding = 10
+        blur {
+          enabled = true
+          size = 3
+          passes =1 
+        }
+        drop_shadow = false
+      }
+      animations {
+        enabled = true
+        bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+        
+        animation = windows, 1, 7, myBezier
+        animation = windowsOut, 1, 7, default, popin 80%
+        animation = border, 1, 10, default
+        animation = borderangle, 1, 8, default
+        animation = fade, 1, 7, default
+        animation = workspaces, 1, 6, default
+      }
+      dwindle {
+        pseudotile = true # bound to mainMOD + P
+        preserve_split = true
+      }
+      master {
+        new_is_master = true
+      }
+      gestures {
+        workspace_swipe = false
+      }
+      
+      $mainMOD = SUPER
+      $term = kitty
+      
+      bind = $mainMOD, Return, exec, $term
+      bind = $mainMOD, C, killactive,
+      bind = $mainMOD, E, exec, nautilus
+      bind = $mainMOD, F, togglefloating,
+      bind = $mainMOD, P, pseudo, # dwindle
+      
+      bind = CTRLALT,Delete,exit,
     '';
   };
 
@@ -245,21 +303,24 @@
           "$git_branch"
           "$git_state"
           "$git_status"
-          "$fill"
-          "$cmd_duration"
-          "$shlvl"
-          "$os"
           "$line_break"
+          "$character"
+        ];
+        right_format = lib.concatStrings [ 
+          "$cmd_duration"
+	        "$time"
+          "$os"
           "$nix_shell"
           "$python"
-          "$character"
-	      ];
-        fill = {
-          symbol = " ";
+        ];
+        directory = {
+          home_symbol = "~";
+          style = "blue";
+          fish_style_pwd_dir_length = 1;
+          truncation_length = 3;
         };
-        directory = { style = "blue"; };
         character = {
-          success_symbol = "[[♥](blue) ❯](green)";
+          success_symbol = "[❯](green)";
           error_symbol = "[❯](red)";
           vimcmd_symbol = "[❮](green)";
         };
@@ -268,17 +329,17 @@
           style = "bright-black";
         }; 
         git_status = {
-        format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
-        style = "cyan";
-        conflicted = "";
-        untracked = "*";
-        modified = "";
-        behind = "⇣";
-        ahead = "⇡";
-        staged = "";
-        renamed = "";
-        deleted = "";
-        stashed = "≡";
+          format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
+          style = "cyan";
+          conflicted = "";
+          untracked = "*";
+          modified = "";
+          behind = "⇣";
+          ahead = "⇡";
+          staged = "+";
+          renamed = "";
+          deleted = "";
+          stashed = "≡";
         };
         git_state = {
           format = "\([$state( $progress_current/$progress_total)]($style)\) ";
@@ -289,40 +350,25 @@
           impure_msg = "[X](bold red)";
           pure_msg = "[P](bold green)";
           unknown_msg = "[?](bold yellow)";
-          format = "via [☃️  $state( \($name\))](bold blue)";
+          format = "via [☃️ $state( \($name\))](bold blue)";
         };
         python = {
           format = "[$virtualenv]($style) ";
           style ="bright-black";
         };
-
         cmd_duration = {
           format = "[$duration]($style) ";
           style = "yellow";
+        };
+        time = {
+          disabled = false;
+          style = "bold red";
         };
         os = { 
           disabled = false;
           format  = "[$symbol]($style) "; 
         };
-        shlvl = {
-          threshold = 2;
-          disabled = false;
-        };       
       };
-  };
-  # TMUX
-  programs.tmux = {
-    enable = true;
-    mouse = true;
-    keyMode = "emacs";
-    plugins = with pkgs; [
-      tmuxPlugins.sensible
-      { plugin = tmuxPlugins.tmux-fzf; }
-      {
-        plugin = tmuxPlugins.catppuccin;
-	extraConfig = "set -g @catppuccin_flavour 'mocha'";
-      }
-    ];
   };
 
   # MPV
@@ -352,15 +398,15 @@
       dracula = builtins.readFile (pkgs.fetchFromGitHub {
         owner = "dracula";
         repo = "sublime"; # Bat uses sublime syntax for its themes 
-	rev = "c5de15a0ad654a2c7d8f086ae67c2c77fda07c5f"; 
-	sha256 = "sha256-m/MHz4phd3WR56I5jfi4hMXnFf4L4iXVpMFwtd0L0XE="; 
-	}+ "/Dracula.tmTheme");
+	      rev = "c5de15a0ad654a2c7d8f086ae67c2c77fda07c5f"; 
+	      sha256 = "sha256-m/MHz4phd3WR56I5jfi4hMXnFf4L4iXVpMFwtd0L0XE="; 
+	    }+ "/Dracula.tmTheme");
       Catppuccin-Mocha = builtins.readFile (pkgs.fetchFromGitHub {
         owner = "catppuccin";
-	repo = "bat";
+	      repo = "bat";
         rev = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
         sha256 = "sha256-6WVKQErGdaqb++oaXnY3i6/GuH2FhTgK0v4TN4Y0Wbw=";	
-	}+ "/Catppuccin-mocha.tmTheme");
+	    }+ "/Catppuccin-mocha.tmTheme");
     };
   };
 

@@ -102,6 +102,9 @@
   # Better for steam proton games
   systemd.extraConfig = "DefaultLimitNOFILE=1048576";
 
+  # Enable 32 bit support
+  hardware.opengl.driSupport32Bit = true; 
+
   ##################
   # Enable things #
   #################
@@ -150,6 +153,8 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
+    wineWowPackages.staging
+    winetricks
   ];
   
   # Enable Mullvad-vpn daemon
