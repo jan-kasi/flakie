@@ -67,6 +67,10 @@
     glow
     bottom
     ikill
+    nil
+    nixd
+    marksman
+    nixpkgs-fmt
   ];
 
   # Git
@@ -109,9 +113,9 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     extraConfig = ''
       monitor=,preferred,auto,auto
-      env = XCURSOR_SIZE,24
+      # env = XCURSOR_SIZE,24
       input {
-        kb_layout = us
+        kb_layout = gb
         follow_mouse = 1
         touchpad {
           natural_scroll = true
@@ -120,7 +124,7 @@
       general {
         
         gaps_in = 5
-        gaps_out = 20
+        gaps_out = 10
         border_size = 2
         col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
         col.inactive_border = rgba(595959aa)
@@ -331,7 +335,7 @@
         git_status = {
           format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
           style = "cyan";
-          conflicted = "";
+          conflicted = "//";
           untracked = "*";
           modified = "";
           behind = "⇣";
