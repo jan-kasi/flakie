@@ -153,8 +153,6 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
-    wineWowPackages.staging
-    winetricks
   ];
   
   # Enable Mullvad-vpn daemon

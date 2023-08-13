@@ -1,6 +1,6 @@
 { config, pkgs, inputs, lib, ... }:
 
-{  
+{
   home.username = "jankasi";
   home.homeDirectory = "/home/jankasi";
   home.stateVersion = "23.11"; # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
@@ -8,20 +8,22 @@
 
   ## Configure nixpkgs ##
   nixpkgs = {
-    config.allowUnfree = true; 
+    config.allowUnfree = true;
     config.allowUnfreePredicate = (_: true);
 
     # >>> (if you want add overlays here) <<< #
     overlays = [
+      inputs.nix-alien.overlay
+
       (final: prev: {
         steam-tui = final.steam-tui.overrideAttrs (oldAttrs: {
           version = "git";
-	  src = prev.fetchFromGitHub {
-	    owner = "dmadisetti";
-	    repo = "steam-tui";
-	    rev = "48bcd094b5b77336e20cc357d9172825475537e4";
-	    sha256 = "sha256-KLf8gMbgt4UstiNGbMW7BnyQJPqP2uL2+0gIdwRYV3w=";
-	  };
+          src = prev.fetchFromGitHub {
+            owner = "dmadisetti";
+            repo = "steam-tui";
+            rev = "48bcd094b5b77336e20cc357d9172825475537e4";
+            sha256 = "sha256-KLf8gMbgt4UstiNGbMW7BnyQJPqP2uL2+0gIdwRYV3w=";
+          };
         });
       })
     ];
@@ -31,7 +33,7 @@
 
   ## Let home-manager install and manage itself ##
   programs.home-manager.enable = true;
-  
+
   # # # # # # # # # # # # # # # # # # # # # #
   # Add stuff for your user as you see fit. #
   # # # # # # # # # # # # # # # # # # # # # #
@@ -60,17 +62,17 @@
     mullvad-vpn
     transmission-gtk
     logseq
+    wineWowPackages.staging
+    winetricks
     steamPackages.steamcmd
     bottles
-    lutris
     cartridges
     glow
     bottom
     ikill
-    nil
     nixd
     marksman
-    nixpkgs-fmt
+    nix-alien
   ];
 
   # Git
@@ -105,7 +107,7 @@
       tab_powerline_style = "slanted";
     };
   };
-  
+
   # Hyprland
   wayland.windowManager.hyprland = {
     enable = true;
@@ -231,7 +233,9 @@
     enable = true;
     shellAbbrs = {
       nurl = "nix run nixpkgs#nurl ";
+      neofetch = "nix run nixpkgs#neofetch";
     };
+    # Manually doing Catppuccin Mocha theme
     shellInit = ''
       set -g fish_color_normal cdd6f4
       set -g fish_color_command 89b4fa
@@ -271,15 +275,15 @@
       { name = "done"; src = pkgs.fishPlugins.done.src; }
       { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
       { name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
-      { name = "foreign-env"; src = pkgs.fishPlugins.foreign-env.src; }  
+      { name = "foreign-env"; src = pkgs.fishPlugins.foreign-env.src; }
 
       # Manually packaging and enabling a plugin
-      
+
       # Catppuccin with following perhaps?
       # { name = "Catppuccin-Mocha";
       #  src = builtins.readFile();
       # }
-      
+
       #{ name = "dracula";
       #  src = pkgs.fetchFromGitHub {
       #	  owner = "dracula";
@@ -297,82 +301,82 @@
 
   # Starship prompt
   programs.starship = {
-      enable = true;
-      enableFishIntegration = true;
-      settings = {
-        format = lib.concatStrings [
-          "$username"
-          "$hostname"
-          "$directory"
-          "$git_branch"
-          "$git_state"
-          "$git_status"
-          "$line_break"
-          "$character"
-        ];
-        right_format = lib.concatStrings [ 
-          "$cmd_duration"
-	        "$time"
-          "$os"
-          "$nix_shell"
-          "$python"
-        ];
-        directory = {
-          home_symbol = "~";
-          style = "blue";
-          fish_style_pwd_dir_length = 1;
-          truncation_length = 3;
-        };
-        character = {
-          success_symbol = "[❯](green)";
-          error_symbol = "[❯](red)";
-          vimcmd_symbol = "[❮](green)";
-        };
-        git_branch = {
-          format = "[$branch]($style)";
-          style = "bright-black";
-        }; 
-        git_status = {
-          format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
-          style = "cyan";
-          conflicted = "//";
-          untracked = "*";
-          modified = "";
-          behind = "⇣";
-          ahead = "⇡";
-          staged = "+";
-          renamed = "";
-          deleted = "";
-          stashed = "≡";
-        };
-        git_state = {
-          format = "\([$state( $progress_current/$progress_total)]($style)\) ";
-          style = "bright-black";
-        };
-        nix_shell = {
-          heuristic = false;
-          impure_msg = "[X](bold red)";
-          pure_msg = "[P](bold green)";
-          unknown_msg = "[?](bold yellow)";
-          format = "via [☃️ $state( \($name\))](bold blue)";
-        };
-        python = {
-          format = "[$virtualenv]($style) ";
-          style ="bright-black";
-        };
-        cmd_duration = {
-          format = "[$duration]($style) ";
-          style = "yellow";
-        };
-        time = {
-          disabled = false;
-          style = "bold red";
-        };
-        os = { 
-          disabled = false;
-          format  = "[$symbol]($style) "; 
-        };
+    enable = true;
+    enableFishIntegration = true;
+    settings = {
+      format = lib.concatStrings [
+        "$username"
+        "$hostname"
+        "$directory"
+        "$git_branch"
+        "$git_state"
+        "$git_status"
+        "$line_break"
+        "$character"
+      ];
+      right_format = lib.concatStrings [
+        "$cmd_duration"
+        "$time"
+        "$os"
+        "$nix_shell"
+        "$python"
+      ];
+      directory = {
+        home_symbol = "~";
+        style = "blue";
+        fish_style_pwd_dir_length = 1;
+        truncation_length = 3;
       };
+      character = {
+        success_symbol = "[❯](green)";
+        error_symbol = "[❯](red)";
+        vimcmd_symbol = "[❮](green)";
+      };
+      git_branch = {
+        format = "[$branch]($style)";
+        style = "bright-black";
+      };
+      git_status = {
+        format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
+        style = "cyan";
+        conflicted = "//";
+        untracked = "*";
+        modified = "";
+        behind = "⇣";
+        ahead = "⇡";
+        staged = "";
+        renamed = "";
+        deleted = "";
+        stashed = "≡";
+      };
+      git_state = {
+        format = "\([$state( $progress_current/$progress_total)]($style)\) ";
+        style = "bright-black";
+      };
+      nix_shell = {
+        heuristic = false;
+        impure_msg = "[X](bold red)";
+        pure_msg = "[P](bold green)";
+        unknown_msg = "[?](bold yellow)";
+        format = "via [☃️ $state( \($name\))](bold blue)";
+      };
+      python = {
+        format = "[$virtualenv]($style) ";
+        style = "bright-black";
+      };
+      cmd_duration = {
+        format = "[$duration]($style) ";
+        style = "yellow";
+      };
+      time = {
+        disabled = false;
+        style = "bold red";
+      };
+      os = {
+        disabled = false;
+        format = "[$symbol]($style) ";
+      };
+    };
   };
 
   # MPV
@@ -386,10 +390,50 @@
     vimAlias = true;
   };
 
+
   # Helix
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${pkgs.system}.helix;
+    # General Helix settings
+    settings = {
+      theme = "catppuccin_mocha";
+      editor = {
+        line-number = "relative";
+        mouse = false;
+        lsp.display-messages = true;
+        lsp.display-inlay-hints = true;
+        true-color = true;
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+        statusline = {
+          center = [ "file-type" ];
+        };
+      };
+      keys.normal = {
+        esc = [ "collapse_selection" "keep_primary_selection" ];
+      };
+    };
+    # Configure Language support
+    languages = {
+      # Add nixd LSP
+      language-server.nixd = {
+        command = "nixd";
+      };
+      # Configure languages
+      language = [
+        #  nix to use nixd LSP and nixpkgs-fmt when :format
+        { name = "nix";
+          language-servers = ["nixd"];
+          formatter = {
+            command = "nixpkgs-fmt";
+          };}
+        # Markdowm marksman is already configured by default
+      ];
+    };
   };
 
   # Bat (cat clone)
@@ -399,18 +443,20 @@
     config.pager = "less -FR";
     extraPackages = with pkgs.bat-extras; [ batdiff batman batpipe ];
     themes = {
-      dracula = builtins.readFile (pkgs.fetchFromGitHub {
-        owner = "dracula";
-        repo = "sublime"; # Bat uses sublime syntax for its themes 
-	      rev = "c5de15a0ad654a2c7d8f086ae67c2c77fda07c5f"; 
-	      sha256 = "sha256-m/MHz4phd3WR56I5jfi4hMXnFf4L4iXVpMFwtd0L0XE="; 
-	    }+ "/Dracula.tmTheme");
-      Catppuccin-Mocha = builtins.readFile (pkgs.fetchFromGitHub {
-        owner = "catppuccin";
-	      repo = "bat";
-        rev = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
-        sha256 = "sha256-6WVKQErGdaqb++oaXnY3i6/GuH2FhTgK0v4TN4Y0Wbw=";	
-	    }+ "/Catppuccin-mocha.tmTheme");
+      Dracula = builtins.readFile (pkgs.fetchFromGitHub
+        {
+          owner = "dracula";
+          repo = "sublime"; # Bat uses sublime syntax for its themes 
+          rev = "c5de15a0ad654a2c7d8f086ae67c2c77fda07c5f";
+          sha256 = "sha256-m/MHz4phd3WR56I5jfi4hMXnFf4L4iXVpMFwtd0L0XE=";
+        } + "/Dracula.tmTheme");
+      Catppuccin-Mocha = builtins.readFile (pkgs.fetchFromGitHub
+        {
+          owner = "catppuccin";
+          repo = "bat";
+          rev = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
+          sha256 = "sha256-6WVKQErGdaqb++oaXnY3i6/GuH2FhTgK0v4TN4Y0Wbw=";
+        } + "/Catppuccin-mocha.tmTheme");
     };
   };
 
@@ -421,7 +467,8 @@
     defaultOptions = [
       "--ansi"
       "--preview-window 'right:60%'"
-      "--preview 'bat --color=always --style=header,grid --line-range :200 {}'"];
+      "--preview 'bat --color=always --style=header,grid --line-range :200 {}'"
+    ];
     colors = {
       fg = "#f8f8f2";
       bg = "#282a36";

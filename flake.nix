@@ -36,24 +36,28 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     helix = {
       url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien";
+    };
+    
     # nix-colors.url =  "github:misterio77/nix-colors";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, helix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, hyprland, helix, nix-alien, ... }@inputs: {
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#snow' (replace #snow with configurations name)
     nixosConfigurations = {
       snow = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = { inherit inputs; }; # Pass flake inputs to our config
 	
         # >>> Your main NixOS configuration file <<< #
-	modules = [ ./nixos/configuration.nix ];
+      	modules = [ ./nixos/configuration.nix ];
       };
     };
 
@@ -62,12 +66,12 @@
     homeConfigurations = {
       "jankasi@snow" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # home-manager requires 'pkgs' instance (??)
-	extraSpecialArgs = { inherit inputs; }; # Pass flake output to out config
+	      extraSpecialArgs = { inherit inputs; }; # Pass flake output to out config
         
-	# >>> Your main home-manager configuration file <<< #
-	modules = [ 
-	  ./home-manager/home.nix
-	  hyprland.homeManagerModules.default
+	      # >>> Your main home-manager configuration file <<< #
+      	modules = [ 
+      	  ./home-manager/home.nix
+      	  hyprland.homeManagerModules.default
           {wayland.windowManager.hyprland.enable = true;}
 
         ];
