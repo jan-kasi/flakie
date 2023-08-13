@@ -97,7 +97,7 @@
   console.keyMap = "uk";
 
   # add shells to /etc/shells 
-  environment.shells = with pkgs; [ fish ];  
+  environment.shells = with pkgs; [ fish dash ];  
 
   # Better for steam proton games
   systemd.extraConfig = "DefaultLimitNOFILE=1048576";
@@ -153,6 +153,7 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
+    dash
   ];
   
   # Enable Mullvad-vpn daemon
