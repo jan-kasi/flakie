@@ -47,6 +47,8 @@
   # Your bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # For gamepad controller?
+  boot.initrd.kernelModules = [ "usbhid" "joydev" "xpad" ];
 
   # Configue your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -112,6 +114,12 @@
   # Enable networking with NetworkManager
   networking.networkmanager.enable = true;
 
+  # Game controllers
+  services.joycond.enable = true;
+  hardware.uinput.enable = true;
+
+
+
   ## override to remove unused gnome packages ##
   environment.gnome.excludePackages = with pkgs; [
     gnome.cheese
@@ -154,6 +162,7 @@
     wget
     curl
     dash
+    libevdev # bluetooth controller?
   ];
   
   # Enable Mullvad-vpn daemon

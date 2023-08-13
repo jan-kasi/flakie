@@ -340,13 +340,13 @@
         format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
         style = "cyan";
         conflicted = "";
-        untracked = "*";
+        untracked = "";
         modified = "";
-        behind = "⇣";
-        ahead = "⇡";
-        staged = "+";
+        staged = "";
         renamed = "";
         deleted = "";
+        ahead = "⇡";
+        behind = "⇣";
         stashed = "≡";
       };
       git_state = {
