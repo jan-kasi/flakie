@@ -118,8 +118,6 @@
   services.joycond.enable = true;
   hardware.uinput.enable = true;
 
-
-
   ## override to remove unused gnome packages ##
   environment.gnome.excludePackages = with pkgs; [
     gnome.cheese
@@ -163,6 +161,7 @@
     curl
     dash
     libevdev # bluetooth controller?
+    game-devices-udev-rules
   ];
   
   # Enable Mullvad-vpn daemon

@@ -62,11 +62,6 @@
     mullvad-vpn
     transmission-gtk
     logseq
-    wineWowPackages.staging
-    winetricks
-    steamPackages.steamcmd
-    bottles
-    cartridges
     glow
     bottom
     ikill
