@@ -172,18 +172,21 @@
   services.flatpak.enable = true;
   # Enable Fish shell
   programs.fish.enable = true;
+
   # Enable MiniDLNA
-  services.minidlna.enable = true;
-  services.minidlna.settings = {
-    friendly_name = "minidlna media";
-    media_dir = [
-      "V,/mnt/minidlna/Videos/" #Video files are located here
-    # "A,/mnt/minidlna/Music/"  #Audio files are here
-    # "etc..." 
-    ];  
-    log_level = "error";
-    inotify = "yes";
+  services.minidlna = {
+    enable = true;
     openFirewall = true;
+    settings = {
+      log_level = "error";
+      inotify = "yes";
+      friendly_name = "minidlna media";
+      media_dir = [
+        "V,/mnt/minidlna/Videos/" #Video files are located here
+        # "A,/mnt/minidlna/Music/"  #Audio files are here
+        # "etc..." 
+      ];  
+    };
   };
 
   # ------------------- #

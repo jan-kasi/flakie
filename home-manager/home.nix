@@ -66,6 +66,7 @@
     bottom
     ikill
     nixd
+    nixpkgs-fmt
     marksman
     nix-alien
   ];
@@ -87,7 +88,7 @@
   programs.kitty = {
     enable = true;
     shellIntegration.enableFishIntegration = true;
-    theme = "Catppuccin-Mocha";
+#    theme = "Catppuccin-Mocha";
     font.name = "Meslo LGS NF";
     settings = {
       allow_remote_control = "yes";
@@ -101,6 +102,9 @@
       tab_bar_style = "powerline";
       tab_powerline_style = "slanted";
     };
+    extraConfig = ''
+      include /home/jankasi/.config/kitty/current-theme.conf
+    '';
   };
 
   # Hyprland
@@ -231,34 +235,34 @@
       neofetch = "nix run nixpkgs#neofetch";
     };
     # Manually doing Catppuccin Mocha theme
-    shellInit = ''
-      set -g fish_color_normal cdd6f4
-      set -g fish_color_command 89b4fa
-      set -g fish_color_param f2cdcd
-      set -g fish_color_keyword f38ba8
-      set -g fish_color_quote a6e3a1
-      set -g fish_color_redirection f5c2e7
-      set -g fish_color_end fab387
-      set -g fish_color_comment 7f849c
-      set -g fish_color_error f38ba8
-      set -g fish_color_gray 6c7086
-      set -g fish_color_selection --background=313244
-      set -g fish_color_search_match --background=313244
-      set -g fish_color_option a6e3a1
-      set -g fish_color_operator f5c2e7
-      set -g fish_color_escape eba0ac
-      set -g fish_color_autosuggestion 6c7086
-      set -g fish_color_cancel f38ba8
-      set -g fish_color_cwd f9e2af
-      set -g fish_color_user 94e2d5
-      set -g fish_color_host 89b4fa
-      set -g fish_color_host_remote a6e3a1
-      set -g fish_color_status f38ba8
-      set -g fish_pager_color_progress 6c7086
-      set -g fish_pager_color_prefix f5c2e7
-      set -g fish_pager_color_completion cdd6f4
-      set -g fish_pager_color_description 6c7086
-    '';
+    # shellInit = ''
+      # set -g fish_color_normal cdd6f4
+      # set -g fish_color_command 89b4fa
+      # set -g fish_color_param f2cdcd
+      # set -g fish_color_keyword f38ba8
+      # set -g fish_color_quote a6e3a1
+      # set -g fish_color_redirection f5c2e7
+      # set -g fish_color_end fab387
+      # set -g fish_color_comment 7f849c
+      # set -g fish_color_error f38ba8
+      # set -g fish_color_gray 6c7086
+      # set -g fish_color_selection --background=313244
+      # set -g fish_color_search_match --background=313244
+      # set -g fish_color_option a6e3a1
+      # set -g fish_color_operator f5c2e7
+      # set -g fish_color_escape eba0ac
+      # set -g fish_color_autosuggestion 6c7086
+      # set -g fish_color_cancel f38ba8
+      # set -g fish_color_cwd f9e2af
+      # set -g fish_color_user 94e2d5
+      # set -g fish_color_host 89b4fa
+      # set -g fish_color_host_remote a6e3a1
+      # set -g fish_color_status f38ba8
+      # set -g fish_pager_color_progress 6c7086
+      # set -g fish_pager_color_prefix f5c2e7
+      # set -g fish_pager_color_completion cdd6f4
+      # set -g fish_pager_color_description 6c7086
+    # '';
 
     interactiveShellInit = ''
       starship init fish | source
@@ -392,7 +396,7 @@
     package = inputs.helix.packages.${pkgs.system}.helix;
     # General Helix settings
     settings = {
-      theme = "catppuccin_mocha";
+      theme = "base16_terminal";
       editor = {
         line-number = "relative";
         mouse = false;
@@ -422,7 +426,7 @@
       language = [
         #  nix to use nixd LSP and nixpkgs-fmt when :format
         { name = "nix";
-          language-servers = ["nixd"];
+          language-servers = [ "nixd" ];
           formatter = {
             command = "nixpkgs-fmt";
           };}
@@ -434,7 +438,7 @@
   # Bat (cat clone)
   programs.bat = {
     enable = true;
-    config.theme = "Catppuccin-Mocha";
+   config.theme = "base16";
     config.pager = "less -FR";
     extraPackages = with pkgs.bat-extras; [ batdiff batman batpipe ];
     themes = {
