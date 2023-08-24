@@ -40,7 +40,7 @@
 
   # Session variables 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "hx";
   };
   # Shell Aliases #
   home.shellAliases = {
@@ -62,13 +62,26 @@
     mullvad-vpn
     transmission-gtk
     logseq
+    cool-retro-term
     glow
+    catimg
     bottom
     ikill
     nixd
     nixpkgs-fmt
     marksman
     nix-alien
+    goldberg-emu
+    yt-dlp
+    mpc-cli
+    mpd-notification
+    # miniplayer
+    cbonsai
+    cli-visualizer
+    cava
+    python311Packages.requests # for beets fetchart
+    python311Packages.pylast # for beets lastgenre
+    pms
   ];
 
   # Git
@@ -78,7 +91,7 @@
     userEmail = "77466026+jan-kasi@users.noreply.github.com";
     extraConfig = {
       core = {
-        editor = "nvim";
+        editor = "hx";
       };
       init.defaultBranch = "main";
     };
@@ -113,6 +126,7 @@
     systemdIntegration = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     extraConfig = ''
+      preload = ~/Pictures/nix-wallpaper-nineish.png
       monitor=,preferred,auto,auto
       # env = XCURSOR_SIZE,24
       input {
@@ -176,11 +190,11 @@
     '';
   };
 
+  
   # Firefox
   programs.firefox = {
     enable = true;
   };
-  
   # Qutebrowser
   #programs.qutebrowser = {
   #  enable = true;
@@ -234,6 +248,11 @@
       nurl = "nix run nixpkgs#nurl ";
       neofetch = "nix run nixpkgs#neofetch";
     };
+    functions = {
+      fish_greeting = ''
+        cbonsai -p
+      '';
+    };
     # Manually doing Catppuccin Mocha theme
     # shellInit = ''
       # set -g fish_color_normal cdd6f4
@@ -271,10 +290,10 @@
       # Enable a plugin from nixpkgs
       { name = "grc"; src = pkgs.fishPlugins.grc.src; }
       { name = "fzf"; src = pkgs.fishPlugins.fzf.src; }
-      { name = "done"; src = pkgs.fishPlugins.done.src; }
       { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
       { name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
       { name = "foreign-env"; src = pkgs.fishPlugins.foreign-env.src; }
+      { name = "z"; src = pkgs.fishPlugins.z.src; }
 
       # Manually packaging and enabling a plugin
 
@@ -383,12 +402,126 @@
     enable = true;
   };
 
+  # MPD the Music Player Daemon
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/home/jankasi/Music/";
+    network.startWhenNeeded = true;
+    extraConfig = ''
+      audio_output {
+        type  "pipewire"
+        name  "MPD PipeWire Output"
+      }
+      audio_output {
+        type   "fifo"
+        name   "my_fifo"
+        path   "/tmp/mpd.fifo"
+        format "44100:16:2"
+      }
+    '';
+  };
+  # mpDris2, MPD to MPRIS2 bridge
+  services.mpdris2.enable = true;
+
+  # Beets music library manager
+  programs.beets = {
+    enable = true;
+    package = pkgs.beets-unstable;
+    settings = {
+      plugins = "duplicates missing edit lastgenre fetchart mpdupdate fish random info";
+      directory = "~/Music";
+      library = "~/Music/musiclibrary.db";
+      import = {
+        move = true;
+      };
+      ui = {
+        color = true;
+        colors = {
+          text_success = "green";
+          text_warning = "yellow";
+          text_error = "red";
+          text_highlight_minor = "lightgray";
+          action_default = "turquoise";
+          action = "blue";
+        };
+      };
+    };
+  };
+
+  # NCMPCPP an NCurses MPD client
+  programs.ncmpcpp = {
+    package = pkgs.ncmpcpp.override { visualizerSupport = true; };
+    enable = true;
+    mpdMusicDir = "/home/jankasi/Music";
+    settings = {
+      visualizer_data_source = "/tmp/mpd.fifo";
+      visualizer_output_name = "my_fifo";
+      visualizer_in_stereo = "yes";
+      visualizer_fps = "60";
+      visualizer_look = "▮●";
+      visualizer_type = "ellipse";
+      playlist_show_remaining_time = "yes";
+      playlist_shorten_total_times = "yes";
+      discard_colors_if_item_is_selected = "yes";
+      incremental_seeking = "yes";
+      seek_time = "2";
+      volume_change_step = "10";
+      progressbar_look = "─╼ ";
+      progressbar_color = "1";
+      progressbar_elapsed_color = "4";
+      user_interface = "alternative";
+      header_visibility = "yes";
+      statusbar_visibility = "yes";
+      titles_visibility = "no";
+      jump_to_now_playing_song_at_start = "yes";
+      enable_window_title = "yes";
+      search_engine_default_search_mode = "2";
+      external_editor = "hx";
+      use_console_editor = "yes";
+      current_item_prefix = "$(blue)$r";
+      current_item_suffix = "$/r$(end)";
+      current_item_inactive_column_prefix = "$(green)$r";
+      current_item_inactive_column_suffix = "$/r$(end)";
+      now_playing_prefix = "$b $(blue)";
+      now_playing_suffix = "  $/b$(end)";
+      media_library_primary_tag = "album_artist";
+      media_library_albums_split_by_date = "no";
+      cyclic_scrolling = "no";
+    };
+    bindings = [
+      { key = "j"; command = "scroll_down"; }
+      { key = "k"; command = "scroll_up"; }
+      { key = "h"; command = "previous_column"; }
+      { key = "l"; command = "next_column"; }
+      { key = "g"; command = "move_home"; }
+      { key = "G"; command = "move_end"; }
+      { key = "n"; command = "next_found_item"; }
+      { key = "N"; command = "previous_found_item"; }
+      { key = "J"; command = ["select_item" "scroll_down"]; }
+      { key = "K"; command = ["select_item" "scroll_up"]; }
+      { key = "ctrl-b"; command = "page_up"; }
+      { key = "ctrl-u"; command = "page_up"; }
+      { key = "ctrl-f"; command = "page_down"; }
+      { key = "ctrl-d"; command = "page_down"; }
+    ];
+  };
+
+  # NNN file browser
+  programs.nnn = {
+    enable = true;
+  };
+
+  # miniplayer configuration
+  xdg.configFile."miniplayer/config".source = ../dots/miniplayer/config;
+
+  # mpd-notification configuration (for album art)
+  xdg.configFile."mpd-notification.conf".source = ../dots/mpd-notification.conf;
+
   # Neovim  
   programs.neovim = {
     enable = true;
     vimAlias = true;
   };
-
 
   # Helix
   programs.helix = {
@@ -396,7 +529,7 @@
     package = inputs.helix.packages.${pkgs.system}.helix;
     # General Helix settings
     settings = {
-      theme = "base16_terminal";
+      theme = "catppuccin_mocha";
       editor = {
         line-number = "relative";
         mouse = false;

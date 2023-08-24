@@ -55,7 +55,7 @@
     jankasi = {
       isNormalUser = true;
       description = "jan kasi";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "audio" ];
       packages = with pkgs; [];
       shell = pkgs.fish;
     };
@@ -143,7 +143,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  sound.enable = false; # sound.enable is only meant for ALSA-based configurations
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -159,6 +159,7 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
+    aria2
     dash
     libevdev # bluetooth controller?
     game-devices-udev-rules
@@ -197,7 +198,6 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
-
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
