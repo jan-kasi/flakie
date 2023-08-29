@@ -9,28 +9,28 @@
 
     # You can put here modules to use from other flakes
   ];
-  
+
   nixpkgs = {
     config.allowUnfree = true;
 
-     # You can add overlays exported from other flakes:
-     # neovim-nightly-overlay.overlays.default
-      
-     # Or define it inline, for example:
-     # (final: prev: {
-     #   hi = final.hello.overrideAttrs (oldAttrs: {
-     #     patches = [ /change-hello-to-hi.patch ];
-     #   });
-     # })
+    # You can add overlays exported from other flakes:
+    # neovim-nightly-overlay.overlays.default
+
+    # Or define it inline, for example:
+    # (final: prev: {
+    #   hi = final.hello.overrideAttrs (oldAttrs: {
+    #     patches = [ /change-hello-to-hi.patch ];
+    #   });
+    # })
   };
-  
+
   nix = {
     # This will add each flake input as a registry (make nix3 commands consistent with your files)
     registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;    
-    
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
+
     settings = {
       # Enable flakes and new  'nix' command
       experimental-features = "nix-command flakes";
@@ -43,7 +43,7 @@
 
   # Define your hostname
   networking.hostName = "snow";
-  
+
   # Your bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -56,15 +56,15 @@
       isNormalUser = true;
       description = "jan kasi";
       extraGroups = [ "networkmanager" "wheel" "audio" ];
-      packages = with pkgs; [];
+      packages = with pkgs; [ ];
       shell = pkgs.fish;
     };
 
     minidlna = {
       extraGroups = [ "users" ]; # Allow access to directories (can't do /home)
     };
-  }; 
-  
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/London";
 
@@ -99,13 +99,13 @@
   console.keyMap = "uk";
 
   # add shells to /etc/shells 
-  environment.shells = with pkgs; [ fish dash ];  
+  environment.shells = with pkgs; [ fish ];
 
   # Better for steam proton games
   systemd.extraConfig = "DefaultLimitNOFILE=1048576";
 
   # Enable 32 bit support
-  hardware.opengl.driSupport32Bit = true; 
+  hardware.opengl.driSupport32Bit = true;
 
   ##################
   # Enable things #
@@ -138,12 +138,12 @@
     gnome-tour
     gnome-console
   ];
-  
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = false; # sound.enable is only meant for ALSA-based configurations
+  # sound.enable = false; # sound.enable is only meant for ALSA-based configurations
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -153,6 +153,16 @@
     pulse.enable = true;
   };
 
+  # Enable polkit
+  security.polkit.enable = true;
+
+  # To edit expected files in /etc/whatever I think you can use
+  # environment.etc."example/configuration.d/00-section.conf".text = '' 
+  # text context =
+  #    whatever you want to add
+  # '';
+  # Maybe this would overwrite the file if it exists though, so I'm not sure...
+
   ##############################################
   # List packages installed in system profile. #
   ##############################################
@@ -161,10 +171,11 @@
     curl
     aria2
     dash
+    polkit_gnome
     libevdev # bluetooth controller?
     game-devices-udev-rules
   ];
-  
+
   # Enable Mullvad-vpn daemon
   services.mullvad-vpn.enable = true;
   # Enable Git
@@ -186,7 +197,7 @@
         "V,/mnt/minidlna/Videos/" #Video files are located here
         # "A,/mnt/minidlna/Music/"  #Audio files are here
         # "etc..." 
-      ];  
+      ];
     };
   };
 
@@ -200,7 +211,10 @@
   };
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
+
+  # Enable mosh server, an alternative SSH terminal (install pkgs.mosh for client)
+  programs.mosh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

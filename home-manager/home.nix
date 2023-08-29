@@ -15,6 +15,17 @@
     overlays = [
       inputs.nix-alien.overlay
 
+      # for --print-index for cliphist?
+      # (final: prev: {
+      #   tofi = final.tofi.overrideAttrs (oldAttrs: {
+      #     version = "git";
+      #     src = prev.fetchFromGitHub {
+      #       rev = "b32c9954d3da430392575e9e637a2d8d114e34d0";
+      #       hash = "sha256-2PNME5QVTqdEnX0iQQr8KI6hi+LN+HOxSZYOLquWwCw=";
+      #     };
+      #   })
+      # })
+
       (final: prev: {
         steam-tui = final.steam-tui.overrideAttrs (oldAttrs: {
           version = "git";
@@ -42,12 +53,25 @@
   home.sessionVariables = {
     EDITOR = "hx";
   };
+
   # Shell Aliases #
   home.shellAliases = {
     l = "exa --icons";
     ll = "exa --icons -lagh";
     lt = "exa --icons -TL";
   };
+
+  # Force on specific bluetooth codecs per-user with wireplumber
+  # Slightly better quality in calls and audio listening (maybe not necessary to do this?)
+  # Configuration enables based on hardware database, but I don't think mine are listed...
+  xdg.configFile."wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
+    bluez_monitor.properties = {
+    	["bluez5.enable-sbc-xq"] = true,
+    	["bluez5.enable-msbc"] = true,
+    	["bluez5.enable-hw-volume"] = true,
+    	["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+  	}
+ 	'';
 
   # >>>>>>>>>>>>>><<<<<<<<<<<<<< #
   # packages to install for user #
@@ -67,12 +91,13 @@
     catimg
     bottom
     ikill
-    nixd
+    nil
     nixpkgs-fmt
     marksman
     nix-alien
-    goldberg-emu
+    # goldberg-emu
     yt-dlp
+    ffmpeg
     mpc-cli
     mpd-notification
     # miniplayer
@@ -81,8 +106,39 @@
     cava
     python311Packages.requests # for beets fetchart
     python311Packages.pylast # for beets lastgenre
-    pms
+    tofi
+    swww
+    # sunpaper
+    eww-wayland
+    waybar
+    wl-clipboard
+    wl-clip-persist
+    cliphist
+    nb # command line note-taking archiving, and knowledge base application
   ];
+
+  # tofi config TODO
+  # create file ~/.config/tofi/current-theme with "include = /home/jankasi/.config/tofi/themes/fullscreen" or your choice
+  xdg.configFile."tofi/config".text = ''
+    font     = "/home/jankasi/.nix-profile/share/fonts/truetype/MesloLGS NF Regular.ttf"
+    include  = "/home/jankasi/.config/tofi/current-theme"
+    terminal = kitty
+  '';
+  home.file.".config/tofi/themes/fullscreen".text = ''
+    width = 100%
+    height = 100%
+    border-width = 0
+    outline-width = 0
+    padding-left = 35%
+    padding-top = 35%
+    result-spacing = 25
+    num-results = 5
+    background-color = #000A
+    clip-to-padding = true
+  '';
+
+  # Example make symlinks
+  # home.file.".config/iNeedSymlinked.lua".source = config.lib.file.mkOutOfStoreSymlink /home/jankasi/flakie/dots/iNeedSymlinked;
 
   # Git
   programs.git = {
@@ -101,17 +157,20 @@
   programs.kitty = {
     enable = true;
     shellIntegration.enableFishIntegration = true;
-#    theme = "Catppuccin-Mocha";
+    #    theme = "Catppuccin-Mocha";
     font.name = "Meslo LGS NF";
     settings = {
       allow_remote_control = "yes";
       dynamic_background_opacity = "yes";
       focus_follows_mouse = "yes";
       draw_minimal_borders = "yes";
+      hide_window_decorations = "yes";
       bell_border_color = "#ff5555";
       mouse_hide_wait = "3";
       inactive_text_alpha = "0.7";
-      window_padding_width = "1";
+      window_padding_width = "0";
+      tab_bar_min_tabs = "1";
+      tab_bar_edge = "bottom";
       tab_bar_style = "powerline";
       tab_powerline_style = "slanted";
     };
@@ -120,15 +179,32 @@
     '';
   };
 
-  # Hyprland
+  # Simple image viewer
+  programs.imv = {
+    enable = true;
+  };
+
+  # Mako notification daemon TODO
+  services.mako = {
+    enable = true;
+  };
+
+  # Hyprland TODO
   wayland.windowManager.hyprland = {
     enable = true;
     systemdIntegration = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     extraConfig = ''
-      preload = ~/Pictures/nix-wallpaper-nineish.png
       monitor=,preferred,auto,auto
-      # env = XCURSOR_SIZE,24
+      exec-once = mako
+      exec-once = ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
+      exec-once = wl-paste --type text --watch cliphist store
+      exec-once = wl-paste --type image --watch cliphist store
+      exec-once = wl-clip-persist --clipboard regular --all-mime-type-regex '(?i)^(?!(?:image|audio|video|font|model)/).+' --selection-size-limit 1048576
+      exec-once = swww init && swww img -t none ~/Pictures/Wallpapers/nix-wallpaper-nineish.png 
+
+      env = XCURSOR_SIZE,24
+
       input {
         kb_layout = gb
         follow_mouse = 1
@@ -138,8 +214,8 @@
       }
       general {
         
-        gaps_in = 5
-        gaps_out = 10
+        gaps_in = 2
+        gaps_out = 4
         border_size = 2
         col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
         col.inactive_border = rgba(595959aa)
@@ -174,27 +250,52 @@
         new_is_master = true
       }
       gestures {
-        workspace_swipe = false
+        workspace_swipe = true
+      }
+      misc {
+        disable_hyprland_logo = true
+        disable_splash_rendering = true
       }
       
       $mainMOD = SUPER
       $term = kitty
+      $drun = tofi-drun | xargs hyprctl dispatch exec --
+
+      bindr=SUPER, SUPER_L, exec, pkill tofi || $drun
+      bind = $mainMOD, V, exec, cliphist list | tofi | cliphist decode | wl-copy
       
       bind = $mainMOD, Return, exec, $term
       bind = $mainMOD, C, killactive,
-      bind = $mainMOD, E, exec, nautilus
       bind = $mainMOD, F, togglefloating,
       bind = $mainMOD, P, pseudo, # dwindle
       
+      # To switch between windows in a floating workspace
+      bind = SUPER, Tab, cyclenext,
+      bind = SUPER, Tab, bringactivetotop,
+      
       bind = CTRLALT,Delete,exit,
+
+      bind = , XF86AudioRaiseVolume, exec, wpctl set-volume 59 0.02+
+      bind = , XF86AudioLowerVolume, exec, wpctl set-volume 59 0.02-
+      bind = , XF86AudioMute, exec, wpctl set-mute 59 toggle
+      bind = , XF86AudioPlay, exec, mpc toggle
+      bind = , XF86AudioPrev, exec, mpc prev
+      bind = , XF86AudioNext, exec, mpc next
+
+      bind = $mainMOD, E, exec, nautilus
+      bind = $mainMOD, B, exec, firefox
+      
+      # Can use 'wev' to check mouse button codes
+      bindm = SUPER, mouse:272, movewindow     # <Super-LMB> moves windows
+      bindm = ALT, mouse:272, resizewindow   # <Alt-LMB> resizes windows
     '';
   };
 
-  
-  # Firefox
+  # Firefox TODO NUR
   programs.firefox = {
     enable = true;
   };
+
   # Qutebrowser
   #programs.qutebrowser = {
   #  enable = true;
@@ -208,7 +309,6 @@
   #  searchEngines = {
   #    DEFAULT = "https://www.ecosia.org/search?method=index&q={}";
   #    "!d" = "https:www.duckduckgo.com/?q={}";
-  #    "!fg" = "https://fitgirl-repacks.site/?s={}";
   #    "!fh" = "https://flathub.org/apps/search?q={}";
   #    "!gr" = "https://www.goodreads.com/search?q={}";
   #    "!np" = "https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query={}";
@@ -247,40 +347,51 @@
     shellAbbrs = {
       nurl = "nix run nixpkgs#nurl ";
       neofetch = "nix run nixpkgs#neofetch";
+      "7zz" = "nix run nixpkgs#_7zz --";
+      hmsw = "home-manager switch --flake .#jankasi@snow";
+      nrsw = "sudo nixos-rebuild switch --flake .#snow";
+      cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
+      nixpf = "sudo nix profile list --profile /nix/var/nix/profiles/system";
     };
     functions = {
       fish_greeting = ''
         cbonsai -p
       '';
+      # change background color when certain actions performed (sudo)
+      sudo = ''
+        printf '\x1b]11;rgb:4040/2020/3030\x1b\\'
+        command sudo $argv
+        printf '\x1b]11;\x1b\\'
+      '';
     };
     # Manually doing Catppuccin Mocha theme
     # shellInit = ''
-      # set -g fish_color_normal cdd6f4
-      # set -g fish_color_command 89b4fa
-      # set -g fish_color_param f2cdcd
-      # set -g fish_color_keyword f38ba8
-      # set -g fish_color_quote a6e3a1
-      # set -g fish_color_redirection f5c2e7
-      # set -g fish_color_end fab387
-      # set -g fish_color_comment 7f849c
-      # set -g fish_color_error f38ba8
-      # set -g fish_color_gray 6c7086
-      # set -g fish_color_selection --background=313244
-      # set -g fish_color_search_match --background=313244
-      # set -g fish_color_option a6e3a1
-      # set -g fish_color_operator f5c2e7
-      # set -g fish_color_escape eba0ac
-      # set -g fish_color_autosuggestion 6c7086
-      # set -g fish_color_cancel f38ba8
-      # set -g fish_color_cwd f9e2af
-      # set -g fish_color_user 94e2d5
-      # set -g fish_color_host 89b4fa
-      # set -g fish_color_host_remote a6e3a1
-      # set -g fish_color_status f38ba8
-      # set -g fish_pager_color_progress 6c7086
-      # set -g fish_pager_color_prefix f5c2e7
-      # set -g fish_pager_color_completion cdd6f4
-      # set -g fish_pager_color_description 6c7086
+    # set -g fish_color_normal cdd6f4
+    # set -g fish_color_command 89b4fa
+    # set -g fish_color_param f2cdcd
+    # set -g fish_color_keyword f38ba8
+    # set -g fish_color_quote a6e3a1
+    # set -g fish_color_redirection f5c2e7
+    # set -g fish_color_end fab387
+    # set -g fish_color_comment 7f849c
+    # set -g fish_color_error f38ba8
+    # set -g fish_color_gray 6c7086
+    # set -g fish_color_selection --background=313244
+    # set -g fish_color_search_match --background=313244
+    # set -g fish_color_option a6e3a1
+    # set -g fish_color_operator f5c2e7
+    # set -g fish_color_escape eba0ac
+    # set -g fish_color_autosuggestion 6c7086
+    # set -g fish_color_cancel f38ba8
+    # set -g fish_color_cwd f9e2af
+    # set -g fish_color_user 94e2d5
+    # set -g fish_color_host 89b4fa
+    # set -g fish_color_host_remote a6e3a1
+    # set -g fish_color_status f38ba8
+    # set -g fish_pager_color_progress 6c7086
+    # set -g fish_pager_color_prefix f5c2e7
+    # set -g fish_pager_color_completion cdd6f4
+    # set -g fish_pager_color_description 6c7086
     # '';
 
     interactiveShellInit = ''
@@ -317,7 +428,7 @@
     ];
   };
 
-  # Starship prompt
+  # Starship prompt TODO
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
@@ -329,15 +440,14 @@
         "$git_branch"
         "$git_state"
         "$git_status"
+        "$cmd_duration"
         "$line_break"
         "$character"
       ];
       right_format = lib.concatStrings [
-        "$cmd_duration"
-        "$time"
         "$os"
-        "$nix_shell"
-        "$python"
+        "$time"
+        "$shlvl"
       ];
       directory = {
         home_symbol = "~";
@@ -371,20 +481,16 @@
         format = "\([$state( $progress_current/$progress_total)]($style)\) ";
         style = "bright-black";
       };
-      nix_shell = {
-        heuristic = false;
-        impure_msg = "[X](bold red)";
-        pure_msg = "[P](bold green)";
-        unknown_msg = "[?](bold yellow)";
-        format = "via [☃️ $state( \($name\))](bold blue)";
-      };
-      python = {
-        format = "[$virtualenv]($style) ";
-        style = "bright-black";
-      };
       cmd_duration = {
         format = "[$duration]($style) ";
         style = "yellow";
+      };
+      shlvl = {
+        disabled = false;
+        threshold = 2;
+        format = "via [$shlvl$symbol](bold blue)";
+        symbol = "☃️";
+        repeat = false;
       };
       time = {
         disabled = false;
@@ -392,7 +498,7 @@
       };
       os = {
         disabled = false;
-        format = "[$symbol]($style) ";
+        format = "[$symbol]($style)";
       };
     };
   };
@@ -428,7 +534,7 @@
     enable = true;
     package = pkgs.beets-unstable;
     settings = {
-      plugins = "duplicates missing edit lastgenre fetchart mpdupdate fish random info";
+      plugins = "duplicates missing edit lastgenre fetchart mpdupdate fish random info fuzzy deezer spotify";
       directory = "~/Music";
       library = "~/Music/musiclibrary.db";
       import = {
@@ -497,8 +603,8 @@
       { key = "G"; command = "move_end"; }
       { key = "n"; command = "next_found_item"; }
       { key = "N"; command = "previous_found_item"; }
-      { key = "J"; command = ["select_item" "scroll_down"]; }
-      { key = "K"; command = ["select_item" "scroll_up"]; }
+      { key = "J"; command = [ "select_item" "scroll_down" ]; }
+      { key = "K"; command = [ "select_item" "scroll_up" ]; }
       { key = "ctrl-b"; command = "page_up"; }
       { key = "ctrl-u"; command = "page_up"; }
       { key = "ctrl-f"; command = "page_down"; }
@@ -526,44 +632,38 @@
   # Helix
   programs.helix = {
     enable = true;
+    defaultEditor = true;
     package = inputs.helix.packages.${pkgs.system}.helix;
     # General Helix settings
     settings = {
-      theme = "catppuccin_mocha";
+      theme = "gruvbox";
+      keys = {
+        normal.esc = [ "collapse_selection" "keep_primary_selection" ];
+      };
       editor = {
-        line-number = "relative";
         mouse = false;
+        line-number = "relative";
+        statusline.center = [ "file-type" ];
         lsp.display-messages = true;
         lsp.display-inlay-hints = true;
         true-color = true;
-        cursor-shape = {
-          insert = "bar";
-          normal = "block";
-          select = "underline";
-        };
-        statusline = {
-          center = [ "file-type" ];
-        };
-      };
-      keys.normal = {
-        esc = [ "collapse_selection" "keep_primary_selection" ];
+        color-modes = true;
+        # cursor-shape = {
+        # insert = as"bar";
+        # normal = "block";
+        # select = "underline";
+        # };
       };
     };
     # Configure Language support
     languages = {
-      # Add nixd LSP
-      language-server.nixd = {
-        command = "nixd";
-      };
-      # Configure languages
       language = [
-        #  nix to use nixd LSP and nixpkgs-fmt when :format
-        { name = "nix";
-          language-servers = [ "nixd" ];
-          formatter = {
-            command = "nixpkgs-fmt";
-          };}
-        # Markdowm marksman is already configured by default
+        # use nixpkgs-fmt when :format
+        {
+          name = "nix";
+          formatter = { command = "nixpkgs-fmt"; };
+        }
+        # Markdowm marksman already configured by default
       ];
     };
   };
@@ -571,8 +671,7 @@
   # Bat (cat clone)
   programs.bat = {
     enable = true;
-   config.theme = "base16";
-    config.pager = "less -FR";
+    config.theme = "base16";
     extraPackages = with pkgs.bat-extras; [ batdiff batman batpipe ];
     themes = {
       Dracula = builtins.readFile (pkgs.fetchFromGitHub
@@ -601,20 +700,20 @@
       "--preview-window 'right:60%'"
       "--preview 'bat --color=always --style=header,grid --line-range :200 {}'"
     ];
-    colors = {
-      fg = "#f8f8f2";
-      bg = "#282a36";
-      hl = "#bd93f9";
-      "fg+" = "#f8f8f2";
-      "bg+" = "#44475a";
-      "hl+" = "#bd93f9";
-      info = "#ffb86c";
-      prompt = "#50fa7b";
-      pointer = "#ff79c6";
-      marker = "#ff79c6";
-      spinner = "#ffb86c";
-      header = "#6272a4";
-    };
+    # colors = {  # catppuccin mocha colours
+    # fg = "#f8f8f2";
+    # bg = "#282a36";
+    # hl = "#bd93f9";
+    # "fg+" = "#f8f8f2";
+    # "bg+" = "#44475a";
+    # "hl+" = "#bd93f9";
+    # info = "#ffb86c";
+    # prompt = "#50fa7b";
+    # pointer = "#ff79c6";
+    # marker = "#ff79c6";
+    # spinner = "#ffb86c";
+    # header = "#6272a4";
+    # };
   };
 
   ## You can import other home-manager modules here ##
