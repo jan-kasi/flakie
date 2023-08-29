@@ -64,14 +64,14 @@
   # Force on specific bluetooth codecs per-user with wireplumber
   # Slightly better quality in calls and audio listening (maybe not necessary to do this?)
   # Configuration enables based on hardware database, but I don't think mine are listed...
-  xdg.configFile."wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
-    bluez_monitor.properties = {
-    	["bluez5.enable-sbc-xq"] = true,
-    	["bluez5.enable-msbc"] = true,
-    	["bluez5.enable-hw-volume"] = true,
-    	["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-  	}
- 	'';
+  # xdg.configFile."wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
+  #  bluez_monitor.properties = {
+  #  	["bluez5.enable-sbc-xq"] = true,
+  #  	["bluez5.enable-msbc"] = true,
+  #  	["bluez5.enable-hw-volume"] = true,
+  #  	["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+  # 	}
+  #	'';
 
   # >>>>>>>>>>>>>><<<<<<<<<<<<<< #
   # packages to install for user #
