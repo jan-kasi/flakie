@@ -29,9 +29,7 @@
     glow     # markdown
     nb       # note-taking, archiving, and knowledge base
     fff      # file manager
-    walk     # file manager
     ikill    # interactive pkill
-    
     
     # music
     mpc-cli
