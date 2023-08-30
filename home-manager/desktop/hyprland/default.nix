@@ -1,5 +1,4 @@
-{ inputs, pkgs, ... }:
-{
+{ inputs, pkgs, ... }: {
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -9,7 +8,7 @@
 
     settings = {
       monitor = ",preferred,auto,auto";
-      env = "XCURSOR_SIZE,24";
+      env = "XCURSOR_SIZE,48";
 
       exec-once = [
         "mako"

@@ -42,8 +42,7 @@
       inherit (self) outputs;
       usedSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
     in
-    rec
-    {
+    rec {
       # Your custom packages
       packages = usedSystems (system:
         let pkgs = nixpkgs.legacyPackages.${system};

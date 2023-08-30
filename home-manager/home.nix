@@ -1,8 +1,7 @@
-{ inputs, ... }:
-{
+{ inputs, ... }: {
   # You can import other home-manager modules here
   imports = [
-    ./homesystem.nix
+    ./home-system.nix
     ./pkgs.nix
     ./programs
     ./desktop

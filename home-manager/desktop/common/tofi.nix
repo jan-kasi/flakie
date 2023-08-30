@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.packages = [ pkgs.tofi ];
 
   # create file ~/.config/tofi/current-theme with "include = /home/jankasi/.config/tofi/themes/fullscreen" or your choice

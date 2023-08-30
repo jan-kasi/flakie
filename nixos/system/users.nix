@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   users.users = {
     jankasi = {
       description = "jan kasi";
