@@ -1,5 +1,5 @@
 {
-  services.xserver ={
+  services.xserver = {
     layout = "gb";
     xkbVariant = "";
     enable = true;

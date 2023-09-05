@@ -1,14 +1,19 @@
 { inputs, pkgs, ... }: {
 
   wayland.windowManager.hyprland = {
-    enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    enable = true;
+    # enabled in nixos/programs/default to add proper support
+    # desktop entry, xdg portals, target, polkit, etc.
+    # I haven't been able to do this by enabling only in hm.
+    # But it doesn't really matter as the hash is the same, so not
+    # installed twice or anything silly like that :D
     systemdIntegration = true;
     xwayland.enable = true;
 
     settings = {
       monitor = ",preferred,auto,auto";
-      env = "XCURSOR_SIZE,48";
+      env = "XCURSOR_SIZE,72";
 
       exec-once = [
         "mako"
@@ -36,7 +41,9 @@
       ];
       bind = [
         "$mainMOD, Return, exec, $term"
+        "SUPER,space,exec,wofi --show drun"
         "$mainMOD, C, killactive, "
+        "$mainMOD, V, exec, cliphist list | tofi | cliphist decode | wl-copy"
         "$mainMOD, F, togglefloating, "
         "$mainMOD, P, pseudo, " # dwindle
 
@@ -49,9 +56,9 @@
 
         "CTRLALT, Delete, exit, "
 
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume 58 0.02+"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume 58 0.02-"
-        ", XF86AudioMute, exec, wpctl set-mute 58 toggle"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume 59 0.02+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume 59 0.02-"
+        ", XF86AudioMute, exec, wpctl set-mute 59 toggle"
 
         ", XF86AudioPlay, exec, mpc toggle"
         ", XF86AudioPrev, exec, mpc prev"
@@ -79,7 +86,7 @@
 
         blur = {
           enabled = true;
-          size = 3;
+          size = 2;
           passes = 3;
         };
       };

@@ -10,29 +10,26 @@
       keys = { normal.esc = [ "collapse_selection" "keep_primary_selection" ]; };
       editor = {
         mouse = false;
-        line-number = "relative";
-        soft-wrap = true;
-        statusline.center = [ "file-type" ];
+        # line-number = "relative";
+        statusline.left = [ "mode" "spinner" "file-type" ];
+        statusline.center = [ "file-name" ];
         lsp.display-messages = true;
         lsp.display-inlay-hints = true;
         true-color = true;
         color-modes = true;
+        soft-wrap = {
+          enable = true;
+        };
       };
     };
-
     # Configure Language support
     languages = {
       language = [
         {
           name = "nix";
           # use nixpkgs-fmt when :format
+          auto-format = true;
           formatter = { command = "nixpkgs-fmt"; };
-          # include the ";"
-          auto-pairs = {
-            "(" = ");";
-            "{" = "};";
-            "[" = "];";
-          };
         }
         # Markdowm marksman and nil LSP already configured by default
       ];

@@ -1,22 +1,31 @@
-{
+{ pkgs, ... }: {
   programs.kitty = {
     enable = true;
-    shellIntegration.enableFishIntegration = true;
-    font.name = "Meslo LGS NF";
+    font.name = "MesloLGS NF";
+    font.package = pkgs.meslo-lgs-nf;
     settings = {
-      allow_remote_control = "yes";
-      dynamic_background_opacity = "yes";
-      background_blur = "10";
-      focus_follows_mouse = "yes";
+      linux_display_server = "wayland";
+      shell_integration = "disabled";
+
+      wayland_titlebar_color = "background";
       draw_minimal_borders = "yes";
       hide_window_decorations = "yes";
-      bell_border_color = "#ff5555";
-      mouse_hide_wait = "3";
-      inactive_text_alpha = "0.7";
-      window_padding_width = "0";
+      window_padding_width = 4;
+
+      allow_remote_control = "yes";
+      dynamic_background_opacity = "yes";
+
+      background_blur = 0;
+      background_opacity = "0.7";
+
+      focus_follows_mouse = "yes";
+      mouse_hide_wait = "-1";
+
       tab_bar_min_tabs = "2";
       tab_bar_edge = "bottom";
-      tab_bar_style = "slant";
+      tab_bar_style = "powerline";
+      powerline_style = "slanted";
+
       include = "/home/jankasi/.config/kitty/current-theme.conf";
     };
     extraConfig = ''

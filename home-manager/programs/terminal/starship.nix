@@ -1,6 +1,6 @@
 { lib, ... }: {
   programs.starship = {
-    enable = true;
+    enable = false;
     enableFishIntegration = true;
     settings = {
       format = lib.concatStrings [
@@ -12,12 +12,8 @@
         "$git_status"
         "$cmd_duration"
         "$line_break"
-        "$character"
-      ];
-      right_format = lib.concatStrings [
-        "$os"
-        "$time"
         "$shlvl"
+        "$character"
       ];
       directory = {
         home_symbol = "~";
@@ -58,17 +54,9 @@
       shlvl = {
         disabled = false;
         threshold = 2;
-        format = "via [$shlvl$symbol](bold blue)";
+        format = "[$shlvl$symbol](bold blue) ";
         symbol = "☃️";
         repeat = false;
-      };
-      time = {
-        disabled = false;
-        style = "bold red";
-      };
-      os = {
-        disabled = false;
-        format = "[$symbol]($style)";
       };
     };
   };

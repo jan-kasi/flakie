@@ -8,13 +8,13 @@
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
     settings = {
-      experimental-features = "nix-command flakes";
+      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
       auto-optimise-store = true;
       trusted-users = [ "root" "@wheel" ];
     };
-  };      
+  };
 
-  nixpkgs = { 
+  nixpkgs = {
     config.allowUnfree = true;
     overlays = [
       outputs.overlays.additions

@@ -3,7 +3,7 @@
 
   # create file ~/.config/tofi/current-theme with "include = /home/jankasi/.config/tofi/themes/fullscreen" or your choice
   xdg.configFile."tofi/config".text = ''
-    font     = "/home/jankasi/.nix-profile/share/fonts/truetype/MesloLGS NF Regular.ttf"
+    font     = "/home/jankasi/.nix-profile/share/fonts/truetype/MesloLGS\ NF\ Regular.ttf"
     include  = "/home/jankasi/.config/tofi/current-theme"
     terminal = kitty
   '';
@@ -20,4 +20,4 @@
     background-color = #000A
     clip-to-padding = true
   '';
-}  
+}

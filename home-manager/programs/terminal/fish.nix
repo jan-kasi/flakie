@@ -9,29 +9,37 @@
       nrsw = "sudo nixos-rebuild switch --flake .#snow";
       cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";
       nixhist = "sudo nix profile history --profile /nix/var/nix/profiles/system";
+      replnix = "nix repl --expr 'import <nixpkgs>{}'";
     };
     functions = {
-      fish_greeting = ''
-        cbonsai -p
-      '';
+      fish_greeting = "krabby random";
       # change background color when certain actions performed (sudo)
       sudo = ''
         printf '\x1b]11;rgb:4040/2020/3030\x1b\\'
         command sudo $argv
-        printf '\x1b]11;\x1b\\'
+        printf '\x1b]111\x1b\\'
       '';
+      # home-manager = ''
+      #   printf '\x1b]11;#8839ef\x1b\\
+      #   command home-manager $argv
+      #   printf '\x1b]111\x1b\\'
+      # '';
     };
+
     interactiveShellInit = ''
-      starship init fish | source
+      set fzf_fd_opts --hidden --exclude=.git --exclude=.github --exclude=.cache
     '';
+
     plugins = [
       # Enable a plugin from nixpkgs
       { name = "grc"; src = pkgs.fishPlugins.grc.src; }
-      { name = "fzf"; src = pkgs.fishPlugins.fzf.src; }
-      { name = "sponge"; src = pkgs.fishPlugins.sponge.src; }
-      { name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
-      { name = "foreign-env"; src = pkgs.fishPlugins.foreign-env.src; }
       { name = "z"; src = pkgs.fishPlugins.z.src; }
+      { name = "fzf.fish"; src = pkgs.fishPlugins.fzf-fish.src; }
+      { name = "pure"; src = pkgs.fishPlugins.pure.src; }
+      { name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
+      { name = "puffer"; src = pkgs.fishPlugins.puffer.src; }
+      { name = "foreign-env"; src = pkgs.fishPlugins.foreign-env.src; }
+      { name = "colored-man-pages"; src = pkgs.fishPlugins.colored-man-pages.src; }
     ];
   };
 }

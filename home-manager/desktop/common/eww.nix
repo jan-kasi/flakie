@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.eww = {
-    enable = true;
+    enable = false;
     package = pkgs.eww-wayland;
     configDir = ./eww-config-dir;
   };

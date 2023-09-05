@@ -1,6 +1,6 @@
 {
   programs.neovim = {
-    enable = true;
+    enable = false;
     vimAlias = true;
   };
 }

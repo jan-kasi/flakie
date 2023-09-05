@@ -4,7 +4,7 @@
 { pkgs ? (import ./nixpkgs.nix) { } }: {
   default = pkgs.mkShell {
     # Enable experimental features without having to specify the argument
-    NIX_CONFIG = "experimental-features = nix-command flakes";
+    NIX_CONFIG = "experimental-features = nix-command flakes repl-flake";
     nativeBuildInputs = with pkgs; [ nix home-manager git ];
   };
 }

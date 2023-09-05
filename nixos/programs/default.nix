@@ -5,6 +5,8 @@
     polkit_gnome
     libevdev # bluetooth gamepad?
     game-devices-udev-rules # bluetooth gamepad?
+    python311
+    hyprland-share-picker
   ];
 
   programs = {
@@ -13,8 +15,9 @@
     mosh.enable = true;
     dconf.enable = true;
     hyprland = {
-      enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      enable = true;
+      xwayland.enable = true;
     };
   };
 
@@ -22,4 +25,6 @@
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
+
+  fonts.enableDefaultPackages = true;
 }
