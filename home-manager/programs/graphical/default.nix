@@ -2,10 +2,14 @@
   imports = [
     ./kitty.nix
     ./foot.nix
-    ./imv.nix
     ./firefox.nix
-    ./mpv.nix
     ./nautilus.nix
     ./vscode.nix
   ];
+
+  programs = {
+    imv.enable = true;
+    mpv.enable = true;
+    zathura.enable = true;
+  };
 }

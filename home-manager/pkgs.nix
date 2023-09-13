@@ -6,8 +6,9 @@
     grc
     ripgrep
     jq
-    catimg
+    chafa # teminal graphics
     acpi # battery stuff
+    # brightnessctl # currently using light 
     ffmpeg
     cbonsai # fun bonsai
     krabby # fun pokemon 
@@ -17,26 +18,29 @@
     # lsp
     nil
     nixpkgs-fmt
+    nixfmt
     marksman
 
     # fonts #
-    meslo-lgs-nf
-    font-awesome
     jetbrains-mono
+    # icons
+    font-awesome
     feather-icon-font # custom
+    # nerdfonts
+    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    meslo-lgs-nf
 
     # internet #
     mullvad-vpn
     transmission-gtk
     yt-dlp
 
-    # tui/cli
+    # tui/cli #
     glow # markdown
-    nb # note-taking, archiving, and knowledge base
     fff # file manager
     ikill # interactive pkill
 
-    # music
+    # music #
     mpc-cli
     mpd-notification
     playerctl
@@ -45,14 +49,22 @@
     python311Packages.requests # fetchart plugin
     python311Packages.pylast # lastgenre plugin
 
-    # wayland
+    # wayland #
     wl-clipboard
     wl-clip-persist
     cliphist
     swww
     eww-wayland
 
-    # gui editing
+    # documents #
     libreoffice-fresh
+    texlive.combined.scheme-full
+    ghostscript
+    # for emacs doom org jupyter integration require
+    # (python311.withPackages(ps: with ps; [jupyter]))
+    pandoc
+
+    # other #
+    zotero # bibliography
   ];
 }

@@ -20,15 +20,11 @@
         printf '\x1b]111\x1b\\'
       '';
       # home-manager = ''
-      #   printf '\x1b]11;#8839ef\x1b\\
+      #   printf '\x1b]11;#8839ef\x1b\\'
       #   command home-manager $argv
       #   printf '\x1b]111\x1b\\'
       # '';
     };
-
-    interactiveShellInit = ''
-      set fzf_fd_opts --hidden --exclude=.git --exclude=.github --exclude=.cache
-    '';
 
     plugins = [
       # Enable a plugin from nixpkgs
@@ -38,8 +34,6 @@
       { name = "pure"; src = pkgs.fishPlugins.pure.src; }
       { name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
       { name = "puffer"; src = pkgs.fishPlugins.puffer.src; }
-      { name = "foreign-env"; src = pkgs.fishPlugins.foreign-env.src; }
-      { name = "colored-man-pages"; src = pkgs.fishPlugins.colored-man-pages.src; }
     ];
   };
 }

@@ -14,12 +14,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     hardware.url = "github:nixos/nixos-hardware";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
 
     helix.url = "github:helix-editor/helix";
     # helix.inputs.nixpkgs.follows = "nixpkgs"; I think helix flake adds a cachix, so don't override
@@ -34,6 +34,7 @@
     nix-alien.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-colors.url = "github:misterio77/nix-colors";
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

@@ -14,6 +14,9 @@
     fish.enable = true;
     mosh.enable = true;
     dconf.enable = true;
+    light.enable = true;
+
+    # note: enabling here is for proper support, it won't duplicate package ofc, thanks to hash
     hyprland = {
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       enable = true;

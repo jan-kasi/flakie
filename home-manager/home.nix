@@ -1,10 +1,13 @@
 { inputs, ... }: {
-  # You can import other home-manager modules here
+  # Import other home-manager modules here
   imports = [
     ./home-system.nix
     ./pkgs.nix
-    ./programs
     ./desktop
+
+    ./programs/utilities
+    ./programs/terminal
+    ./programs/graphical
 
     # Modules exported from other flakes
     inputs.nix-colors.homeManagerModules.default

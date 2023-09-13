@@ -16,12 +16,13 @@
       env = "XCURSOR_SIZE,72";
 
       exec-once = [
-        "mako"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+        "mako"
+        "swww init"
+        "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "wl-clip-persist --clipboard regular --all-mime-type-regex '(?i)^(?!(?:image|audio|video|font|model)/).+' --selection-size-limit 1048576"
-        "swww init"
       ];
 
       input = {
@@ -42,6 +43,7 @@
       bind = [
         "$mainMOD, Return, exec, $term"
         "SUPER,space,exec,wofi --show drun"
+        "$mainMOD, T, exec, pkill -SIGUSR1 waybar"
         "$mainMOD, C, killactive, "
         "$mainMOD, V, exec, cliphist list | tofi | cliphist decode | wl-copy"
         "$mainMOD, F, togglefloating, "
@@ -56,9 +58,12 @@
 
         "CTRLALT, Delete, exit, "
 
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume 59 0.02+"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume 59 0.02-"
-        ", XF86AudioMute, exec, wpctl set-mute 59 toggle"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 0.02+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 0.02-"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+
+        ", XF86MonBrightnessUp, exec, light -A 5"
+        ", XF86MonBrightnessDown, exec, light -U 5"
 
         ", XF86AudioPlay, exec, mpc toggle"
         ", XF86AudioPrev, exec, mpc prev"

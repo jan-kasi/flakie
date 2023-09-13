@@ -18,18 +18,27 @@
     };
   };
 
-  home.username = "jankasi";
-  home.homeDirectory = "/home/jankasi";
+  home = {
+    username = "jankasi";
+    homeDirectory = "/home/jankasi";
+    sessionPath = [ "$HOME/.config/emacs/bin" ];
 
-  home.shellAliases = {
-    l = "exa --icons";
-    ll = "exa --icons -lagh";
-    lt = "exa --icons -TL";
+    sessionVariables = {
+      EDITOR = "hx";
+      DEFAULT_BROWSER = "firefox";
+    };
+
+    shellAliases = {
+      l = "exa --icons";
+      ll = "exa --icons -lagh";
+      lt = "exa --icons -TL";
+    };
   };
 
-  home.sessionVariables = {
-    EDITOR = "hx";
-  };
+  xdg.mime.enable = true;
+  xdg.mimeApps.defaultApplications = [
+
+  ];
 
   # Let home-manager install and manage itself
   programs.home-manager.enable = true;
