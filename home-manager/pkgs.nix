@@ -4,7 +4,8 @@
     fd
     exa
     grc
-    ripgrep
+    (ripgrep.override { withPCRE2 = true; })
+    imagemagick
     jq
     chafa # teminal graphics
     acpi # battery stuff
@@ -14,6 +15,7 @@
     krabby # fun pokemon 
     nix-alien # run binaries
     nix-init # generate nix packages from URLs
+    sqlite
 
     # lsp
     nil
@@ -59,8 +61,7 @@
 
     # documents #
     libreoffice-fresh
-
-    # other #
+    texlive.combined.scheme-medium
     zotero # bibliography
   ];
 }

@@ -26,6 +26,7 @@
     sessionVariables = {
       EDITOR = "hx";
       DEFAULT_BROWSER = "firefox";
+      TERMINAL = "kitty";
     };
 
     shellAliases = {
