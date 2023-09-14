@@ -39,6 +39,7 @@
     glow # markdown
     fff # file manager
     ikill # interactive pkill
+    nb # notes
 
     # music #
     mpc-cli
@@ -58,11 +59,6 @@
 
     # documents #
     libreoffice-fresh
-    texlive.combined.scheme-full
-    ghostscript
-    # for emacs doom org jupyter integration require
-    # (python311.withPackages(ps: with ps; [jupyter]))
-    pandoc
 
     # other #
     zotero # bibliography
