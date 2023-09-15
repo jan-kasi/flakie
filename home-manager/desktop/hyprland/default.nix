@@ -17,7 +17,7 @@
 
       exec-once = [
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
-        "mako"
+        "dunst"
         "swww init"
         "waybar"
         "wl-paste --type text --watch cliphist store"
@@ -36,7 +36,7 @@
       "$mainMOD" = "SUPER";
       "$term" = "kitty";
       "$web_browser" = "firefox";
-      "$drun" = "tofi-drun | xargs hyprctl dispatch exec --";
+      # "$drun" = "tofi-drun | xargs hyprctl dispatch exec --";
 
       bind = [
         # applications
@@ -45,7 +45,7 @@
         "$mainMOD, E, exec, nautilus"
 
         # utilities
-        "SUPER,space,exec,wofi --show drun"
+        "$mainMOD, space, exec, sh $HOME/.config/rofi/bin/launcher"
         "$mainMOD, T, exec, pkill -SIGUSR1 waybar"
         "$mainMOD, V, exec, cliphist list | tofi | cliphist decode | wl-copy"
 
@@ -57,7 +57,7 @@
         "$mainMOD, F, fullscreen, "
         "$mainMOD, Tab, bringactivetotop, " # cycle in floating workspace
         "$mainMOD, S, togglefloating, " # make window floating
-        "$mainMOD SHIFT, V, exec, hyprctl dispatch workspaceopt allfloat" # make all windows float
+        "$mainMOD SHIFT, S, exec, hyprctl dispatch workspaceopt allfloat" # make all windows float
         "$mainMOD, P, pseudo, " # dwindle
         "$mainMOD, O, toggleopaque, " # toggle opacity for singular window
 
@@ -110,8 +110,6 @@
         border_size = 2;
         "col.active_border" = "rgb(b4befe)";
         "col.inactive_border" = "rgb(1e1e2e)";
-
-
       };
 
       decoration = {
@@ -142,12 +140,12 @@
       dwindle = {
         pseudotile = true; # bound to mainMOD + P
         preserve_split = true;
-        no_gaps_when_only = 1; # default:disabled - 0, no border - 1, with border - 2
+        no_gaps_when_only = 2; # default:disabled - 0, no border - 1, with border - 2
       };
 
       master = {
         new_is_master = true;
-        no_gaps_when_only = 1;
+        no_gaps_when_only = 2;
       };
 
       gestures = {
@@ -166,7 +164,7 @@
       windowrulev2 = [
         # 'opacity float float' (sets active inactive)
         # can add "override" after a float to make it override instead of a multiplier (not sure what this means haha...)  
-        "opacity 1.0 0.7, floating:1" # gives inactive floating windows 0.5 opacity
+        "opacity 1.0 0.5, floating:1" # gives inactive floating windows 0.5 opacity
         "opacity 1.0, class:^(kitty)$" # don't change kitty opacity
 
         "float, class:^(xdg-desktop-portal-gtk)$"

@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     # utilities #
     fd
+    libnotify
     exa
     grc
     (ripgrep.override { withPCRE2 = true; })
@@ -15,13 +16,17 @@
     krabby # fun pokemon 
     nix-alien # run binaries
     nix-init # generate nix packages from URLs
-    sqlite
-    graphviz
+    sqlite #org-roam
+    graphviz #org-roam
+    aspell #flyspell
+
 
     # lsp
     nil
     nixpkgs-fmt
     nixfmt
+    shellcheck
+    shfmt
     marksman
 
     # fonts #
@@ -64,5 +69,6 @@
     libreoffice-fresh
     texlive.combined.scheme-medium
     zotero # bibliography
+    multimarkdown
   ];
 }

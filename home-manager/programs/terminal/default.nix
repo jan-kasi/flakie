@@ -6,5 +6,7 @@
     ./helix.nix
     ./emacs.nix
     ./tmux.nix
+    #./zellij
+    #./starship
   ];
 }

@@ -2,80 +2,118 @@
   programs.wofi = {
     enable = true;
     settings = {
-      width = 800;
-      height = 500;
+      width = 500;
+      height = 250;
       location = "top";
       yoffset = 200;
       show = "drun";
       prompt = "";
-      lines = 13;
+      lines = 10;
       filter_rate = 100;
       allow_markup = true;
-      always_parse_args = true;
+      parse_action = false;
+      key_expand = "Alt_L";
       halign = "fill";
       orientation = "vertical";
-      content_halign = "fill";
       insensitive = true;
       allow_images = true;
       gtk_dark = true;
     };
     style = ''
-      * {
-      font-family: 'MesloLGS NF Bold';
-      font-size: 15px;
-      font-weight: 600;
-      }
+      /* Mocha Lavender */
+      @define-color accent #babbf1;
+      @define-color txt #cad3fr;
+      @define-color bg rgba(36, 39, 58, 1.0);
+      @define-color bg2 rgba(73, 77, 100, 1.0);
 
+       * {
+            font-family: 'MesloLGS NF', monospace;
+            font-size: 14px;
+       }
 
-      #window {
+       /* Window */
+       window {
           margin: 0px;
-          border: 0.0px solid;
-          border-color: rgb(235, 77, 129);
-          border-radius: 10px;
-          background-color: #8C7C73;
-          color:  /*rgb(235, 77, 129)*/ #f1f1f1;
-      }
+          padding: 10px;
+          border: 3px solid @accent;
+          border-radius: 7px;
+          background-color: @bg;
+          animation: slideIn 0.1s ease-in-out both;
+       }
 
-      #input {
-          margin: 15px;
-          background-color: rgb(112, 122, 137);
-          color: rgb(37, 38, 51);
-          border-radius: 25px;
-          border: 2px solid rgb(52, 64, 76);
-      }
+       /* Slide In */
+       @keyframes slideIn {
+          0% {
+             opacity: 0;
+          }
 
-      #scroll {
-          margin-bottom: 15px;
-      }
+          100% {
+             opacity: 1;
+          }
+       }
 
-      #entry {
-          margin: 0px 15px;
-      }
-
-      #entry:selected {
-          /*background-color: /*rgb(245, 98, 36);*/
-          background-color: #F59251;
-          border-radius: 0px;
+       /* Inner Box */
+       #inner-box {
+          margin: 5px;
+          padding: 10px;
           border: none;
-          outline: none;
-      }
+          background-color: @bg;
+          animation: fadeIn 0.1s ease-in-out both;
+       }
 
-      #entry > box {
-          margin-left: 16px;
-      }
+       /* Fade In */
+       @keyframes fadeIn {
+          0% {
+             opacity: 0;
+          }
 
-      #entry image {
-          padding-right: 10px;
-      }
+          100% {
+             opacity: 1;
+          }
+       }
 
-      #colors {
-          color: rgb(37, 38, 51);
-          color: rgb(52, 64, 76);
-          color: rgb(76, 90, 107);
-          color: rgb(112, 122, 137);
-          color: rgb(235, 77, 129);
-          color: rgb(245, 98, 36);
-      }
+       /* Outer Box */
+       #outer-box {
+          margin: 5px;
+          padding: 10px;
+          border: none;
+          background-color: @bg;
+       }
+
+       /* Scroll */
+       #scroll {
+          margin: 0px;
+          padding: 10px;
+          border: none;
+       }
+
+       /* Input */
+       #input {
+          margin: 5px;
+          padding: 10px;
+          border: none;
+          color: @accent;
+          background-color: @bg2;
+          animation: fadeIn 0.1s ease-in-out both;
+       }
+
+       /* Text */
+       #text {
+          margin: 5px;
+          padding: 10px;
+          border: none;
+          color: @txt;
+          animation: fadeIn 0.1s ease-in-out both;
+       }
+
+       /* Selected Entry */
+       #entry:selected {
+         background-color: @accent;
+       }
+
+       #entry:selected #text {
+          color: @bg;
+       }
     '';
   };
 }

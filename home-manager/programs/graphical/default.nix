@@ -1,10 +1,10 @@
 {
   imports = [
     ./kitty.nix
-    ./foot.nix
+    # ./foot.nix
     ./firefox.nix
     ./nautilus.nix
-    ./vscode.nix
+    # ./vscode.nix
     ./zathura.nix
   ];
 

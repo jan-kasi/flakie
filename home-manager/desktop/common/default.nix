@@ -1,10 +1,13 @@
 {
   imports = [
-    ./mako.nix
-    ./tofi.nix
-    ./wofi.nix
-    ./eww.nix
+    #./mako.nix
+    ./dunst.nix
+    # ./tofi.nix
+    ./rofi
+    # ./wofi.nix
     ./waybar.nix
+    # ./eww.nix
     ./wlsunset.nix
+    ./swaylock.nix
   ];
 }

@@ -13,7 +13,8 @@
         "custom/nix" = {
           format = " 󱄅 ";
           tooltip = false;
-          # on-click = "sh $HOME/.config/wofi/bin/powermenu";
+          on-click = "sh $HOME/.config/rofi/bin/launcher";
+          on-click-right = "sh $HOME/.config/rofi/bin/powermenu";
         };
 
         "hyprland/workspaces" = {
@@ -49,13 +50,14 @@
 
         pulseaudio = {
           format = "<span color='#b4befe'>{icon}</span> {volume}%";
-          format-muted = "󰖁";
+          format-muted = "<span color='#b4befe'>󰖁</span>";
           tooltip = false;
           format-icons = {
             headphone = "";
             default = [ "" "󰕾" "󰕾" "󰕾" "" "" "" ];
           };
           scroll-step = 1;
+          on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
         };
 
         bluetooth = {
@@ -63,6 +65,7 @@
           format-diabled = ""; # an empty format will hide the module 
           format-connected = "<span color='#b4befe'>󰂱</span> {num_connections}";
           tooltip-format-enumerate-connected = "{device_enumerate}";
+          on-click = "sh $HOME/.config/rofi/bin/rofi-bluetooth";
         };
 
         network = {
@@ -72,6 +75,7 @@
           format-ethernet = "{ipaddr}/{cidr} ";
           format-disconnected = "<span color='#b4befe'>󰖪 </span>No Network";
           tooltip = false;
+          on-click = "sh $HOME/.config/wofi/bin/wofi-wifi";
         };
 
         battery = {
