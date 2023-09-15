@@ -16,6 +16,7 @@
     nix-alien # run binaries
     nix-init # generate nix packages from URLs
     sqlite
+    graphviz
 
     # lsp
     nil
