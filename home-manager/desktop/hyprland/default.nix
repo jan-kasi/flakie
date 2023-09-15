@@ -36,7 +36,6 @@
       "$mainMOD" = "SUPER";
       "$term" = "kitty";
       "$web_browser" = "firefox";
-      # "$drun" = "tofi-drun | xargs hyprctl dispatch exec --";
 
       bind = [
         # applications
@@ -47,15 +46,15 @@
         # utilities
         "$mainMOD, space, exec, sh $HOME/.config/rofi/bin/launcher"
         "$mainMOD, T, exec, pkill -SIGUSR1 waybar"
-        "$mainMOD, V, exec, cliphist list | tofi | cliphist decode | wl-copy"
+        "$mainMOD, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
         # hyprland
         "CTRLALT, Delete, exit, "
         "$mainMOD, C, killactive, "
         "$mainMOD, Tab, cyclenext, " # cycle windows
+        "$mainMOD, Tab, bringactivetotop, " # cycle in floating workspace
 
         "$mainMOD, F, fullscreen, "
-        "$mainMOD, Tab, bringactivetotop, " # cycle in floating workspace
         "$mainMOD, S, togglefloating, " # make window floating
         "$mainMOD SHIFT, S, exec, hyprctl dispatch workspaceopt allfloat" # make all windows float
         "$mainMOD, P, pseudo, " # dwindle
