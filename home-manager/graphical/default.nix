@@ -1,10 +1,17 @@
 {
   imports = [
+    # desktop environment
+    ./dunst.nix
+    ./rofi
+    ./waybar.nix
+    ./wlsunset.nix
+    ./swaylock.nix
+
+    # apps
     ./kitty.nix
     # ./foot.nix
     ./firefox.nix
     ./nautilus.nix
-    # ./vscode.nix
     ./zathura.nix
   ];
 

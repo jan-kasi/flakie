@@ -2,12 +2,15 @@
   # Import other home-manager modules here
   imports = [
     ./home-system.nix
-    ./pkgs.nix
-    ./desktop
 
-    ./programs/utilities
-    ./programs/terminal
-    ./programs/graphical
+    ./pkgs.nix
+
+    ./utilities
+    ./terminal
+    ./graphical
+
+    ./desktop/hyprland.nix
+    ./desktop/newm-atha.nix
 
     # Modules exported from other flakes
     inputs.nix-colors.homeManagerModules.default

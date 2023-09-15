@@ -13,12 +13,16 @@
     # brightnessctl # currently using light 
     ffmpeg
     cbonsai # fun bonsai
-    krabby # fun pokemon 
+    krabby # fun pokemon
     nix-alien # run binaries
     nix-init # generate nix packages from URLs
-    sqlite #org-roam
-    graphviz #org-roam
-    aspell #flyspell
+
+    sqlite # org-roam
+    graphviz # org-roam
+    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ]))
+    cmake
+    gnumake
+    gcc
 
 
     # lsp
@@ -67,7 +71,7 @@
 
     # documents #
     libreoffice-fresh
-    texlive.combined.scheme-medium
+    texlive.combined.scheme-full
     zotero # bibliography
     multimarkdown
   ];

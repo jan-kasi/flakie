@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./utilities
-    ./terminal
-    ./graphical
-  ];
-}
