@@ -22,4 +22,5 @@
   home.file.".config/rofi/bin/powermenu".source = ./bin/powermenu;
   home.file.".config/rofi/bin/launcher".source = ./bin/launcher;
   home.file.".config/rofi/bin/rofi-bluetooth".source = ./bin/rofi-bluetooth;
+  home.file.".config/rofi/bin/rofi-wifi-menu".source = ./bin/rofi-wifi-menu;
 }

@@ -169,6 +169,7 @@
         "float, class:^(xdg-desktop-portal-gtk)$"
         "float, class:^(blueman-manager)$"
         "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
+        "float, class:^(org.gnome.Nautilus)$"
 
       ];
 

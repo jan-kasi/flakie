@@ -35,6 +35,7 @@
 
     # fonts #
     jetbrains-mono
+    iosevka-comfy.comfy
     # icons
     font-awesome
     feather-icon-font # custom

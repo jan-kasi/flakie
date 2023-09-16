@@ -20,6 +20,9 @@
           action = "blue";
         };
       };
+      fetchart = {
+        cover_format = "png";
+      };
     };
   };
 }

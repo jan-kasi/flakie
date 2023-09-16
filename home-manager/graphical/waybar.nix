@@ -75,7 +75,7 @@
           format-ethernet = "{ipaddr}/{cidr} ";
           format-disconnected = "<span color='#b4befe'>󰖪 </span>No Network";
           tooltip = false;
-          on-click = "sh $HOME/.config/wofi/bin/wofi-wifi";
+          on-click = "sh $HOME/.config/rofi/bin/rofi-wifi-menu";
         };
 
         battery = {
