@@ -25,7 +25,6 @@ stdenv.mkDerivation {
       Feather is a collection of simply beautiful open source icons.
     '';
     license = licenses.mit;
-    maintainers = [ maintainers.jan-kasi ];
     platforms = platforms.all;
   };
 }

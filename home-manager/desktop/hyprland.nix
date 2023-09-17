@@ -51,6 +51,7 @@
 
         # hyprland
         "CTRLALT, Delete, exit, "
+        "$mainMOD, L, exec, swaylock"
         "$mainMOD, C, killactive, "
         "$mainMOD, Tab, cyclenext, " # cycle windows
         "$mainMOD, Tab, bringactivetotop, " # cycle in floating workspace

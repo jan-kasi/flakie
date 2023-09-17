@@ -3,7 +3,7 @@
     # utilities #
     fd
     libnotify
-    exa
+    eza
     grc
     (ripgrep.override { withPCRE2 = true; })
     imagemagick
@@ -70,6 +70,7 @@
     cliphist
     swww
     eww-wayland
+    hyprpicker
 
     # documents #
     libreoffice-fresh
@@ -77,6 +78,7 @@
     zotero # bibliography
     multimarkdown
 
+    # apps
     anki
   ];
 }

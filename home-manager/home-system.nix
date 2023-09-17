@@ -30,9 +30,9 @@
     };
 
     shellAliases = {
-      l = "exa --icons";
-      ll = "exa --icons -lagh";
-      lt = "exa --icons -TL";
+      l = "eza --icons";
+      ll = "eza --icons -lagh";
+      lt = "eza --icons -TL";
     };
   };
 
