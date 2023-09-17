@@ -59,7 +59,6 @@
         "$mainMOD, S, togglefloating, " # make window floating
         "$mainMOD SHIFT, S, exec, hyprctl dispatch workspaceopt allfloat" # make all windows float
         "$mainMOD, P, pseudo, " # dwindle
-        "$mainMOD, O, toggleopaque, " # toggle opacity for singular window
 
         # audio
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 0.02+"
@@ -164,8 +163,6 @@
       windowrulev2 = [
         # 'opacity float float' (sets active inactive)
         # can add "override" after a float to make it override instead of a multiplier (not sure what this means haha...)  
-        "opacity 1.0 0.5, floating:1" # gives inactive floating windows 0.5 opacity
-        "opacity 1.0, class:^(kitty)$" # don't change kitty opacity
 
         "float, class:^(xdg-desktop-portal-gtk)$"
         "float, class:^(blueman-manager)$"

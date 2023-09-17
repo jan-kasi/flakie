@@ -53,6 +53,7 @@
     ikill # interactive pkill
     nb # notes
     catgirl # RSS
+    mangal # download manga
 
     # music #
     mpc-cli

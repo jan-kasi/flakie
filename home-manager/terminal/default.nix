@@ -6,7 +6,7 @@
 
     ./helix.nix
     ./emacs.nix
-    ./kakoune.nix
+    #./kakoune.nix
 
     ./ncmpcpp.nix
     ./nnn.nix

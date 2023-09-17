@@ -20,7 +20,7 @@
         "hyprland/workspaces" = {
           format = "{icon}";
           tooltip = false;
-          active-only = true;
+          active-only = false;
           on-click = "activate";
           show-special = true;
           on-scroll-up = "hyprctl dispatch workspace e+1";
