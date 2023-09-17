@@ -36,10 +36,7 @@
     };
   };
 
-  xdg.mime.enable = true;
-  xdg.mimeApps.defaultApplications = [
-
-  ];
+  fonts.fontconfig.enable = true;
 
   # Let home-manager install and manage itself
   programs.home-manager.enable = true;

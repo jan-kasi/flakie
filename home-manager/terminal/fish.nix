@@ -19,12 +19,16 @@
         command sudo $argv
         printf '\x1b]111\x1b\\'
       '';
-      # home-manager = ''
-      #   printf '\x1b]11;#8839ef\x1b\\'
-      #   command home-manager $argv
-      #   printf '\x1b]111\x1b\\'
-      # '';
     };
+    interactiveShellInit = ''
+      set FZF_ALT_C_OPTS "--preview 'exa --icons -LT 3 {}'"
+      set FZF_CTRL_R_OPTS "--preview 'echo {}' --preview-window up:3:hidden:wrap --bind 'ctrl-/:toggle-preview' --color header:italic --header 'Press CTRL-Y to copy command into clipboard'"
+      set FZF_ALT_C_OPTS "--preview 'exa --icons --tree {}'"
+    '';
+    shellInit = ''
+      set fzf_preview_dir_cmd "exa --icons -LT 3"
+      set fzf_directory_opts --bind "ctrl-o:execute($EDITOR {} &> /dev/tty)"
+    '';
 
     plugins = [
       # Enable a plugin from nixpkgs

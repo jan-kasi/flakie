@@ -19,11 +19,10 @@
 
     sqlite # org-roam
     graphviz # org-roam
-    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ]))
-    cmake
-    gnumake
-    gcc
-
+    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ])) # spellcheck
+    cmake # vterm
+    gnumake # vterm
+    gcc # vterm
 
     # lsp
     nil
@@ -35,8 +34,8 @@
 
     # fonts #
     jetbrains-mono
-    iosevka-comfy.comfy
     # icons
+    symbola
     font-awesome
     feather-icon-font # custom
     # nerdfonts
@@ -53,6 +52,7 @@
     fff # file manager
     ikill # interactive pkill
     nb # notes
+    catgirl # RSS
 
     # music #
     mpc-cli
@@ -75,5 +75,7 @@
     texlive.combined.scheme-full
     zotero # bibliography
     multimarkdown
+
+    anki
   ];
 }

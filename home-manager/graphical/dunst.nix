@@ -11,7 +11,7 @@
         offset = "22x22";
         frame_width = 2;
         separate_color = "frame";
-        font = "MesloLGS NF 12";
+        font = "MesloLGS NF 8";
         corner_radius = 7;
         background = "#11111B";
         foreground = "#CDD6F4";
