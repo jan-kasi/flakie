@@ -16,7 +16,7 @@
       dynamic_background_opacity = "yes";
 
       background_blur = 0;
-      background_opacity = "0.5";
+      background_opacity = "0.8";
 
       focus_follows_mouse = "yes";
       mouse_hide_wait = "-1";
