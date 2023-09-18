@@ -20,7 +20,7 @@
         "hyprland/workspaces" = {
           format = "{icon}";
           tooltip = false;
-          active-only = false;
+          active-only = true;
           on-click = "activate";
           show-special = true;
           on-scroll-up = "hyprctl dispatch workspace e+1";
@@ -117,7 +117,7 @@
         color: #b4befe;
       }
 
-      #workspaces button {
+      #workspaces button.active {
         background: #11111b;
         color: #b4befe;
       }

@@ -61,19 +61,7 @@
         "$mainMOD SHIFT, S, exec, hyprctl dispatch workspaceopt allfloat" # make all windows float
         "$mainMOD, P, pseudo, " # dwindle
 
-        # audio
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 0.02+"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 0.02-"
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
-        # brightness
-        ", XF86MonBrightnessUp, exec, light -A 5"
-        ", XF86MonBrightnessDown, exec, light -U 5"
-        # music
-        ", XF86AudioPlay, exec, mpc toggle"
-        ", XF86AudioPrev, exec, mpc prev"
-        ", XF86AudioNext, exec, mpc next"
-
-        # focus
+               # focus
         "$mainMOD, h, movefocus, l"
         "$mainMOD, j, movefocus, r"
         "$mainMOD, k, movefocus, u"
@@ -94,6 +82,20 @@
         "$mainMOD SHIFT, 3, movetoworkspace, 3"
         "$mainMOD SHIFT, 4, movetoworkspace, 4"
         "$mainMOD SHIFT, 5, movetoworkspace, 5"
+      ];
+
+      bindl = [
+        # audio
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 0.02+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 0.02-"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+        # brightness
+        ", XF86MonBrightnessUp, exec, light -A 5"
+        ", XF86MonBrightnessDown, exec, light -U 5"
+        # music
+        ", XF86AudioPlay, exec, mpc toggle"
+        ", XF86AudioPrev, exec, mpc prev"
+        ", XF86AudioNext, exec, mpc next"
       ];
 
       # mouse

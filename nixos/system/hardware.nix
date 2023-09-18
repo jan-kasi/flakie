@@ -1,5 +1,5 @@
 {
-  powerManagement.enable = true;
+  powerManagement.enable = false;
 
   hardware.bluetooth.enable = true;
 

@@ -34,6 +34,7 @@
 
     # fonts #
     jetbrains-mono
+    etBook
     # icons
     symbola
     font-awesome
@@ -54,6 +55,7 @@
     nb # notes
     catgirl # RSS
     mangal # download manga
+    gnugo # gnu Go AI
 
     # music #
     mpc-cli
