@@ -60,8 +60,10 @@
         "$mainMOD, S, togglefloating, " # make window floating
         "$mainMOD SHIFT, S, exec, hyprctl dispatch workspaceopt allfloat" # make all windows float
         "$mainMOD, P, pseudo, " # dwindle
+        "$mainMOD, G, togglegroup"
+        "$mainMOD, Tab, changegroupactive"
 
-               # focus
+        # focus
         "$mainMOD, h, movefocus, l"
         "$mainMOD, j, movefocus, r"
         "$mainMOD, k, movefocus, u"
@@ -142,12 +144,12 @@
       dwindle = {
         pseudotile = true; # bound to mainMOD + P
         preserve_split = true;
-        no_gaps_when_only = 2; # default:disabled - 0, no border - 1, with border - 2
+        no_gaps_when_only = 0; # default:disabled - 0, no border - 1, with border - 2
       };
 
       master = {
         new_is_master = true;
-        no_gaps_when_only = 2;
+        no_gaps_when_only = 0;
       };
 
       gestures = {
