@@ -16,6 +16,7 @@
       env = "XCURSOR_SIZE,72";
 
       exec-once = [
+        "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "dunst"
         "swww init"
@@ -53,15 +54,18 @@
         "CTRLALT, Delete, exit, "
         "$mainMOD, L, exec, swaylock"
         "$mainMOD, C, killactive, "
+
         "$mainMOD, Tab, cyclenext, " # cycle windows
         "$mainMOD, Tab, bringactivetotop, " # cycle in floating workspace
+        "$mainMOD, Tab, changegroupactive"
 
         "$mainMOD, F, fullscreen, "
         "$mainMOD, S, togglefloating, " # make window floating
         "$mainMOD SHIFT, S, exec, hyprctl dispatch workspaceopt allfloat" # make all windows float
         "$mainMOD, P, pseudo, " # dwindle
         "$mainMOD, G, togglegroup"
-        "$mainMOD, Tab, changegroupactive"
+
+        "$mainMod SHIFT, c ,exec, hyprpicker -a"
 
         # focus
         "$mainMOD, h, movefocus, l"
@@ -114,6 +118,22 @@
         border_size = 2;
         "col.active_border" = "rgb(b4befe)";
         "col.inactive_border" = "rgb(1e1e2e)";
+        "col.group_border" = "rgb(1e1e2e)";
+        "col.group_border_active" = "rgb(a6e3a1)";
+        "col.group_border_locked" = "rgb(f9e2af)";
+        "col.group_border_locked_active" = "rgb(fab387)";
+      };
+
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+
+        enable_swallow = true;
+        swallow_regex = "^(kitty)$";
+
+        render_titles_in_groupbar = true;
+        groupbar_text_color = "rgb(b4befe)";
+        groupbar_gradients = false;
       };
 
       decoration = {
@@ -156,11 +176,6 @@
         workspace_swipe = true;
       };
 
-      misc = {
-        disable_hyprland_logo = true;
-        disable_splash_rendering = true;
-      };
-
       windowrule = [
         ""
       ];
@@ -168,12 +183,11 @@
       windowrulev2 = [
         # 'opacity float float' (sets active inactive)
         # can add "override" after a float to make it override instead of a multiplier (not sure what this means haha...)  
-
         "float, class:^(xdg-desktop-portal-gtk)$"
         "float, class:^(blueman-manager)$"
         "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
+        "float, class:^(firefox)$, title:^(Library)$"
         "float, class:^(org.gnome.Nautilus)$"
-
       ];
 
     };
