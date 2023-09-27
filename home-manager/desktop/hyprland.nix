@@ -65,7 +65,7 @@
         "$mainMOD, P, pseudo, " # dwindle
         "$mainMOD, G, togglegroup"
 
-        "$mainMod SHIFT, c ,exec, hyprpicker -a"
+        "$mainMOD SHIFT, C ,exec, hyprpicker -a"
 
         # focus
         "$mainMOD, h, movefocus, l"
@@ -132,6 +132,7 @@
         swallow_regex = "^(kitty)$";
 
         render_titles_in_groupbar = true;
+        groupbar_titles_font_size = 12;
         groupbar_text_color = "rgb(b4befe)";
         groupbar_gradients = false;
       };

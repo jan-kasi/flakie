@@ -79,8 +79,10 @@
     texlive.combined.scheme-full
     zotero # bibliography
     multimarkdown
+    ditaa # diagrams
 
     # apps
     anki
+    calibre
   ];
 }
