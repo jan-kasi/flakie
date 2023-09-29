@@ -8,15 +8,18 @@
     (ripgrep.override { withPCRE2 = true; })
     imagemagick
     jq
-    chafa # teminal graphics
-    acpi # battery stuff
-    # brightnessctl # currently using light 
     ffmpeg
+    chafa # teminal graphics
+
+    acpi # battery stuff
+
     cbonsai # fun bonsai
     krabby # fun pokemon
+
     nix-alien # run binaries
     nix-init # generate nix packages from URLs
 
+    # EMACS #
     sqlite # org-roam
     graphviz # org-roam
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ])) # spellcheck
@@ -24,7 +27,7 @@
     gnumake # vterm
     gcc # vterm
 
-    # lsp
+    # lsp #
     nil
     nixpkgs-fmt
     nixfmt
@@ -77,12 +80,13 @@
     # documents #
     libreoffice-fresh
     texlive.combined.scheme-full
-    zotero # bibliography
     multimarkdown
     ditaa # diagrams
 
+
     # apps
     anki
-    calibre
+    foliate
+    zotero # bibliography
   ];
 }

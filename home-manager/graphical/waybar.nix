@@ -18,7 +18,6 @@
         };
 
         "hyprland/workspaces" = {
-          format = "{icon}";
           tooltip = false;
           active-only = false;
           on-click = "activate";
