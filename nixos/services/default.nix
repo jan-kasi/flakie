@@ -13,5 +13,6 @@
     flatpak.enable = true;
     gvfs.enable = true; # gnome nautilus 
     fstrim.enable = true;
+    fwupd.enable = true;
   };
 }
