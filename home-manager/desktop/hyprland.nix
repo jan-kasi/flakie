@@ -8,7 +8,7 @@
     # I haven't been able to do this by enabling only in hm.
     # But it doesn't really matter as the hash is the same, so not
     # installed twice or anything silly like that :D
-    systemdIntegration = true;
+    systemd.enable = true;
     xwayland.enable = true;
 
     settings = {

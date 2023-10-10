@@ -21,9 +21,6 @@
 
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
 
-    helix.url = "github:helix-editor/helix";
-    # helix.inputs.nixpkgs.follows = "nixpkgs"; I think helix flake adds a cachix, so don't override
-
     hyprland.url = "github:hyprwm/Hyprland";
     # don't override hyprland nixpkgs follows, this would make hyprland cachix useless
 

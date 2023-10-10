@@ -8,7 +8,7 @@
       outputs.overlays.newm-atha
 
       # overlays exported from other flakes
-      inputs.nix-alien.overlay
+      inputs.nix-alien.overlays.default
     ];
 
     config = {

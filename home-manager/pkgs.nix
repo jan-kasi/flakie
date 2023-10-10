@@ -59,6 +59,7 @@
     catgirl # RSS
     mangal # download manga
     gnugo # gnu Go AI
+    vim
 
     # music #
     mpc-cli
