@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.bat = {
     enable = true;
-    config.theme = "ansi";
+    config = { theme = "ansi"; };
     extraPackages = with pkgs.bat-extras; [ batdiff ];
     themes = {
       Dracula = builtins.readFile (pkgs.fetchFromGitHub
