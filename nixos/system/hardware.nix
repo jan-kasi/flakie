@@ -1,4 +1,6 @@
 {
+  hardware.enableAllFirmware = true;
+
   powerManagement.enable = true;
 
   hardware.bluetooth.enable = true;

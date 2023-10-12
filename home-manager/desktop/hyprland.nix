@@ -16,14 +16,14 @@
       env = "XCURSOR_SIZE,72";
 
       exec-once = [
-        "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "dunst"
         "swww init"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "wl-clip-persist --clipboard regular --all-mime-type-regex '(?i)^(?!(?:image|audio|video|font|model)/).+' --selection-size-limit 1048576"
+        "wl-clip-persist --clipboard regular --selection-size-limit 1048576"
         "mpd-notification"
       ];
 
@@ -118,23 +118,27 @@
         border_size = 2;
         "col.active_border" = "rgb(b4befe)";
         "col.inactive_border" = "rgb(1e1e2e)";
-        "col.group_border" = "rgb(1e1e2e)";
-        "col.group_border_active" = "rgb(a6e3a1)";
-        "col.group_border_locked" = "rgb(f9e2af)";
-        "col.group_border_locked_active" = "rgb(fab387)";
+      };
+
+      group = {
+        "col.border_active" = "rgb(a6e3a1)";
+        "col.border_locked_active" = "rgb(fab387)";
+        "col.border_inactive" = "rgb(1e1e2e)";
+        "col.border_locked_inactive" = "rgb(f9e2af)";
+        groupbar = {
+          font_size = 12;
+          text_color = "rgb(b4befe)";
+          gradients = false;
+          render_titles = true;
+        };
       };
 
       misc = {
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
-
         enable_swallow = true;
         swallow_regex = "^(kitty)$";
 
-        render_titles_in_groupbar = true;
-        groupbar_titles_font_size = 12;
-        groupbar_text_color = "rgb(b4befe)";
-        groupbar_gradients = false;
       };
 
       decoration = {
