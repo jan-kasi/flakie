@@ -3,8 +3,10 @@
     layout = "gb";
     xkbVariant = "";
     enable = true;
+    desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = true;
+
 
     # displayManager.sddm.enable = true;
     # For some reason theme is ROKEN, doesn't let me log in

@@ -4,6 +4,7 @@
     ./minidlna.nix
     ./xserver.nix
     ./openssh.nix
+    ./gnome.nix
   ];
 
   # Just for those being enabled
