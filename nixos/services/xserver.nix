@@ -7,7 +7,6 @@
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = true;
 
-
     # displayManager.sddm.enable = true;
     # For some reason theme is ROKEN, doesn't let me log in
     # (setting user as "", maybe that's the problem?)

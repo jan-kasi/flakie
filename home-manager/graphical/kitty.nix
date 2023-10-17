@@ -8,15 +8,14 @@
       shell_integration = "disabled";
 
       wayland_titlebar_color = "background";
-      draw_minimal_borders = "yes";
-      hide_window_decorations = "yes";
+      draw_minimal_borders = "no";
+      hide_window_decorations = "no";
       window_padding_width = 4;
 
       allow_remote_control = "yes";
       dynamic_background_opacity = "yes";
 
       background_blur = 0;
-      background_opacity = "0.4";
 
       focus_follows_mouse = "yes";
       mouse_hide_wait = "-1";

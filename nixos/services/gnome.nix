@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   services.gnome = {
-    core-utilities.enable = false;
     gnome-browser-connector.enable = true;
   };
   environment.gnome.excludePackages = with pkgs; [
