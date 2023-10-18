@@ -17,6 +17,5 @@
     gnome.totem
     gnome.geary
     gnome-tour
-    gnome-console
   ];
 }
