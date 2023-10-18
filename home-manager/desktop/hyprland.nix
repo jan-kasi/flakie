@@ -181,10 +181,6 @@
         workspace_swipe = true;
       };
 
-      windowrule = [
-        ""
-      ];
-
       windowrulev2 = [
         # 'opacity float float' (sets active inactive)
         # can add "override" after a float to make it override instead of a multiplier (not sure what this means haha...)  
