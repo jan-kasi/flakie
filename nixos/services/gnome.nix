@@ -12,7 +12,6 @@
     gnome.gnome-contacts
     gnome.gnome-maps
     gnome.gnome-music
-    gnome.gnome-system-monitor
     gnome.gnome-weather
     gnome.yelp
     gnome.totem

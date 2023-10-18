@@ -2,7 +2,6 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
-    polkit_gnome
     libevdev # bluetooth gamepad?
     game-devices-udev-rules # bluetooth gamepad?
     python311
@@ -11,7 +10,6 @@
   programs = {
     git.enable = true;
     fish.enable = true;
-    mosh.enable = true;
     dconf.enable = true;
     light.enable = true;
 
