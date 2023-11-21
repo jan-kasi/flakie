@@ -2,11 +2,10 @@
   # TODO Nix User Repository NUR
   programs.firefox = {
     enable = true;
-    enableGnomeExtensions = true;
     package = pkgs.firefox.override {
+      nativeMessagingHosts = [ pkgs.tridactyl-native ];
       cfg = {
-        # Tridactyl native connector
-        enableTridactylNative = true;
+        enableGnomeExtensions = true;
       };
     };
   };
