@@ -2,15 +2,12 @@
 
   imports = [
     ./fish.nix
-    ./tmux.nix
-    #./zellij
-
     ./helix.nix
 
     ./ncmpcpp.nix
     ./newsboat.nix
     # ./catgirl.nix
-    #./starship
+    # ./starship
   ];
 
   programs = {
