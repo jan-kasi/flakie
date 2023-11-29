@@ -29,7 +29,7 @@
 
       input = {
         kb_layout = "gb";
-        follow_mouse = 1;
+        follow_mouse = 0;
         touchpad = {
           natural_scroll = true;
         };
