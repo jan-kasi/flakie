@@ -12,7 +12,6 @@
 
   programs = {
     nnn.enable = true;
-    vim.enable = true;
 
     emacs = {
       enable = true;
