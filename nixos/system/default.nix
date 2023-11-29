@@ -9,11 +9,11 @@
   ############
   # Hardware #
   ############
+  powerManagement.enable = true;
   hardware = {
     enableAllFirmware = true;
     cpu.intel.updateMicrocode = true;
 
-    powerManagement.enable = true;
     bluetooth.enable = true;
 
     uinput.enable = true;
