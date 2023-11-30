@@ -3,6 +3,7 @@
   imports = [
     ./fish.nix
     ./helix.nix
+    ./emacs.nix
 
     ./ncmpcpp.nix
     ./newsboat.nix
@@ -12,12 +13,6 @@
 
   programs = {
     nnn.enable = true;
-
-    emacs = {
-      enable = true;
-      package = pkgs.emacs29-pgtk;
-      extraPackages = epkgs: [ epkgs.vterm ];
-    };
 
     tmux = {
       enable = true;
