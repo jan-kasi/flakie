@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+# { inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     wget
     curl
@@ -15,7 +16,8 @@
 
     # note: enabling here is for proper support, it won't duplicate package ofc, thanks to hash
     hyprland = {
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      # uncomment if changing to flake instead of nixpkgs release. Also in home-manager/desktop/hyprland.nix
+      # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       enable = true;
       xwayland.enable = true;
     };
@@ -23,6 +25,7 @@
 
   xdg.portal = {
     enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
 
   fonts.enableDefaultPackages = true;

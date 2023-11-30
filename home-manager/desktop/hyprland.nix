@@ -1,13 +1,15 @@
-{ inputs, pkgs, ... }: {
-
+# { inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   wayland.windowManager.hyprland = {
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    # not using flake for hyprland, only nixpkgs release
+    # if using flake again also uncomment in nixos/programs/default.nix
+    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+
     enable = true;
     # enabled in nixos/programs/default to add proper support
     # desktop entry, xdg portals, target, polkit, etc.
-    # I haven't been able to do this by enabling only in hm.
-    # But it doesn't really matter as the hash is the same, so not
-    # installed twice or anything silly like that :D
+    # The hash is the same, so not installed twice or anything silly like that :D
+
     systemd.enable = true;
     xwayland.enable = true;
 

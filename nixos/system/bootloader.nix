@@ -8,6 +8,6 @@
     kernelPackages = pkgs.linuxPackages_latest;
 
     # Should probably manually disable this
-    swraid.enable = false; # Default: "`true` if stateVersion is older than 23.11"
+    # swraid.enable = false; # Default: "`true` if stateVersion is older than 23.11"
   };
 }
