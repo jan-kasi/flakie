@@ -34,8 +34,6 @@
     symbola
     font-awesome
     feather-icon-font # custom
-    pantheon.elementary-icon-theme
-    pantheon.elementary-gtk-theme
     # nerdfonts
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     meslo-lgs-nf

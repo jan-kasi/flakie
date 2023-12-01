@@ -19,7 +19,7 @@
 
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "${pkgs.pantheon.pantheon-agent-polkit}/"
+        "${pkgs.pantheon.pantheon-agent-polkit}/libexec/policykit-1-pantheon/io.elementary.desktop.agent-polkit"
         # "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "dunst"
         "swww init"
