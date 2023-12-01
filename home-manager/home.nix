@@ -4,7 +4,6 @@
     ./home-system.nix
 
     ./pkgs.nix
-
     ./utilities
     ./terminal
     ./graphical

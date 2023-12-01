@@ -1,7 +1,7 @@
 {
   # tidy services with larger configuration
   imports = [
-    ./gnome.nix
+    # ./gnome.nix
   ];
 
   services = {
@@ -24,9 +24,11 @@
       layout = "gb";
       xkbVariant = "";
       enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
+      # desktopManager.gnome.enable = true;
 
+      # displayManager.gdm.enable = true;
+      displayManager.lightdm.enable = true;
+      displayManager.lightdm.greeters.pantheon.enable = true;
       # displayManager.sddm.enable = true;
       # For some reason following theme is BROKEN, doesn't let me log in
       # (it tries setting user as "", maybe that's the problem?)
@@ -49,7 +51,7 @@
       settings = {
         log_level = "error";
         inotify = "yes";
-        friendlt_name = "minidlna media";
+        friendly_name = "minidlna";
         media_dir = [
           "V,/mnt/minidlna/Videos/" # Video files are located here
         ];

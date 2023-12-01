@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [
     # desktop environment
     ./dunst.nix
@@ -18,5 +18,11 @@
   programs = {
     imv.enable = true;
     mpv.enable = true;
+
+    # pidgin = {
+    #  enable = true;
+    #  plugins = with pkgs; [ pidgin-otr pidgin-latex purple-matrix purple-discord purple-xmpp-http-upload ];
+    # };
+
   };
 }

@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   services.dunst = {
     enable = true;
-    iconTheme.package = pkgs.gnome.adwaita-icon-theme;
-    iconTheme.name = "Adwaita";
+    iconTheme.package = pkgs.pantheon.elementary-icon-theme;
+    iconTheme.name = "Elementary";
     settings = {
       global = {
         format = ''<b>%s</b>\n%b'';

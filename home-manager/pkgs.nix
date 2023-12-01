@@ -19,14 +19,6 @@
     nix-alien # run binaries
     nix-init # generate nix packages from URLs
 
-    # EMACS #
-    sqlite # org-roam
-    graphviz # org-roam
-    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ])) # spellcheck
-    cmake # vterm
-    gnumake # vterm
-    gcc # vterm
-
     # lsp #
     nil
     nixpkgs-fmt
@@ -35,13 +27,15 @@
     shfmt
     marksman
 
-    # fonts #
+    # fonts/theme #
     jetbrains-mono
     etBook
     # icons
     symbola
     font-awesome
     feather-icon-font # custom
+    pantheon.elementary-icon-theme
+    pantheon.elementary-gtk-theme
     # nerdfonts
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     meslo-lgs-nf
@@ -59,7 +53,6 @@
     catgirl # RSS
     mangal # download manga
     gnugo # gnu Go AI
-    vim
 
     # music #
     mpc-cli
@@ -77,13 +70,14 @@
     swww
     eww-wayland
     hyprpicker
+    grimblast
+    pantheon.pantheon-agent-polkit
 
     # documents #
     libreoffice-fresh
     texlive.combined.scheme-full
     multimarkdown
     ditaa # diagrams
-
 
     # apps
     anki

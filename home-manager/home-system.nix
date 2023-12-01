@@ -24,7 +24,6 @@
     sessionPath = [ "$HOME/.config/emacs/bin" ];
 
     sessionVariables = {
-      EDITOR = "hx";
       DEFAULT_BROWSER = "firefox";
       TERMINAL = "kitty";
     };

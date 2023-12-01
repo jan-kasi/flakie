@@ -8,7 +8,7 @@
     python311
   ];
 
-  programs = {
+  powerManagement = {
     git.enable = true;
     fish.enable = true;
     dconf.enable = true;
@@ -25,7 +25,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ]; # gnome already adds this
   };
 
   fonts.enableDefaultPackages = true;
