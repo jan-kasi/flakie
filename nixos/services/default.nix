@@ -28,7 +28,9 @@
 
       # displayManager.gdm.enable = true;
       displayManager.lightdm.enable = true;
-      displayManager.lightdm.greeters.pantheon.enable = true;
+      displayManager.lightdm.greeters = {
+        pantheon.enable = true;
+      };
       # displayManager.sddm.enable = true;
       # For some reason following theme is BROKEN, doesn't let me log in
       # (it tries setting user as "", maybe that's the problem?)

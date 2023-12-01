@@ -6,6 +6,8 @@
     libevdev # bluetooth gamepad?
     game-devices-udev-rules # bluetooth gamepad?
     python311
+    pantheon.elementary-gtk-theme
+    pantheon.elementary-icon-theme
   ];
 
   programs = {

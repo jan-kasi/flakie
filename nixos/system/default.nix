@@ -49,6 +49,11 @@
     DefaultTimeoutStopSec=10s
   '';
 
+  # update path (flatpak stuff) 
+  systemd.user.extraConfig = ''
+    DefaultEnvironment="PATH=/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin"
+  '';
+
   ############
   # Security #
   ############
