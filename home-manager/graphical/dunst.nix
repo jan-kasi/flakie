@@ -2,7 +2,7 @@
   services.dunst = {
     enable = true;
     iconTheme.package = pkgs.pantheon.elementary-icon-theme;
-    iconTheme.name = "Elementary";
+    iconTheme.name = "elementary";
     settings = {
       global = {
         format = ''<b>%s</b>\n%b'';

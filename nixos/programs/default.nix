@@ -8,7 +8,7 @@
     python311
   ];
 
-  powerManagement = {
+  programs = {
     git.enable = true;
     fish.enable = true;
     dconf.enable = true;
