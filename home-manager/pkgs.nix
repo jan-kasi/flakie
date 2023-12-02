@@ -27,13 +27,14 @@
     shfmt
     marksman
 
-    # fonts/theme #
+    # fonts #
     jetbrains-mono
     etBook
     # icons
     symbola
     font-awesome
     feather-icon-font # custom
+    gnome.adwaita-icon-theme
     # nerdfonts
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     meslo-lgs-nf

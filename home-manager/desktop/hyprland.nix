@@ -19,11 +19,11 @@
 
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        # "systemctl --user import-environment PATH" # should be covered by systemd.user.extraConfig
+        "systemctl --user import-environment PATH" # should be covered by systemd.user.extraConfig
         "${pkgs.pantheon.pantheon-agent-polkit}/libexec/policykit-1-pantheon/io.elementary.desktop.agent-polkit"
         # "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "dunst"
-        "swww init"
+        "swww-daemon && $HOME/.local/bin/lastswww.sh"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
@@ -33,7 +33,7 @@
 
       input = {
         kb_layout = "gb";
-        follow_mouse = 0;
+        follow_mouse = 1;
         touchpad = {
           natural_scroll = true;
         };
