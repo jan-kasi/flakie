@@ -53,11 +53,13 @@
         "$mainMOD, space, exec, sh $HOME/.config/rofi/bin/launcher"
         "$mainMOD, T, exec, pkill -SIGUSR1 waybar"
         "$mainMOD, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+        ", Print, exec, grimblast copysave screen"
+        "SHIFT, Print, exec grimblast copysave area"
 
         # hyprland
         "CTRLALT, Delete, exit, "
-        "$mainMOD, L, exec, swaylock"
-        "$mainMOD, C, killactive, "
+        "$mainMOD, BackSpace, exec, swaylock"
+        "$mainMOD, Q, killactive, "
 
         "$mainMOD, Tab, cyclenext, " # cycle windows
         "$mainMOD, Tab, bringactivetotop, " # cycle in floating workspace
@@ -193,6 +195,8 @@
         "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
         "float, class:^(firefox)$, title:^(Library)$"
         "float, class:^(org.gnome.Nautilus)$"
+        "float, class:^(anki)$"
+        "float, class:^(transmission-gtk)$"
       ];
 
     };

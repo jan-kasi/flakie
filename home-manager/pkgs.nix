@@ -79,8 +79,7 @@
     ditaa # diagrams
 
     # apps
-    anki
-    foliate
+    anki-bin
     zotero # bibliography
   ];
 }
