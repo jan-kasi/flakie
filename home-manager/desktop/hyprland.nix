@@ -1,5 +1,9 @@
 # { inputs, pkgs, ... }: {
 { pkgs, ... }: {
+  xdg.configFile."hypr/shaders/vibrance.glsl".source = ./hypr/shaders/vibrance.glsl;
+  xdg.configFile."hypr/shaders/blue-light-filter.glsl".source = ./hypr/shaders/blue-light-filter.glsl;
+  xdg.configFile."hypr/shaders/crt.frag".source = ./hypr/shaders/crt.frag;
+
   wayland.windowManager.hyprland = {
     # not using flake for hyprland, only nixpkgs release
     # if using flake again also uncomment in nixos/programs/default.nix
@@ -23,12 +27,12 @@
         "${pkgs.pantheon.pantheon-agent-polkit}/libexec/policykit-1-pantheon/io.elementary.desktop.agent-polkit"
         # "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         "dunst"
-        "swww-daemon && $HOME/.local/bin/lastswww.sh"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "wl-clip-persist --clipboard regular --selection-size-limit 1048576"
         "mpd-notification"
+        "swww init && $HOME/.local/bin/lastswww.sh"
       ];
 
       input = {
@@ -36,6 +40,7 @@
         follow_mouse = 1;
         touchpad = {
           natural_scroll = true;
+          disable_while_typing = false;
         };
       };
 
@@ -53,8 +58,8 @@
         "$mainMOD, space, exec, sh $HOME/.config/rofi/bin/launcher"
         "$mainMOD, T, exec, pkill -SIGUSR1 waybar"
         "$mainMOD, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
-        ", Print, exec, grimblast copysave screen"
-        "SHIFT, Print, exec grimblast copysave area"
+        ", Print, exec, grimblast --notify copysave screen"
+        "SHIFT, Print, exec, grimblast --notify copysave area"
 
         # hyprland
         "CTRLALT, Delete, exit, "

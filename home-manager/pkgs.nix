@@ -69,6 +69,7 @@
     swww
     eww-wayland
     hyprpicker
+    hyprshade
     grimblast
     pantheon.pantheon-agent-polkit
 
@@ -79,7 +80,8 @@
     ditaa # diagrams
 
     # apps
-    anki-bin
+    anki
     zotero # bibliography
+    cool-retro-term
   ];
 }
