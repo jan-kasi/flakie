@@ -85,5 +85,6 @@
     zotero # bibliography
     cool-retro-term
     foliate # read ebooks
+    gnome.boxes # gui stuff for virtualisation (qemu)
   ];
 }
