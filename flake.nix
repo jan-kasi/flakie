@@ -19,7 +19,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     hyprland.url = "github:hyprwm/Hyprland";
     # don't override hyprland nixpkgs follows, this would make hyprland cachix useless
