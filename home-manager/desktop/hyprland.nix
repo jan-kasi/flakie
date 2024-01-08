@@ -40,7 +40,7 @@
         follow_mouse = 1;
         touchpad = {
           natural_scroll = true;
-          disable_while_typing = false;
+          disable_while_typing = true;
         };
       };
 
@@ -60,6 +60,7 @@
         "$mainMOD, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         ", Print, exec, grimblast --notify copysave screen"
         "SHIFT, Print, exec, grimblast --notify copysave area"
+        "$mainMOD, F1, exec, sh $HOME/.config/hypr/gamemode.sh"
 
         # hyprland
         "CTRLALT, Delete, exit, "
@@ -107,8 +108,8 @@
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 0.02-"
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
         # brightness
-        ", XF86MonBrightnessUp, exec, light -A 5"
-        ", XF86MonBrightnessDown, exec, light -U 5"
+        ", XF86MonBrightnessUp, exec, light -A 1"
+        ", XF86MonBrightnessDown, exec, light -U 1"
         # music
         ", XF86AudioPlay, exec, mpc toggle"
         ", XF86AudioPrev, exec, mpc prev"

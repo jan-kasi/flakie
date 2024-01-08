@@ -83,5 +83,6 @@
     anki
     zotero # bibliography
     cool-retro-term
+    foliate # read ebooks
   ];
 }

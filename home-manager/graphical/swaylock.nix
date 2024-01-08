@@ -23,7 +23,7 @@
       line-color = "00000000";
       line-clear-color = "00000000";
       line-ver-color = "00000000";
-      key-hl-color = "cec68b";
+      key-hl-color = "c5c9c6";
       bs-hl-color = "ed8796";
       caps-lock-bs-hl-color = "ed8796";
       caps-lock-key-hl-color = "fe640b";
@@ -36,7 +36,7 @@
       datestr = "%A, %d %B";
       indicator-x-position = "1400";
       indicator-y-position = "700";
-      indicator-radius = "300";
+      indicator-radius = "200";
       font-size = "200";
       text-color = "2e3440";
 
