@@ -30,4 +30,5 @@
   };
 
   fonts.enableDefaultPackages = true;
+  virtualisation.libvirtd.enable = true;
 }

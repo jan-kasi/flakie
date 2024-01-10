@@ -1,5 +1,6 @@
 # { inputs, pkgs, ... }: {
 { pkgs, ... }: {
+  xdg.configFile."hypr/gamemode.sh".source = ./hypr/gamemode.sh;
   xdg.configFile."hypr/shaders/vibrance.glsl".source = ./hypr/shaders/vibrance.glsl;
   xdg.configFile."hypr/shaders/blue-light-filter.glsl".source = ./hypr/shaders/blue-light-filter.glsl;
   xdg.configFile."hypr/shaders/crt.frag".source = ./hypr/shaders/crt.frag;

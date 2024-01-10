@@ -17,8 +17,8 @@
     krabby # fun pokemon
     nitch
 
-    nix-alien # run binaries
-    nix-init # generate nix packages from URLs
+    # nix-alien # run binaries
+    # nix-init # generate nix packages from URLs
 
     # lsp #
     nil
@@ -46,13 +46,13 @@
     yt-dlp
 
     # tui/cli #
-    glow # markdown
+    # glow # markdown
     fff # file manager
     ikill # interactive pkill
-    nb # notes
-    catgirl # RSS
+    # nb # notes
+    # catgirl # RSS
     mangal # download manga
-    gnugo # gnu Go AI
+    # gnugo # gnu Go AI
 
     # music #
     mpc-cli
@@ -83,7 +83,7 @@
     # apps
     anki
     zotero # bibliography
-    cool-retro-term
+    # cool-retro-term
     foliate # read ebooks
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
   ];
