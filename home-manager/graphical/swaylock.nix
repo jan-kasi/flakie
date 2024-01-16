@@ -5,7 +5,7 @@
     settings = {
       ignore-empty-password = true;
       disable-caps-lock-text = false;
-      image = "$HOME/Pictures/Wallpapers/calvin_and_hobbes.png";
+      image = "$HOME/Pictures/Wallpapers/lockscreen.png";
       font = "Calvin and Hobbes";
 
       text-ver-color = "00000000";
@@ -34,11 +34,14 @@
       clock = true;
       timestr = "%I:%M %p";
       datestr = "%A, %d %B";
-      indicator-x-position = "1400";
-      indicator-y-position = "700";
+      # indicator-x-position = "1400";
+      # indicator-y-position = "700";
+      indicator-x-position = "1420";
+      indicator-y-position = "590";
       indicator-radius = "200";
       font-size = "200";
-      text-color = "2e3440";
+      # text-color = "2e3440";
+      text-color = "c5c9c6";
 
     };
   };

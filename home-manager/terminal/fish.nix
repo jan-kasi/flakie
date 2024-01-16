@@ -3,7 +3,6 @@
     enable = true;
     shellAbbrs = {
       nurl = "nix run nixpkgs#nurl ";
-      neofetch = "nix run nixpkgs#neofetch";
       "7zz" = "nix run nixpkgs#_7zz --";
       hmsw = "home-manager switch --flake .#jankasi@snow";
       nrsw = "sudo nixos-rebuild switch --flake .#snow";
@@ -12,7 +11,8 @@
       replnix = "nix repl --expr 'import <nixpkgs>{}'";
     };
     functions = {
-      fish_greeting = "krabby random";
+      # fish_greeting = "krabby random";
+      fish_greeting = "";
       # change background color when certain actions performed (sudo)
       sudo = ''
         printf '\x1b]11;rgb:4040/2020/3030\x1b\\'

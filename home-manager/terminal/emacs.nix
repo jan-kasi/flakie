@@ -13,6 +13,7 @@
     sqlite # org-roam
     graphviz # org-roam
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ])) # spellcheck
+    languagetool # grammar check
     cmake # vterm
     gnumake # vterm
     gcc # vterm

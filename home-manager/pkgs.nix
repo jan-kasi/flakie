@@ -15,7 +15,7 @@
 
     cbonsai # fun bonsai
     krabby # fun pokemon
-    nitch
+    pfetch
 
     # nix-alien # run binaries
     # nix-init # generate nix packages from URLs
