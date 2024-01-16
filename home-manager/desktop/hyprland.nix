@@ -128,8 +128,8 @@
         apply_sens_to_raw = 0; # whether to apply sensitivity to raw input (e.g. used by games where you aim with mouse)
         gaps_in = 2;
         gaps_out = 4;
-        border_size = 2;
-        "col.active_border" = "rgb(b4befe)";
+        border_size = 1;
+        "col.active_border" = "rgb(bac2f8)";
         "col.inactive_border" = "rgb(1e1e2e)";
       };
 
