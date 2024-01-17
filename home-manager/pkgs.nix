@@ -44,6 +44,7 @@
     mullvad-vpn
     transmission-gtk
     yt-dlp
+    qrcp # send files over internet
 
     # tui/cli #
     # glow # markdown

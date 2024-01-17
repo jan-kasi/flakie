@@ -37,6 +37,10 @@
 
   fonts.fontconfig.enable = true;
 
+  xdg.userDirs.extraConfig = {
+    XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory/Pictures/Screenshots}";
+  };
+
   # Let home-manager install and manage itself
   programs.home-manager.enable = true;
 
