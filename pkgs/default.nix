@@ -4,4 +4,5 @@
 { pkgs ? (import ../dev/nixpkgs.nix) { } }: {
   # example = pkgs.callPackage ./example { };
   feather-icon-font = pkgs.callPackage ./feather-icon-font { };
+  chatdocs = pkgs.callPackage ./chatdocs { };
 }

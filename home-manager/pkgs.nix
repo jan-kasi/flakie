@@ -59,7 +59,6 @@
     mpc-cli
     mpd-notification
     playerctl
-    cli-visualizer
     cava
     python311Packages.requests # fetchart plugin
     python311Packages.pylast # lastgenre plugin

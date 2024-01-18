@@ -24,7 +24,7 @@ in
       border = mkLiteral "2px";
       border-color = mkLiteral "@BDR";
       border-radius = mkLiteral "5px";
-      width = mkLiteral "500px";
+      width = mkLiteral "750px";
       anchor = mkLiteral "center";
       x-offset = mkLiteral "0";
       y-offset = mkLiteral "-50";
@@ -84,7 +84,7 @@ in
       columns = mkLiteral "1";
       lines = mkLiteral "10";
       spacing = mkLiteral "4px";
-      cycle = mkLiteral "false";
+      cycle = mkLiteral "true";
       dynamic = mkLiteral "true";
       layout = mkLiteral "vertical";
     };
