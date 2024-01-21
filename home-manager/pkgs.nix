@@ -30,7 +30,8 @@
 
     # fonts #
     jetbrains-mono
-    etBook
+    noto-fonts
+
     # icons
     symbola
     font-awesome
