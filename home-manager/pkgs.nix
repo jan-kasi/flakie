@@ -83,8 +83,8 @@
 
     # apps
     anki
-    zotero # bibliography
-    # cool-retro-term
+    zotero
+    minder
     foliate # read ebooks
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
   ];
