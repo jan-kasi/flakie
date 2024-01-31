@@ -41,13 +41,13 @@
       # Fixes antialiasing blur
       hinting = {
         enable = true;
-        style = "hintfull"; # no difference
-        autohint = true; # no difference
+        style = "full";
+        autohint = true;
       };
       subpixel = {
         # Makes it bolder
         rgba = "rgb";
-        lcdfilter = "default"; # no difference
+        lcdfilter = "default";
       };
     };
   };
