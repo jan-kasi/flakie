@@ -85,8 +85,8 @@
     anki
     zotero
     minder
+    spotify
     foliate # read ebooks
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
-    spotify
   ];
 }
