@@ -87,5 +87,6 @@
     minder
     foliate # read ebooks
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
+    spotify
   ];
 }
