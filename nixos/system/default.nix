@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [
     ./bootloader.nix
     ./locale.nix
@@ -29,6 +29,28 @@
   # via pipewire enabled in ../services/default.nix
   hardware.pulseaudio.enable = false; # therefore disable pulseaudio
 
+  #########
+  # FONTS #
+  #########
+  fonts = {
+    fonts = [ pkgs.noto-fonts pkgs.noto-fonts-emoji ];
+
+    fontconfig = {
+      # Fixes pixelation
+      antialias = true;
+      # Fixes antialiasing blur
+      hinting = {
+        enable = true;
+        style = "hintfull"; # no difference
+        autohint = true; # no difference
+      };
+      subpixel = {
+        # Makes it bolder
+        rgba = "rgb";
+        lcdfilter = "default"; # no difference
+      };
+    };
+  };
 
   ###########
   # Network #

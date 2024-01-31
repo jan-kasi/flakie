@@ -30,7 +30,6 @@
 
     # fonts #
     jetbrains-mono
-    noto-fonts
 
     # icons
     symbola
