@@ -47,7 +47,7 @@
     qrcp # send files over internet
 
     # tui/cli #
-    # glow # markdown
+    glow # markdown
     fff # file manager
     ikill # interactive pkill
     # nb # notes
