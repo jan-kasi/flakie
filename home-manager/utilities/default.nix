@@ -32,4 +32,6 @@
   };
 
   programs.thefuck.enable = true;
+
+  services.spotifyd.enable = true;
 }
