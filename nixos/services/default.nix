@@ -23,8 +23,8 @@
 
     # Xserver
     xserver = {
-      layout = "gb";
-      xkbVariant = "";
+      xkb.layout = "gb";
+      xkb.variant = "";
       enable = true;
 
       # desktopManager.gnome.enable = true;

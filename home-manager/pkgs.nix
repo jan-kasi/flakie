@@ -28,17 +28,6 @@
     shfmt
     marksman
 
-    # fonts #
-    jetbrains-mono
-
-    # icons
-    symbola
-    font-awesome
-    feather-icon-font # custom
-    gnome.adwaita-icon-theme
-    # nerdfonts
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
-    meslo-lgs-nf
 
     # internet #
     mullvad-vpn
@@ -73,6 +62,7 @@
     hyprshade
     grimblast
     pantheon.pantheon-agent-polkit
+    gnome.adwaita-icon-theme #icon theme
 
     # documents #
     libreoffice-fresh

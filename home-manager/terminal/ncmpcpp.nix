@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.ncmpcpp = {
-    package = pkgs.ncmpcpp.override { visualizerSupport = true; };
+    # package = pkgs.ncmpcpp.override { visualizerSupport = true; };
     enable = true;
     mpdMusicDir = "/home/jankasi/Music";
 

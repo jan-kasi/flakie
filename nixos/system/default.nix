@@ -33,8 +33,6 @@
   # FONTS #
   #########
   fonts = {
-    packages = [ pkgs.noto-fonts pkgs.noto-fonts-emoji ];
-
     fontconfig = {
       # Fixes pixelation
       antialias = true;
