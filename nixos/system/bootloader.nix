@@ -13,7 +13,6 @@
     # https://discourse.nixos.org/t/why-does-my-root-mount-suddenly-remount-as-read-only-after-a-while/33595/11
     kernelParams = [
       "nvme_core.default_ps_max_latency_us=0"
-      "pcie_aspm=off"
     ];
 
     # Should probably manually disable this

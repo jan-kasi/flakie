@@ -82,13 +82,13 @@
 
         # focus
         "$mainMOD, h, movefocus, l"
-        "$mainMOD, j, movefocus, r"
+        "$mainMOD, j, movefocus, d"
         "$mainMOD, k, movefocus, u"
-        "$mainMOD, l, movefocus, d"
+        "$mainMOD, l, movefocus, r"
         "$mainMOD SHIFT, h, swapwindow, l"
-        "$mainMOD SHIFT, j, swapwindow, r"
+        "$mainMOD SHIFT, j, swapwindow, d"
         "$mainMOD SHIFT, k, swapwindow, u"
-        "$mainMOD SHIFT, l, swapwindow, d"
+        "$mainMOD SHIFT, l, swapwindow, r"
 
         # workspaces
         "$mainMOD, 1, workspace, 1"

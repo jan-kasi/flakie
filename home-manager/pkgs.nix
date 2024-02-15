@@ -86,6 +86,6 @@
     minder
     foliate # read ebooks
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
-    # flatpaks: steam, spotify, flatseal, bottles, unofficial homestuck collection, cartridges
+    # flatpaks: steam, flatseal, bottles, unofficial homestuck collection, cartridges
   ];
 }
