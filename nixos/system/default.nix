@@ -33,7 +33,25 @@
   # FONTS #
   #########
   fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      # fonts #
+      jetbrains-mono
+      noto-fonts
+      noto-fonts-emoji
+      noto-fonts-cjk
+      # icons
+      symbola
+      font-awesome
+      feather-icon-font # custom
+      # nerdfonts
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      meslo-lgs-nf
+    ];
+
     fontconfig = {
+      enable = true;
+
       # Fixes pixelation
       antialias = true;
       # Fixes antialiasing blur

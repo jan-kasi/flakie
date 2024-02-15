@@ -36,21 +36,6 @@
   };
 
   fonts.fontconfig.enable = true;
-  fonts.fontDir.enable = true;
-  fonts.packages = with pkgs; [
-    # fonts #
-    jetbrains-mono
-    noto-fonts
-    noto-fonts-emoji
-    noto-fonts-cjk
-    # icons
-    symbola
-    font-awesome
-    feather-icon-font # custom
-    # nerdfonts
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
-    meslo-lgs-nf
-  ];
 
   xdg.userDirs.extraConfig = {
     XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory/Pictures/Screenshots}";
