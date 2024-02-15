@@ -9,7 +9,8 @@ if [ "$HYPRGAMEMODE" = 1 ] ; then
         keyword general:gaps_out 0;\
         keyword general:border_size 1;\
         keyword decoration:rounding 0;\
-        keyword input:touchpad:disable_while_typing 0"
+        keyword input:touchpad:disable_while_typing 0;\
+        keyword input:follow_mouse 0"
     exit
 fi
 hyprctl reload

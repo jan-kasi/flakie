@@ -45,6 +45,7 @@
     # gnugo # gnu Go AI
 
     # music #
+    spotify-tui #spt
     mpc-cli
     mpd-notification
     playerctl
