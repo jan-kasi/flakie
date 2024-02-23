@@ -10,6 +10,7 @@
     jq
     ffmpeg
     chafa # teminal graphics
+    zip
 
     acpi # battery stuff
 
