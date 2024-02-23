@@ -11,6 +11,7 @@
     ffmpeg
     chafa # teminal graphics
     zip
+    unzip
 
     acpi # battery stuff
 
