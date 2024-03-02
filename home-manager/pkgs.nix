@@ -74,11 +74,14 @@
     ditaa # diagrams
 
     # apps
+    ungoogled-chromium
     anki
     zotero
     minder
     foliate # read ebooks
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
     # flatpaks: steam, flatseal, bottles, unofficial homestuck collection, cartridges
+    uget
+    uget-integrator
   ];
 }

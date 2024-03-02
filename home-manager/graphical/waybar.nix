@@ -79,9 +79,15 @@
 
         battery = {
           format = "<span color='#b4befe'>{icon}</span> {capacity}%";
+          format-warning = "<span color='#f9e2af'>{icon}</span> {capacity}%";
+          format-critical = "<span color='#f38ba8'>{icon}</span> {capacity}%";
           format-icons = [ "" "" "" "" "" "" "" "" "" "" ];
-          format-charging = "<span color='#b4befe'></span> {capacity}%";
+          format-charging = "<span color='#a6e3a1'></span> {capacity}%";
           tooltip = false;
+          states = {
+            warning = 15;
+            critical = 5;
+          };
         };
       };
     };
