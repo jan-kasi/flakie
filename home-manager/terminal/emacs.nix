@@ -17,5 +17,11 @@
     cmake # vterm
     gnumake # vterm
     gcc # vterm
+    gnuplot # gnuplot org
+    unoconv # doc-view
+    ghostscript # doc-view
+    zip # export odt
+    unzip # export odt
+    ditaa # diagrams
   ];
 }

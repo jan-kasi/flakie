@@ -10,10 +10,7 @@
     jq
     ffmpeg
     chafa # teminal graphics
-    zip
-    unzip
-    gnuplot
-    mkvtoolsnix
+    mkvtoolnix # edit mkv video files
 
     acpi # battery stuff
 
@@ -73,7 +70,6 @@
     libreoffice-fresh
     texlive.combined.scheme-full
     multimarkdown
-    ditaa # diagrams
 
     # apps
     anki
