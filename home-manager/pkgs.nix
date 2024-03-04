@@ -59,7 +59,6 @@
     wl-clip-persist
     cliphist
     swww
-    eww-wayland
     hyprpicker
     hyprshade
     grimblast
