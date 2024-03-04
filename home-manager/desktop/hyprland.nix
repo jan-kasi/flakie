@@ -129,8 +129,8 @@
         gaps_in = 2;
         gaps_out = 4;
         border_size = 1;
-        "col.active_border" = "rgb(bac2f8)";
-        "col.inactive_border" = "rgb(1e1e2e)";
+        "col.active_border" = "rgb(1e1e2e)";
+        "col.inactive_border" = "rgb(bac2f8)";
       };
 
       group = {

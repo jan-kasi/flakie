@@ -13,6 +13,7 @@
     zip
     unzip
     gnuplot
+    mkvtoolsnix
 
     acpi # battery stuff
 
