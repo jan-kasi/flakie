@@ -34,12 +34,15 @@
   #########
   fonts = {
     fontDir.enable = true;
+    enableDefaultPackages = true;
+    enableGhostscriptFonts = true;
     packages = with pkgs; [
       # fonts #
       jetbrains-mono
       noto-fonts
       noto-fonts-emoji
       noto-fonts-cjk
+      libertinus
       # icons
       symbola
       font-awesome

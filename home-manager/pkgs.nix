@@ -12,6 +12,7 @@
     chafa # teminal graphics
     zip
     unzip
+    gnuplot
 
     acpi # battery stuff
 
@@ -74,7 +75,6 @@
     ditaa # diagrams
 
     # apps
-    ungoogled-chromium
     anki
     zotero
     minder
