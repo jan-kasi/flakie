@@ -43,24 +43,21 @@
       noto-fonts-emoji
       noto-fonts-cjk
       libertinus
-      iosevka
+      cozette
       # icons
       symbola
       font-awesome
       feather-icon-font # custom
       # nerdfonts
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Iosevka" "IosevksTerm" "Monoid" "Mononoki" ]; })
       meslo-lgs-nf
     ];
 
     fontconfig = {
       enable = true;
-
-      # Fixes pixelation
-      antialias = true;
-      # Fixes antialiasing blur
+      antialias = true; # Fixes pixelation
       hinting = {
-        enable = true;
+        enable = true; # Fixes antialiasing blur
         style = "full";
         autohint = true;
       };
