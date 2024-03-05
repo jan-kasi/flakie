@@ -43,6 +43,7 @@
       noto-fonts-emoji
       noto-fonts-cjk
       libertinus
+      iosevka
       # icons
       symbola
       font-awesome
