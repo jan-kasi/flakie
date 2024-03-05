@@ -49,7 +49,7 @@
       font-awesome
       feather-icon-font # custom
       # nerdfonts
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Iosevka" "IosevksTerm" "Monoid" "Mononoki" ]; })
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Iosevka" "IosevkaTerm" "Monoid" "Mononoki" ]; })
       meslo-lgs-nf
     ];
 
