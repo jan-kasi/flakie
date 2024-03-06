@@ -103,7 +103,8 @@
         "$mainMOD SHIFT, 5, movetoworkspace, 5"
       ];
 
-      bindl = [
+      # bind repeatable key and when locked
+      bindle = [
         # audio
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 0.02+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 0.02-"
@@ -111,6 +112,10 @@
         # brightness
         ", XF86MonBrightnessUp, exec, light -A 1"
         ", XF86MonBrightnessDown, exec, light -U 1"
+      ];
+
+      # bind music including locked
+      bindl = [
         # music
         ", XF86AudioPlay, exec, mpc toggle"
         ", XF86AudioPrev, exec, mpc prev"
@@ -125,7 +130,8 @@
 
       general = {
         layout = "dwindle";
-        apply_sens_to_raw = 0; # whether to apply sensitivity to raw input (e.g. used by games where you aim with mouse)
+        # whether to apply sensitivity to raw input (e.g. used by games where you aim with mouse)
+        apply_sens_to_raw = 0;
         gaps_in = 2;
         gaps_out = 4;
         border_size = 1;
@@ -170,19 +176,28 @@
 
       animations = {
         enabled = true;
-        bezier = "overshot, 0.13, 0.99, 0.29, 1.1";
+        # ANIMATION BEZIER CURVE
+        bezier = [
+          "overshot, 0.05, 0.9, 0.1, 1.05"
+          "smoothOut, 0.36, 0, 0.66, -0.56"
+          "smoothIn, 0.25, 1, 0.5, 1"
+        ];
         animation = [
-          "windows, 1, 4, overshot, slide"
-          "fade, 1, 7, default"
-          "workspaces, 1, 8.8, overshot, slide"
-          "border, 1, 14, default"
+          "windows, 1, 3, overshot, slide"
+          "windowsOut, 1, 3, smoothOut, slide"
+          "windowsMove, 1, 3, default"
+          "border, 1, 3, default"
+          "fade, 1, 3, smoothIn"
+          "fadeDim, 1, 3, smoothIn"
+          "workspaces, 1, 3, default"
         ];
       };
 
       dwindle = {
         pseudotile = true; # bound to mainMOD + P
         preserve_split = true;
-        no_gaps_when_only = 0; # default:disabled - 0, no border - 1, with border - 2
+        # default:disabled - 0, no border - 1, with border - 2
+        no_gaps_when_only = 0;
       };
 
       master = {
@@ -190,13 +205,11 @@
         no_gaps_when_only = 0;
       };
 
-      gestures = {
-        workspace_swipe = true;
-      };
+      gestures = { workspace_swipe = true; };
 
       windowrulev2 = [
         # 'opacity float float' (sets active inactive)
-        # can add "override" after a float to make it override instead of a multiplier (not sure what this means haha...)  
+        # can add "override" after a float to make it override instead of a multiplier (not sure what this means haha...)
         "float, class:^(xdg-desktop-portal-gtk)$"
         "float, class:^(blueman-manager)$"
         "float, class:^(firefox)$, title:^(Picture-in-Picture)$"
