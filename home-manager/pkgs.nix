@@ -21,6 +21,13 @@
     # nix-alien # run binaries
     # nix-init # generate nix packages from URLs
 
+    # programming #
+    lua
+    luaPackages.fennel
+    ghc #haskell
+    racket
+    guile
+
     # lsp #
     nil
     nixpkgs-fmt
@@ -28,7 +35,7 @@
     shellcheck
     shfmt
     marksman
-
+    haskell-language-server
 
     # internet #
     mullvad-vpn
@@ -67,7 +74,7 @@
 
     # documents #
     libreoffice-fresh
-    texlive.combined.scheme-full
+    texliveFull
     multimarkdown
 
     # apps
