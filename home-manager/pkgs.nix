@@ -36,6 +36,8 @@
     shfmt
     marksman
     haskell-language-server
+    lua-language-server
+
 
     # internet #
     mullvad-vpn
