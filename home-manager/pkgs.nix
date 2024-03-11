@@ -72,7 +72,8 @@
     hyprshade
     grimblast
     pantheon.pantheon-agent-polkit
-    gnome.adwaita-icon-theme # icon theme
+    gnome.adwaita-icon-theme
+    adwaita-qt
     gtklock # lock screen
 
     # documents #

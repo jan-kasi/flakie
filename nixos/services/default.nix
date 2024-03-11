@@ -24,9 +24,11 @@
 
     # Xserver
     xserver = {
+      enable = true;
       xkb.layout = "gb";
       xkb.variant = "";
-      enable = true;
+
+      windowManager.awesome.enable = true;
 
       # desktopManager.gnome.enable = true;
       displayManager.defaultSession = "hyprland";

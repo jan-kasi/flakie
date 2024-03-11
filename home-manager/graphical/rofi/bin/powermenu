@@ -74,7 +74,7 @@ case $chosen in
         fi
         ;;
     $lock)
-        gtklock
+        gtklock -i
         ;;
     $suspend)
 		ans=$(rdialog &)

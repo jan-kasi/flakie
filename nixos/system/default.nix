@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   imports = [
     ./bootloader.nix
     ./locale.nix
@@ -29,9 +29,10 @@
   # via pipewire enabled in ../services/default.nix
   hardware.pulseaudio.enable = false; # therefore disable pulseaudio
 
-  #########
-  # FONTS #
-  #########
+  ###############
+  # FONTS/STYLE #
+  ###############
+  qt.style = "adwaita";
   fonts = {
     fontDir.enable = true;
     enableDefaultPackages = true;
@@ -104,5 +105,6 @@
       # the 'login' configuration file (see /etc/pam.d/login)
       auth include login
     '';
+    pam.services.gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
   };
 }
