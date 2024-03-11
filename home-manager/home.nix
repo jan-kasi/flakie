@@ -9,7 +9,8 @@
     ./graphical
 
     ./desktop/hyprland.nix
-    ./desktop/newm-atha.nix
+    ./desktop/awesome.nix
+    # ./desktop/newm-atha.nix
 
     # Modules exported from other flakes
     inputs.nix-colors.homeManagerModules.default

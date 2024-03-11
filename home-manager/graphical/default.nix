@@ -18,6 +18,7 @@
   programs = {
     imv.enable = true;
     mpv.enable = true;
+    wezterm.enable = true;
 
     sioyek = {
       enable = false;
