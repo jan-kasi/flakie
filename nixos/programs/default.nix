@@ -6,9 +6,8 @@
     libevdev # bluetooth gamepad?
     game-devices-udev-rules # bluetooth gamepad?
     python311
-    # where-is-my-sddm-theme
+    where-is-my-sddm-theme
     adwaita-qt
-    gnome.adwaita-icon-theme
   ];
 
   programs = {

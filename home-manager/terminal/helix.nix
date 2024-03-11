@@ -5,7 +5,7 @@
 
     # General Helix settings
     settings = {
-      theme = "base16_transparent";
+      theme = "base16_default";
       keys = { normal.esc = [ "collapse_selection" "keep_primary_selection" ]; };
       editor = {
         mouse = false;
