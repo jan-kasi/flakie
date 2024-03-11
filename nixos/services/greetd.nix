@@ -3,12 +3,6 @@
 
   services.greetd = {
     enable = true;
-    settings = {
-    };
-  };
-
-  services.cage = {
-    enable = true;
     restart = true; # disable if using autologin settings.initial_session
     settings = {
       default_session = {
@@ -25,4 +19,6 @@
     fish
     bash
   '';
+
+  services.cage.enable = true;
 }
