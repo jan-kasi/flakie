@@ -63,7 +63,7 @@
     python311Packages.requests # fetchart plugin
     python311Packages.pylast # lastgenre plugin
 
-    # wayland #
+    # wayland/windowmanager #
     wl-clipboard
     wl-clip-persist
     cliphist
@@ -72,7 +72,8 @@
     hyprshade
     grimblast
     pantheon.pantheon-agent-polkit
-    gnome.adwaita-icon-theme #icon theme
+    gnome.adwaita-icon-theme # icon theme
+    gtklock # lock screen
 
     # documents #
     libreoffice-fresh

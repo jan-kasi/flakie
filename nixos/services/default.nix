@@ -2,6 +2,7 @@
   # tidy services with larger configuration
   imports = [
     # ./gnome.nix
+    ./greetd.nix
   ];
 
   services = {
@@ -31,14 +32,13 @@
       displayManager.defaultSession = "hyprland";
 
       # displayManager.gdm.enable = true;
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        enableHidpi = true;
-        theme = "where_is_my_sddm_theme";
-      };
+      # displayManager.sddm = {
+      #  enable = true;
+      #  wayland.enable = true;
+      #   enableHidpi = true;
+      #   theme = "where_is_my_sddm_theme";
+      # };
     };
-
 
     # Audio via pipewire
     pipewire = {

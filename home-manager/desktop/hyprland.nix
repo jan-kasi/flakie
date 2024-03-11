@@ -65,7 +65,7 @@
 
         # hyprland
         "CTRLALT, Delete, exit, "
-        "$mainMOD, BackSpace, exec, swaylock"
+        "$mainMOD, BackSpace, exec, gtklock"
         "$mainMOD, Q, killactive, "
 
         "$mainMOD, Tab, cyclenext, " # cycle windows
