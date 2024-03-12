@@ -23,6 +23,7 @@
 
     # programming #
     lua
+    luajit
     luaPackages.fennel
     ghc #haskell
     racket

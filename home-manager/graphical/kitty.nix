@@ -2,9 +2,10 @@
   programs.kitty = {
     enable = true;
     font.name = "MesloLGS NF";
+    font.size = 16;
     font.package = pkgs.meslo-lgs-nf;
     settings = {
-      linux_display_server = "wayland";
+      linux_display_server = "auto";
       shell_integration = "disabled";
 
       wayland_titlebar_color = "background";

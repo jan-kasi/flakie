@@ -26,6 +26,10 @@
       enable = true;
       xkb.layout = "gb";
       xkb.variant = "";
+      dpi = 331;
+      # monitorSection = ''
+      #   
+      # '';
 
       windowManager.awesome.enable = true;
 
