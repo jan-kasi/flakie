@@ -30,6 +30,10 @@
       # monitorSection = ''
       #   
       # '';
+      libinput = {
+        enable = true;
+        touchpad.naturalScrolling = true;
+      };
 
       windowManager.awesome.enable = true;
 

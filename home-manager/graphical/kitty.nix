@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     font.name = "MesloLGS NF";
-    font.size = 16;
+    font.size = 16.0;
     font.package = pkgs.meslo-lgs-nf;
     settings = {
       linux_display_server = "auto";
