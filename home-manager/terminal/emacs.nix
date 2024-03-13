@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs29-pgtk;
+    package = pkgs.emacs;
     extraPackages = epkgs: [ epkgs.vterm ];
   };
   services.emacs = {
@@ -23,5 +23,6 @@
     zip # export odt
     unzip # export odt
     ditaa # diagrams
+    python311Packages.grip # preview markdown
   ];
 }

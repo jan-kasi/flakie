@@ -27,6 +27,7 @@
     ghc #haskell
     racket
     guile
+    sbcl
 
     # lsp #
     nil

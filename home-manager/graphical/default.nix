@@ -11,6 +11,7 @@
     ./kitty.nix
     # ./foot.nix
     ./firefox.nix
+    ./qutebrowser.nix
     ./nautilus.nix
     ./zathura.nix
   ];
@@ -18,6 +19,11 @@
   programs = {
     imv.enable = true;
     mpv.enable = true;
+
+    password-store = {
+      enable = true;
+      settings = { };
+    };
 
     sioyek = {
       enable = false;

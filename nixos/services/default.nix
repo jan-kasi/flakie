@@ -26,7 +26,7 @@
       enable = true;
       xkb.layout = "gb";
       xkb.variant = "";
-      dpi = 331;
+      dpi = 192;
       # monitorSection = ''
       #   
       # '';
