@@ -56,20 +56,7 @@
       meslo-lgs-nf
     ];
 
-    fontconfig = {
-      enable = true;
-      antialias = true; # Fixes pixelation
-      hinting = {
-        enable = true; # Fixes antialiasing blur
-        style = "slight";
-        autohint = true;
-      };
-      subpixel = {
-        # Makes it bolder
-        rgba = "rgb";
-        lcdfilter = "default";
-      };
-    };
+    fontconfig.enable = true;
   };
 
   ###########

@@ -30,7 +30,11 @@
     };
 
     # quickmarks = {};
-    settings = { tabs.last_close = "close"; };
+    settings = {
+      tabs.last_close = "close";
+      qt.highdpi = true;
+      fonts.default_size = "14pt";
+    };
     extraConfig = ''
       import os
       from urllib.request import urlopen
@@ -46,7 +50,7 @@
 
       if os.path.exists(config.configdir / "theme.py"):
          import theme
-         theme.setup(c, 'mocha', True)
+         theme.setup(c, 'latte', True)
     '';
   };
 }
