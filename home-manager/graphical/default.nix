@@ -9,7 +9,6 @@
 
     # apps
     ./kitty.nix
-    ./wezterm.nix
     # ./foot.nix
     ./qutebrowser.nix
     ./nautilus.nix

@@ -46,7 +46,7 @@
       };
 
       "$mainMOD" = "SUPER";
-      "$term" = "wezterm";
+      "$term" = "kitty";
       "$web_browser" = "qutebrowser";
 
       bind = [
