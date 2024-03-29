@@ -24,7 +24,7 @@
     sessionPath = [ "$HOME/.config/emacs/bin" ];
 
     sessionVariables = {
-      DEFAULT_BROWSER = "firefox";
+      DEFAULT_BROWSER = "qutebrowser";
       TERMINAL = "kitty";
     };
 

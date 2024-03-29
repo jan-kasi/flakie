@@ -14,7 +14,7 @@
     mullvad-vpn.enable = true; # VPN
     gvfs.enable = true; # gnome nautilus 
     fwupd.enable = true;
-    tlp.enable = true; # power management daemon
+    tlp.enable = false; # power management daemon
     thermald.enable = true; # prevent overheating on intel CPUs, works well with other tools
 
     ##############

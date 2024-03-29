@@ -7,6 +7,7 @@
     package = pkgs.rofi-wayland;
     terminal = "${pkgs.kitty}/bin/kitty";
     font = "MesloLGS NF 14";
+    pass.enable = true;
     plugins = [ ];
     extraConfig = {
       show-icons = true;

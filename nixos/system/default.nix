@@ -10,6 +10,7 @@
   # Hardware #
   ############
   powerManagement.enable = true;
+  powerManagement.powertop.enable = true;
   hardware = {
     enableAllFirmware = true;
     cpu.intel.updateMicrocode = true;
@@ -60,7 +61,7 @@
       antialias = true; # Fixes pixelation
       hinting = {
         enable = true; # Fixes antialiasing blur
-        style = "full";
+        style = "slight";
         autohint = true;
       };
       subpixel = {
