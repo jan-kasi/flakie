@@ -9,6 +9,7 @@
 
     # apps
     ./kitty.nix
+    ./wezterm.nix
     # ./foot.nix
     ./qutebrowser.nix
     ./nautilus.nix
@@ -19,7 +20,7 @@
 
   programs.mpv = {
     enable = true;
-    scripts = "[ pkgs.mpvScripts.sponsorblock ]";
+    scripts = [ pkgs.mpvScripts.sponsorblock ];
   };
 
   programs.password-store = {
@@ -42,7 +43,7 @@
   };
 
   programs.firefox = {
-    enable = true;
+    enable = false;
     package = pkgs.firefox.override {
       nativeMessagingHosts = [ pkgs.tridactyl-native ];
     };

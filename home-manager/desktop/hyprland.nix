@@ -46,8 +46,8 @@
       };
 
       "$mainMOD" = "SUPER";
-      "$term" = "kitty";
-      "$web_browser" = "firefox";
+      "$term" = "wezterm";
+      "$web_browser" = "qutebrowser";
 
       bind = [
         # applications
