@@ -69,6 +69,7 @@
     wl-clip-persist
     cliphist
     swww
+    waypaper # gui frontend
     hyprpicker
     hyprshade
     grimblast

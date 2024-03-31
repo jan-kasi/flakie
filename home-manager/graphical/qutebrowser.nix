@@ -31,7 +31,7 @@
 
     # quickmarks = {};
     settings = {
-      tabs.last_close = "close";
+      # tabs.last_close = "close";
       qt.highdpi = true;
       fonts.default_size = "14pt";
     };

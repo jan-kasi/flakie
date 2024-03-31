@@ -33,7 +33,8 @@
         "wl-paste --type image --watch cliphist store"
         "wl-clip-persist --clipboard regular --selection-size-limit 1048576"
         "mpd-notification"
-        "swww init && $HOME/.local/bin/lastswww.sh"
+        "waypaper --restore --backend swww"
+        # "swww init && $HOME/.local/bin/lastswww.sh"
       ];
 
       input = {
