@@ -38,9 +38,6 @@
     GDK_SCALE = "2";
     GDK_DPI_SCALE = "0.5";
     _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    QT_ENABLE_HIGHDPI_SCALING = "1";
-    # if you manually set QT_SCALE_FACTOR you must set previous two variables to 0.
   };
 
   fonts = {
