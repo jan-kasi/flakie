@@ -23,10 +23,10 @@
     };
 
     searchEngines = {
-      nixos = "https://search.nixos.org/options?channel=unstable&query={}";
-      nixpkgs = "https://search.nixos.org/packages?channel=unstable&query={}";
-      hmop = "https://home-manager-options.extranix.com/?query={}&release=master";
-      torrentz2 = "https://torrentz2.nz/search?q={}";
+      ",nixos" = "https://search.nixos.org/options?channel=unstable&query={}";
+      ",nixpkgs" = "https://search.nixos.org/packages?channel=unstable&query={}";
+      ",hmop" = "https://home-manager-options.extranix.com/?query={}&release=master";
+      ",torrentz2" = "https://torrentz2.nz/search?q={}";
     };
 
     # quickmarks = {};

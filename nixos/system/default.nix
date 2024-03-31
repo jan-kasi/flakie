@@ -34,6 +34,11 @@
   # FONTS/STYLE #
   ###############
   qt.style = "adwaita";
+  environment.variables = {
+  GDK_SCALE = "2";
+  GDK_DPI_SCALE = "0.5";
+  _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+  };
 
   fonts = {
     fontDir.enable = true;
@@ -57,6 +62,15 @@
     ];
 
     fontconfig.enable = true;
+
+    fontconfig ={
+      antialias = true;
+      hinting.enable = true;
+      hinting.style = "full";
+      hinting.autohint = true;
+      subpixel.rgba = "rgb";
+      subpixel.lcdfilter = "none";
+    };
   };
 
   ###########
