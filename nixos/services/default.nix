@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   # tidy services with larger configuration
   imports = [
     # ./gnome.nix
@@ -35,8 +35,6 @@
         enable = true;
         touchpad.naturalScrolling = true;
       };
-
-      windowManager.awesome.enable = true;
 
       displayManager.defaultSession = "hyprland";
       # desktopManager.gnome.enable = true;
