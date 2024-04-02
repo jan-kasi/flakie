@@ -22,8 +22,7 @@
     # nix-init # generate nix packages from URLs
 
     # programming #
-    lua
-    luaPackages.fennel
+    (lua.withPackages (ps: with ps; [ fennel luaposix ]))
     ghc #haskell
     racket
     guile
@@ -44,6 +43,7 @@
     mullvad-vpn
     transmission-gtk
     yt-dlp
+    gnome-decoder # qr codes
     qrcp # send files over internet
 
     # tui/cli #
@@ -54,6 +54,7 @@
     # catgirl # RSS
     mangal # download manga
     # gnugo # gnu Go AI
+    # qrtool # qrtool encode -t terminal "<text data here>"
 
     # music #
     spotify-player
@@ -69,6 +70,7 @@
     wl-clip-persist
     cliphist
     swww
+    feh
     waypaper # gui frontend
     hyprpicker
     hyprshade
