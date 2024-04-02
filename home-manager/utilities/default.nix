@@ -3,6 +3,7 @@
     ./mpd.nix
     ./beets.nix
     ./bat.nix
+    ./gpg.nix
   ];
 
   programs.git = {
