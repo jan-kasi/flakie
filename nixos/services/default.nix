@@ -36,6 +36,14 @@
         touchpad.naturalScrolling = true;
       };
 
+      windowManager.awesome = {
+        enable = true;
+        luaModules = with pkgs.luaPackages; [
+          fennel
+          luaposix
+        ];
+      };
+
       displayManager.defaultSession = "hyprland";
       # desktopManager.gnome.enable = true;
       # displayManager.gdm.enable = true;
