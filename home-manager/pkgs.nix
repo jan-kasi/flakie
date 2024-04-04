@@ -74,6 +74,7 @@
     waypaper # gui frontend
     hyprpicker
     hyprshade
+    hyprcursor
     grimblast
     pantheon.pantheon-agent-polkit
     gnome.adwaita-icon-theme
