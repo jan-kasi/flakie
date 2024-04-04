@@ -4,8 +4,6 @@
   xdg.configFile."hypr/shaders/blue-light-filter.glsl".source = ./hypr/shaders/blue-light-filter.glsl;
   xdg.configFile."hypr/shaders/crt.frag".source = ./hypr/shaders/crt.frag;
 
-  home.packages = [ inputs.rose-pine-hyprcursor.packages.x86_64-linux.default ];
-
   wayland.windowManager.hyprland = {
     # not using flake for hyprland, only nixpkgs release
     # if using flake again also uncomment in nixos/programs/default.nix
@@ -22,9 +20,7 @@
     settings = {
       monitor = ",preferred,auto,auto";
       env = [
-        # "XCURSOR_SIZE,72"
-        "HYPRCURSOR_THEME, rose-pine-hyprcursor"
-        "HYPRCURSOR_SIZE, 24"
+        "XCURSOR_SIZE,72"
       ];
 
       exec-once = [
