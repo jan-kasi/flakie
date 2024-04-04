@@ -12,10 +12,6 @@
     # });
   };
 
-  qutebrowser = final: prev: {
-    qutebrowser = prev.qutebrowser.override { enableWideVine = true; };
-  };
-
   newm-atha = final: prev: {
     newm-atha = inputs.newm-atha.packages."x86_64-linux".newm-atha;
   };

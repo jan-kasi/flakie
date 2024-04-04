@@ -1,5 +1,6 @@
 { pkgs, lib, ... }: {
   programs.qutebrowser = {
+    package = pkgs.qutebrowser.override { enableWideVine = true; };
     enable = true;
     greasemonkey = [
       (pkgs.fetchurl {
