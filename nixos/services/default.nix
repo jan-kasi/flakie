@@ -43,16 +43,17 @@
           luaposix
         ];
       };
+    };
 
-      displayManager.defaultSession = "hyprland";
-      # desktopManager.gnome.enable = true;
-      # displayManager.gdm.enable = true;
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        enableHidpi = true;
-        theme = "where_is_my_sddm_theme";
-      };
+    # Display Manager
+    # desktopManager.gnome.enable = true;
+    # displayManager.gdm.enable = true;
+    displayManager.defaultSession = "hyprland";
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      enableHidpi = true;
+      theme = "where_is_my_sddm_theme";
     };
 
     # Audio via pipewire
