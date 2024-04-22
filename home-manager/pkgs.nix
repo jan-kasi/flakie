@@ -11,6 +11,7 @@
     ffmpeg
     chafa # teminal graphics
     mkvtoolnix # edit mkv video files
+    songrec # recognise songs
 
     acpi # battery stuff
 
@@ -93,6 +94,6 @@
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
     # flatpaks: steam, flatseal, bottles, unofficial homestuck collection, cartridges
     uget
-    uget-integrator
+    prismlauncher
   ];
 }
