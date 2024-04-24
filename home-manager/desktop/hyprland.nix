@@ -220,7 +220,7 @@
         "float, class:^(org.gnome.Nautilus)$"
         "float, class:^(anki)$"
         "float, class:^(transmission-gtk)$"
-        "float, class:^(org.prismlauncher.PrismLauncher)$, title:^(Console window)$"
+        "float, class:^(org.prismlauncher.PrismLauncher)$"
       ];
 
     };
