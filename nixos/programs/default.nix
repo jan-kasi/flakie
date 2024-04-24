@@ -15,6 +15,7 @@
     fish.enable = true;
     dconf.enable = true;
     light.enable = true;
+    gamemode.enable = true;
 
     # note: enabling here is for proper support, it won't duplicate package ofc, thanks to hash
     hyprland = {

@@ -11,6 +11,7 @@
   ############
   powerManagement.enable = true;
   powerManagement.powertop.enable = true;
+  powerManagement.cpuFreqGovernor = "performance";
   hardware = {
     enableAllFirmware = true;
     cpu.intel.updateMicrocode = true;
