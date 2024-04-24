@@ -9,10 +9,11 @@
     # if using flake again also uncomment in nixos/programs/default.nix
     # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 
-    enable = true;
-    # enabled in nixos/programs/default to add proper support
+    # also enabled in nixos/programs/default to add proper support
     # desktop entry, xdg portals, target, polkit, etc.
     # The hash is the same, so not installed twice or anything silly like that :D
+    enable = true;
+    package = pkgs.stable.hyprland;
 
     systemd.enable = true;
     xwayland.enable = true;
@@ -219,6 +220,7 @@
         "float, class:^(org.gnome.Nautilus)$"
         "float, class:^(anki)$"
         "float, class:^(transmission-gtk)$"
+        "float, class:^(org.prismlauncher.PrismLauncher)$, title:^(Console window)$"
       ];
 
     };

@@ -28,6 +28,7 @@
     racket
     guile
     sbcl
+    jdk17
 
     # lsp #
     nil

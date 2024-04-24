@@ -29,7 +29,6 @@
   };
 
   programs.sioyek = {
-
     enable = false;
     bindings = {
       "move_up" = "k";
