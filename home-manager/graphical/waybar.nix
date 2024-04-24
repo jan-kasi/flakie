@@ -1,6 +1,7 @@
-{
+{ pkgs, ... }: {
   programs.waybar = {
     enable = true;
+    package = pkgs.stable.waybar;
     settings = {
       mainBar = {
         layer = "top";
@@ -8,26 +9,24 @@
 
         modules-left = [ "custom/nix" "hyprland/workspaces" "tray" ];
         modules-center = [ "clock" ];
-        modules-right = [ "backlight" "pulseaudio" "bluetooth" "network" "battery" ];
+        modules-right = [ "backlight" "wireplumber" "bluetooth" "network" "battery" ];
 
         "custom/nix" = {
-          format = " 󱄅 ";
+          format = "󱄅";
           tooltip = false;
-          on-click = "sh $HOME/.config/rofi/bin/launcher";
-          on-click-right = "sh $HOME/.config/rofi/bin/powermenu";
+          on-click = "/usr/bin/env sh $HOME/.config/rofi/bin/launcher";
+          on-click-right = "/usr/bin/env sh $HOME/.config/rofi/bin/powermenu";
         };
 
         "hyprland/workspaces" = {
-          tooltip = false;
           active-only = false;
+          window-rewrite = { };
           on-click = "activate";
+          format = "{name}";
+          tooltip = false;
           show-special = true;
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
-          format-icons = {
-            active = "";
-            default = "";
-          };
         };
 
         tray = {
@@ -47,7 +46,7 @@
           format-icons = [ "" "" "" "" "" "" "" "" "" ];
         };
 
-        pulseaudio = {
+        wireplumber = {
           format = "<span color='#b4befe'>{icon}</span> {volume}%";
           format-muted = "<span color='#b4befe'>󰖁</span>";
           tooltip = false;
@@ -64,7 +63,7 @@
           format-diabled = ""; # an empty format will hide the module 
           format-connected = "<span color='#b4befe'>󰂱</span> {num_connections}";
           tooltip-format-enumerate-connected = "{device_enumerate}";
-          on-click = "sh $HOME/.config/rofi/bin/rofi-bluetooth";
+          on-click = "/usr/bin/env sh $HOME/.config/rofi/bin/rofi-bluetooth";
         };
 
         network = {
@@ -132,7 +131,7 @@
         color: #b4befe;
       }
 
-      #clock, #backlight, #pulseaudio, #bluetooth, #network, #battery{
+      #clock, #backlight, #wireplumber, #bluetooth, #network, #battery{
         border-radius: 10px;
         background-color: #11111b;
         color: #cdd6f4;
@@ -149,7 +148,7 @@
         margin-right: 0
       }
 
-      #pulseaudio, #network {
+      #wireplumber, #network {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         padding-left: 5px;

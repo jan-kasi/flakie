@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 rofi_command="rofi -theme $HOME/.config/rofi/config/powermenu.rasi"
 
-uptime=$(uptime -p | sed -e 's/up //g')
+uptime=$(uptime | sed -e 's/up //g')
 
 # Options
 if [[ "$DIR" == "powermenus" ]]; then

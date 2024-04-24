@@ -51,6 +51,7 @@
     displayManager.defaultSession = "hyprland";
     displayManager.sddm = {
       enable = true;
+      package = pkgs.libsForQt5.sddm;
       wayland.enable = true;
       enableHidpi = true;
       theme = "where_is_my_sddm_theme";
