@@ -20,10 +20,18 @@
 
     uinput.enable = true;
     opengl = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver # LIBVA_DRIVER_NAME=iHD
+        intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but better for Firefox/Chromium)
+        libvdpau-va-gl
+        mesa.drivers
+      ];
       driSupport = true;
       driSupport32Bit = true;
     };
   };
+  # environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver
 
   #########
   # AUDIO #

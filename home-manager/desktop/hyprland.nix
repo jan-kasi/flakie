@@ -22,6 +22,7 @@
       monitor = ",preferred,auto,auto";
       env = [
         "XCURSOR_SIZE,72"
+        "HYPRCURSOR_SIZE,24"
       ];
 
       exec-once = [
