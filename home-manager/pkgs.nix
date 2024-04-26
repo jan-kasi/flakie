@@ -39,6 +39,7 @@
     marksman
     haskell-language-server
     lua-language-server
+    semgrep
 
 
     # internet #
