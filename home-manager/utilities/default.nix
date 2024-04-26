@@ -4,6 +4,7 @@
     ./beets.nix
     ./bat.nix
     ./gpg.nix
+    ./autorandr.nix
   ];
 
   programs.git = {
