@@ -24,7 +24,7 @@ in
       border = mkLiteral "2px";
       border-color = mkLiteral "@BDR";
       border-radius = mkLiteral "5px";
-      width = mkLiteral "750px";
+      width = mkLiteral "35%";
       anchor = mkLiteral "center";
       x-offset = mkLiteral "0";
       y-offset = mkLiteral "-50";
@@ -82,7 +82,7 @@ in
     listview = {
       background-color = mkLiteral "@BG";
       columns = mkLiteral "1";
-      lines = mkLiteral "10";
+      lines = mkLiteral "12";
       spacing = mkLiteral "4px";
       cycle = mkLiteral "true";
       dynamic = mkLiteral "true";

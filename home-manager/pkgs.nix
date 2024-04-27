@@ -40,7 +40,8 @@
     haskell-language-server
     lua-language-server
     semgrep
-
+    fennel-ls
+    fnlfmt
 
     # internet #
     mullvad-vpn
@@ -83,6 +84,7 @@
     gnome.adwaita-icon-theme
     adwaita-qt
     gtklock # lock screen
+    xcalib
 
     # documents #
     libreoffice-fresh

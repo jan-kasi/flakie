@@ -14,6 +14,7 @@
       drun-display-format = "{icon} {name}";
       display-drun = " ";
       show-match = true;
+      dpi = 0;
     };
   };
   home.file.".config/rofi/config/askpass.rasi".source = ./config/askpass.rasi;
