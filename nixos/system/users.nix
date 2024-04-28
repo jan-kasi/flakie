@@ -13,5 +13,5 @@
       extraGroups = [ "users" ]; # Allow access to directories (can't do /home)
     };
   };
-  environment.shells = with pkgs; [ fish ]; # see shells in nixos wiki
+  environment.shells = with pkgs; [ fish dash ]; # see shells in nixos wiki
 }

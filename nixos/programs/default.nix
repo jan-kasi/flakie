@@ -8,6 +8,7 @@
     python311
     stable.where-is-my-sddm-theme
     adwaita-qt
+    dash
   ];
 
   programs = {

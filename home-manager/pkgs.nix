@@ -85,6 +85,7 @@
     adwaita-qt
     gtklock # lock screen
     xcalib
+    xbindkeys
 
     # documents #
     libreoffice-fresh
