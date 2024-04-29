@@ -6,9 +6,9 @@
     enable = true;
     package = pkgs.rofi-wayland;
     terminal = "${pkgs.kitty}/bin/kitty";
-    font = "MesloLGS NF 14";
+    font = "MesloLGS NF 12";
     pass.enable = true;
-    plugins = [ ];
+    plugins = with pkgs; [ rofi-calc rofi-mpd rofi-top rofi-bluetooth rofi-pass ];
     extraConfig = {
       show-icons = true;
       drun-display-format = "{icon} {name}";

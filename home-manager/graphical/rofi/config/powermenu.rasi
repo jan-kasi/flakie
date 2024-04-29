@@ -8,7 +8,7 @@ configuration {
 }
 
 * {
-	font:                           "MesloLGS NF 14";
+	font:                           "MesloLGS NF 12";
 	BG:                             #11111Bff;
     BGA:                            #b4befeff;
     FG:                             #D9E0EEff;
@@ -32,7 +32,7 @@ window {
     border:                  	    2px;
     border-color:                   @BGA;
     border-radius:                  10px;
-    width:                          110px;
+    width:                          5%;
     x-offset:                       1%;
     y-offset:                       0;
 }
@@ -55,7 +55,7 @@ textbox-prompt-colon {
     background-color:               @BG;
     text-color:                     @BG;
     padding:                        8px 12px 8px 12px;
-    font:			                "MesloLGS NF 14";
+    font:			                "MesloLGS NF 12";
 }
 
 entry {
@@ -129,7 +129,7 @@ element-icon {
 element-text {
     background-color: 		        inherit;
     text-color:       		        inherit;
-    font:			                "MesloLGS NF 20";
+    font:			                "MesloLGS NF 24";
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;

@@ -11,7 +11,6 @@
     ffmpeg
     chafa # teminal graphics
     mkvtoolnix # edit mkv video files
-    songrec # recognise songs
 
     acpi # battery stuff
 
@@ -68,6 +67,7 @@
     cava
     python311Packages.requests # fetchart plugin
     python311Packages.pylast # lastgenre plugin
+    songrec # recognise songs
 
     # wayland/windowmanager #
     wl-clipboard
