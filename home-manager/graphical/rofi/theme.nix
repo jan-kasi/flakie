@@ -39,7 +39,7 @@ in
 
     textbox-prompt-colon = {
       expand = mkLiteral "false";
-      str = " ";
+      str = "⌕ ";
       border-radius = mkLiteral "100%";
       background-color = mkLiteral "@SEL";
       text-color = mkLiteral "@FG";

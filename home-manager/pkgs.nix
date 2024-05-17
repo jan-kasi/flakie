@@ -98,6 +98,7 @@
     minder
     foliate # read ebooks
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
+    gnome.baobab # storage usage
     # flatpaks: steam, flatseal, bottles, unofficial homestuck collection, cartridges
     uget
     prismlauncher

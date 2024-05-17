@@ -6,7 +6,7 @@
     enable = true;
     package = pkgs.rofi-wayland;
     terminal = "${pkgs.kitty}/bin/kitty";
-    font = "MesloLGS NF 12";
+    font = "CozetteVector 14";
     pass.enable = true;
     plugins = with pkgs; [ rofi-calc rofi-mpd rofi-top rofi-bluetooth rofi-pass ];
     extraConfig = {
