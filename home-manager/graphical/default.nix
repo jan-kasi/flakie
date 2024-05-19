@@ -41,7 +41,7 @@
   };
 
   programs.firefox = {
-    enable = false;
+    enable = true;
     package = pkgs.firefox.override {
       nativeMessagingHosts = [ pkgs.tridactyl-native ];
     };
