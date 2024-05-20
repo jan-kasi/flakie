@@ -21,6 +21,11 @@
     # Configured #
     ##############
 
+    libinput = {
+      enable = true;
+      touchpad.naturalScrolling = true;
+    };
+
     # Xserver
     xserver = {
       enable = true;
@@ -31,10 +36,6 @@
       # monitorSection = ''
       #   
       # '';
-      libinput = {
-        enable = true;
-        touchpad.naturalScrolling = true;
-      };
 
       windowManager.awesome = {
         enable = true;
