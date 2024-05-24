@@ -10,15 +10,15 @@
   # Hardware #
   ############
   powerManagement.enable = true;
-  powerManagement.powertop.enable = true;
-  powerManagement.cpuFreqGovernor = "performance";
+  # for better minecraft stuff set to "performance"
+  # set to "powersave" or "ondemand" for better battery?
+  powerManagement.cpuFreqGovernor = "ondemand";
   hardware = {
     enableAllFirmware = true;
     cpu.intel.updateMicrocode = true;
-
     bluetooth.enable = true;
-
     uinput.enable = true;
+
     opengl = {
       enable = true;
       extraPackages = with pkgs; [
@@ -29,6 +29,12 @@
       ];
       driSupport = true;
       driSupport32Bit = true;
+    };
+
+    # scanners
+    sane = {
+      enable = true;
+      extraBackends = [ pkgs.hplipWithPlugin ];
     };
   };
   # environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; }; # Force intel-media-driver

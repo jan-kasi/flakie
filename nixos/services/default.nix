@@ -14,8 +14,9 @@
     mullvad-vpn.enable = true; # VPN
     gvfs.enable = true; # gnome nautilus 
     fwupd.enable = true;
-    tlp.enable = false; # power management daemon
+    tlp.enable = true; # power management daemon, can cause bluetooth issues sometimes
     thermald.enable = true; # prevent overheating on intel CPUs, works well with other tools
+    };
 
     ##############
     # Configured #

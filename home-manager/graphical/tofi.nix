@@ -5,7 +5,7 @@
   xdg.configFile."tofi/config".text = ''
     font     = "/home/jankasi/.nix-profile/share/fonts/truetype/MesloLGS\ NF\ Regular.ttf"
     include  = "/home/jankasi/.config/tofi/current-theme"
-    terminal = kitty
+    terminal = alacritty
   '';
 
   home.file.".config/tofi/themes/fullscreen".text = ''

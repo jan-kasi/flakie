@@ -50,7 +50,7 @@
       };
 
       "$mainMOD" = "SUPER";
-      "$term" = "kitty";
+      "$term" = "alacritty";
       "$web_browser" = "qutebrowser";
 
       bind = [
@@ -160,7 +160,7 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         enable_swallow = true;
-        swallow_regex = "^(kitty)$";
+        swallow_regex = "^(alacritty)$";
 
       };
 

@@ -25,7 +25,8 @@
 
     sessionVariables = {
       DEFAULT_BROWSER = "qutebrowser";
-      TERMINAL = "kitty";
+      TERMINAL = "alacritty";
+      TERM = "alacritty";
     };
 
     shellAliases = {

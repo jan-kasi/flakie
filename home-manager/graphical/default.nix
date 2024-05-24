@@ -17,6 +17,14 @@
 
   programs.imv.enable = true;
 
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font = {
+        normal = {family = "CozetteVector"; style = "Regular"; };
+      };
+    };
+  };
   programs.mpv = {
     enable = true;
     scripts = [ pkgs.mpvScripts.sponsorblock ];

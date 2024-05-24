@@ -5,7 +5,8 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    terminal = "${pkgs.kitty}/bin/kitty";
+    # terminal = "${pkgs.kitty}/bin/kitty";
+    terminal = "${pkgs.alacritty}/bin/alacritty";
     font = "CozetteVector 14";
     pass.enable = true;
     plugins = with pkgs; [ rofi-calc rofi-mpd rofi-top rofi-bluetooth rofi-pass ];

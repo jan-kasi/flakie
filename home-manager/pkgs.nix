@@ -60,7 +60,7 @@
     # qrtool # qrtool encode -t terminal "<text data here>"
 
     # music #
-    spotify-player
+    # spotify-player
     mpc-cli
     mpd-notification
     playerctl
@@ -68,6 +68,7 @@
     python311Packages.requests # fetchart plugin
     python311Packages.pylast # lastgenre plugin
     songrec # recognise songs
+    cider
 
     # wayland/windowmanager #
     wl-clipboard
@@ -91,16 +92,17 @@
     libreoffice-fresh
     texliveFull
     multimarkdown
+    minder # mindmaps
 
     # apps
-    anki
-    zotero
-    minder
+    # flatpaks: steam, flatseal, bottles, unofficial homestuck collection, cartridges
+    anki # flashcards
+    zotero # citation manager
     foliate # read ebooks
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
     gnome.baobab # storage usage
-    # flatpaks: steam, flatseal, bottles, unofficial homestuck collection, cartridges
-    uget
-    prismlauncher
+    uget # download manager
+    prismlauncher # minecraft launcher
+    rawtherapee # photo processing software
   ];
 }
