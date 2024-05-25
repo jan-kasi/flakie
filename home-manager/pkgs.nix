@@ -96,6 +96,7 @@
 
     # apps
     # flatpaks: steam, flatseal, bottles, unofficial homestuck collection, cartridges
+    qtpass # gui for pass password store
     anki # flashcards
     zotero # citation manager
     foliate # read ebooks

@@ -24,7 +24,7 @@ in
       border = mkLiteral "2px";
       border-color = mkLiteral "@BDR";
       border-radius = mkLiteral "5px";
-      width = mkLiteral "35%";
+      width = mkLiteral "45%";
       anchor = mkLiteral "center";
       x-offset = mkLiteral "0";
       y-offset = mkLiteral "-50";

@@ -16,7 +16,7 @@
     vim.enable = true;
 
     tmux = {
-      enable = true;
+      enable = false;
       shell = "${pkgs.fish}/bin/fish";
       escapeTime = 0;
       sensibleOnTop = true;
@@ -29,7 +29,7 @@
     };
 
     zellij = {
-      enable = false;
+      enable = true;
       enableFishIntegration = true;
       settings = {
         theme = "catppuccin-mocha";
