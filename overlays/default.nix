@@ -10,24 +10,6 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-    pureref = prev.pureref.overrideAttrs (oldAttrs: rec {
-      version = "2.0.0";
-      postInstall = ''
-        cat > $bin/share/applications/pureref.desktop <<EOF
-        [Desktop Entry]
-        Type=Application
-        Version=2.0.0
-        Name=pureref
-        Comment=Reference Image Viewer
-        Exec=pureref %U
-        Terminal=false
-        Icon=pureref
-        DesktopName=pureref
-        Categories=Graphics
-        StartupWMClass=pureref
-        EOF
-      '';
-    });
   };
 
   newm-atha = final: prev: {
