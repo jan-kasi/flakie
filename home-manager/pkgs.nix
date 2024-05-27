@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     # utilities #
+    gopass # pass password store cli/tui
     fd
     libnotify
     eza
@@ -11,6 +12,7 @@
     ffmpeg
     chafa # teminal graphics
     mkvtoolnix # edit mkv video files
+    appimage-run #run appimages
 
     acpi # battery stuff
 
@@ -100,7 +102,7 @@
 
     # apps
     # flatpaks: steam, flatseal, bottles, unofficial homestuck collection, cartridges
-    qtpass # gui for pass password store
+    blueberry # bluetooth
     anki # flashcards
     zotero # citation manager
     foliate # read ebooks
