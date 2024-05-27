@@ -34,6 +34,16 @@
       ll = "eza --icons -lagh";
       lt = "eza --icons -TL";
     };
+
+    pointerCursor = {
+      # name = "material_light_cursors";
+      # package = pkgs.material-cursors;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 32;
+      gtk.enable = true;
+      x11.enable = true;
+    };
   };
 
   fonts.fontconfig.enable = true;

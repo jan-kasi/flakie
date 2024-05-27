@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   # tidy services with larger configuration
   imports = [
-    ./gnome.nix
+    # ./gnome.nix
   ];
 
   services = {
@@ -49,7 +49,7 @@
       #   
       # '';
 
-      desktopManager.gnome.enable = true;
+      # desktopManager.gnome.enable = true;
       # displayManager.gdm.enable = true;
 
       windowManager.awesome = {

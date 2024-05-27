@@ -112,5 +112,6 @@
     prismlauncher # minecraft launcher
     rawtherapee # photo processing software
     pureref2
+    shattered-pixel-dungeon
   ];
 }
