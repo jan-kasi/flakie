@@ -65,11 +65,11 @@
     displayManager.defaultSession = "gnome";
     # displayManager.sddm = {
     #  enable = true;
-    #  # package = pkgs.libsForQt5.sddm;
+    #  #  # package = pkgs.libsForQt5.sddm;
     #  wayland.enable = true;
     #  enableHidpi = true;
     #  theme = "where_is_my_sddm_theme";
-    # };
+    #};
 
     # Audio via pipewire
     pipewire = {
