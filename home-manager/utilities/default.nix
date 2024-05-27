@@ -13,7 +13,7 @@
     extraConfig = {
       init.defaultBranch = "main";
       core = {
-        editor = "hx";
+        editor = "emacsclient -nw";
       };
     };
   };

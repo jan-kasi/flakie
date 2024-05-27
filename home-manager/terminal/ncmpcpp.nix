@@ -27,7 +27,7 @@
       jump_to_now_playing_song_at_start = "yes";
       enable_window_title = "yes";
       search_engine_default_search_mode = "2";
-      external_editor = "hx";
+      external_editor = "emacsclient -nw";
       use_console_editor = "yes";
       current_item_prefix = "$(blue)$r";
       current_item_suffix = "$/r$(end)";
