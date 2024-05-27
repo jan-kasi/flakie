@@ -8,14 +8,24 @@
     ################
     # Just enabled #
     ################
+    tlp.enable = false; # can cause bluetooth issues sometimes
     fstrim.enable = true;
     printing.enable = true; # Enable CUPS to print documents
     flatpak.enable = true;
     mullvad-vpn.enable = true; # VPN
     gvfs.enable = true; # gnome nautilus 
     fwupd.enable = true;
-    tlp.enable = false; # power management daemon, can cause bluetooth issues sometimes
-    thermald.enable = true; # prevent overheating on intel CPUs, works well with other tools
+    thermald.enable = true; # prevent overheating on intel CPUs, works with other tools
+
+    ##############
+    # Configured #
+    ##############
+
+    libinput = {
+      enable = true;
+      touchpad.naturalScrolling = true;
+    };
+
     auto-cpufreq.enable = true;
     auto-cpufreq.settings = {
       battery = {
@@ -26,15 +36,6 @@
         governor = "performance";
         turbo = "auto";
       };
-    };
-
-    ##############
-    # Configured #
-    ##############
-
-    libinput = {
-      enable = true;
-      touchpad.naturalScrolling = true;
     };
 
     # Xserver
