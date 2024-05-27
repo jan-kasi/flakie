@@ -6,7 +6,7 @@
     libevdev # bluetooth gamepad?
     game-devices-udev-rules # bluetooth gamepad?
     python311
-    stable.where-is-my-sddm-theme
+    # stable.where-is-my-sddm-theme
     adwaita-qt
     dash
   ];
@@ -22,7 +22,7 @@
     hyprland = {
       # uncomment if changing to flake instead of nixpkgs release. Also in home-manager/desktop/hyprland.nix
       # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      enable = true;
+      enable = false;
       xwayland.enable = true;
     };
   };

@@ -70,23 +70,27 @@
     songrec # recognise songs
     cider
 
-    # wayland/windowmanager #
-    wl-clipboard
-    wl-clip-persist
-    cliphist
-    swww
+    # de #
+    waypaper # gui frontend for swww/feh
     feh
-    waypaper # gui frontend
-    hyprpicker
-    hyprshade
-    hyprcursor
-    grimblast
     pantheon.pantheon-agent-polkit
     gnome.adwaita-icon-theme
     adwaita-qt
-    gtklock # lock screen
+
+    # xserver wms#
     xcalib
     xbindkeys
+
+    # wayland #
+    # wl-clipboard
+    # wl-clip-persist
+    # cliphist
+    # swww
+    # hyprpicker
+    # hyprshade
+    # hyprcursor
+    # grimblast
+    # gtklock # lock screen
 
     # documents #
     libreoffice-fresh

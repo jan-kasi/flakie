@@ -8,7 +8,7 @@
     ./terminal
     ./graphical
 
-    ./desktop/hyprland.nix
+    # ./desktop/hyprland.nix
     ./desktop/awesome.nix
     # ./desktop/newm-atha.nix
 

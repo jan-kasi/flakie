@@ -3,12 +3,12 @@
     # desktop environment
     ./dunst.nix
     ./rofi
-    ./waybar.nix
-    ./wlsunset.nix
-    ./swaylock.nix
+    # ./waybar.nix
+    # ./wlsunset.nix
+    # ./swaylock.nix
 
     # apps
-    ./kitty.nix
+    # ./kitty.nix
     # ./foot.nix
     ./qutebrowser.nix
     ./nautilus.nix

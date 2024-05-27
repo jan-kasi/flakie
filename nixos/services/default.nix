@@ -58,16 +58,16 @@
     };
 
     # Display Manager
-    # desktopManager.gnome.enable = true;
-    # displayManager.gdm.enable = true;
-    displayManager.defaultSession = "hyprland";
-    displayManager.sddm = {
-      enable = true;
-      # package = pkgs.libsForQt5.sddm;
-      wayland.enable = true;
-      enableHidpi = true;
-      theme = "where_is_my_sddm_theme";
-    };
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
+    # displayManager.defaultSession = "gnome";
+    # displayManager.sddm = {
+    #  enable = true;
+    #  # package = pkgs.libsForQt5.sddm;
+    #  wayland.enable = true;
+    #  enableHidpi = true;
+    #  theme = "where_is_my_sddm_theme";
+    # };
 
     # Audio via pipewire
     pipewire = {
