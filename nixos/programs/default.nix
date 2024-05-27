@@ -29,7 +29,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ]; # gnome already adds this
+    # extraPortals = with pkgs; [ xdg-desktop-portal-gtk ]; # gnome already adds this
   };
 
   fonts.enableDefaultPackages = true;
