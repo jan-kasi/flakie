@@ -49,6 +49,9 @@
       #   
       # '';
 
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
+
       windowManager.awesome = {
         enable = true;
         luaModules = with pkgs.luaPackages; [
@@ -59,9 +62,7 @@
     };
 
     # Display Manager
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
-    # displayManager.defaultSession = "gnome";
+    displayManager.defaultSession = "gnome";
     # displayManager.sddm = {
     #  enable = true;
     #  # package = pkgs.libsForQt5.sddm;
