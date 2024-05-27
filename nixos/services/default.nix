@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   # tidy services with larger configuration
   imports = [
-    # ./gnome.nix
+    ./gnome.nix
   ];
 
   services = {
@@ -50,7 +50,7 @@
       # '';
 
       desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
+      # displayManager.gdm.enable = true;
 
       windowManager.awesome = {
         enable = true;
@@ -62,13 +62,13 @@
     };
 
     # Display Manager
-    # displayManager.sddm = {
-    #  enable = true;
-    #  #  # package = pkgs.libsForQt5.sddm;
-    #  wayland.enable = true;
-    #  enableHidpi = true;
-    #  theme = "where_is_my_sddm_theme";
-    #};
+    displayManager.sddm = {
+      enable = true;
+      #  # package = pkgs.libsForQt5.sddm;
+      wayland.enable = true;
+      enableHidpi = true;
+      theme = "where_is_my_sddm_theme";
+    };
 
     # Audio via pipewire
     pipewire = {

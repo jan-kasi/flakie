@@ -6,7 +6,7 @@
     libevdev # bluetooth gamepad?
     game-devices-udev-rules # bluetooth gamepad?
     python311
-    # stable.where-is-my-sddm-theme
+    stable.where-is-my-sddm-theme
     adwaita-qt
     dash
   ];
