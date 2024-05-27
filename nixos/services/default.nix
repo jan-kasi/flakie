@@ -62,7 +62,6 @@
     };
 
     # Display Manager
-    displayManager.defaultSession = "gnome";
     # displayManager.sddm = {
     #  enable = true;
     #  #  # package = pkgs.libsForQt5.sddm;

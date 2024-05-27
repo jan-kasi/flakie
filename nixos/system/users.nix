@@ -14,7 +14,4 @@
     };
   };
   environment.shells = with pkgs; [ fish dash ]; # see shells in nixos wiki
-  environment.variables = {
-    PATH = "$HOME/.config/emacs/bin:$PATH";
-  };
 }
