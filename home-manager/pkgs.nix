@@ -111,5 +111,6 @@
     uget # download manager
     prismlauncher # minecraft launcher
     rawtherapee # photo processing software
+    pureref2
   ];
 }
