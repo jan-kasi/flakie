@@ -6,7 +6,7 @@
     libevdev # bluetooth gamepad?
     game-devices-udev-rules # bluetooth gamepad?
     python311
-    stable.where-is-my-sddm-theme
+    # stable.where-is-my-sddm-theme
     adwaita-qt
     dash
   ];
@@ -17,6 +17,19 @@
     dconf.enable = true;
     light.enable = true;
     gamemode.enable = true;
+    xwayland.enable = true;
+
+    bash = {
+      interactiveShellInit = ''
+        if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+        then
+          shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+          exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+        fi
+      '';
+    };
+
+    ssh.startAgent = true;
 
     # note: enabling here is for proper support, it won't duplicate package ofc, thanks to hash
     hyprland = {
@@ -29,7 +42,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # enabling gnome adds this too
+    # extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; # enabling gnome adds this too
     configPackages = [ pkgs.xdg-desktop-portal-gtk ];
     config = {
       common = {

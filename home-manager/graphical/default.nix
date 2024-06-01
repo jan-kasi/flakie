@@ -21,7 +21,11 @@
     enable = true;
     settings = {
       font = {
-        normal = {family = "CozetteVector"; style = "Regular"; };
+        normal = { family = "CozetteVector"; style = "Regular"; };
+      };
+      shell = {
+        program = "zellij";
+        args = [ "-l" "welcome" ];
       };
     };
   };
@@ -31,7 +35,7 @@
   };
 
   programs.password-store = {
-    enable = true;
+    enable = false;
     package = pkgs.pass.withExtensions
       (exts: [ exts.pass-update exts.pass-import exts.pass-genphrase ]);
   };

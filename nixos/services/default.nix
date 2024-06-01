@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   # tidy services with larger configuration
   imports = [
-    # ./gnome.nix
+    ./gnome.nix
   ];
 
   services = {
@@ -26,6 +26,8 @@
       touchpad.naturalScrolling = true;
     };
 
+    dbus.packages = [ pkgs.gcr ];
+
     auto-cpufreq.enable = true;
     auto-cpufreq.settings = {
       battery = {
@@ -49,8 +51,8 @@
       #   
       # '';
 
-      # desktopManager.gnome.enable = true;
-      # displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
 
       windowManager.awesome = {
         enable = true;
@@ -62,9 +64,10 @@
     };
 
     # Display Manager
+    displayManager.defaultSession = "none+awesome";
     displayManager.sddm = {
-      enable = true;
-      #  # package = pkgs.libsForQt5.sddm;
+      enable = false;
+      # package = pkgs.libsForQt5.sddm;
       wayland.enable = true;
       enableHidpi = true;
       theme = "where_is_my_sddm_theme";

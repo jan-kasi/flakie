@@ -8,7 +8,7 @@
       outputs.overlays.newm-atha
 
       # overlays exported from other flakes
-      inputs.nix-alien.overlays.default
+      # inputs.nix-alien.overlays.default
     ];
 
     config = {
@@ -24,10 +24,24 @@
     sessionPath = [ "$HOME/.config/emacs/bin" ];
 
     sessionVariables = {
-      DEFAULT_BROWSER = "qutebrowser";
+      DEFAULT_BROWSER = "firefox";
       TERMINAL = "alacritty";
       TERM = "alacritty";
     };
+
+    file.".profile".text = ''
+      #!/usr/bin/env dash
+      if [ $XDG_SESSION_TYPE=wayland ]; then
+        export QT_SCALE_FACTOR=1
+        export QT_QPA_PLATFORM=wayland
+        export MOZ_ENABLE_WAYLAND=1
+        dbus-update-activation-environment --systemd --all
+      elif [ $XDG_SESSION_TYPE=xcb ]; then
+        export QT_QPA_PLATFORM=xcb
+        export MOZ_ENABLE_WAYLAND=0
+        dbus-update-activation-environment --systemd --all
+      fi
+    '';
 
     shellAliases = {
       l = "eza --icons";
@@ -39,7 +53,7 @@
       # name = "material_light_cursors";
       # package = pkgs.material-cursors;
       package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
+      name = "Bibata-Original-Classic";
       size = 32;
       gtk.enable = true;
       x11.enable = true;

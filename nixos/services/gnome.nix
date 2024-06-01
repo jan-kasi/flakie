@@ -2,19 +2,16 @@
   services.gnome = {
     gnome-browser-connector.enable = true;
   };
-  environment.gnome.excludePackages = with pkgs; [
-    #  gnome.cheese
-    gnome.eog
-    gnome.epiphany
-    #   gnome.evince
-    #   gnome.geary
-    gnome.gnome-characters
-    gnome.gnome-contacts
-    gnome.gnome-maps
-    gnome.gnome-music
-    gnome.gnome-weather
-    #  gnome.yelp
-    gnome.totem
+  environment.gnome.excludePackages = (with pkgs; [
+    # for packages that are <pkgs.***>
+    gnome-connections
     gnome-tour
-  ];
+  ]) ++ (with pkgs.gnome; [
+    # for packages that are <pkgs.gnome.***>
+    eog
+    epiphany
+    gnome-music
+    totem
+  ]);
+
 }

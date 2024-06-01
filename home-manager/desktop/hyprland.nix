@@ -51,7 +51,7 @@
 
       "$mainMOD" = "SUPER";
       "$term" = "alacritty";
-      "$web_browser" = "qutebrowser";
+      "$web_browser" = "firefox";
 
       bind = [
         # applications

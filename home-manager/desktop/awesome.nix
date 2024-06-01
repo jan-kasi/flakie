@@ -10,6 +10,7 @@
   services.picom.enable = true;
 
   home.file.".xprofile".text = ''
-    dbus-update-activation-environment DISPLAY
+    #!/usr/bin/env dash
+    dbus-update-activation-environment --systemd --all
   '';
 }

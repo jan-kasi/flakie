@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     # utilities #
-    gopass # pass password store cli/tui
     fd
     libnotify
     eza
@@ -78,10 +77,14 @@
     pantheon.pantheon-agent-polkit
     gnome.adwaita-icon-theme
     adwaita-qt
+    gnome.gnome-screenshot
+    wl-clipboard
 
     # xserver wms#
     xcalib
     xbindkeys
+    maim
+    xclip
 
     # wayland #
     # wl-clipboard
@@ -108,10 +111,11 @@
     foliate # read ebooks
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
     gnome.baobab # storage usage
+    loupe # simple gnome image viewer
     uget # download manager
     prismlauncher # minecraft launcher
     rawtherapee # photo processing software
     pureref2
-    shattered-pixel-dungeon
+    keepassxc # passwords
   ];
 }
