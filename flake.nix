@@ -21,16 +21,14 @@
 
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
     # don't override hyprland nixpkgs follows, this would make hyprland cachix useless
 
-    newm-atha.url = "sourcehut:~atha/newm-atha";
-    newm-atha.inputs.nixpkgs.follows = "nixpkgs";
+    # newm-atha.url = "sourcehut:~atha/newm-atha";
+    # newm-atha.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-alien.url = "github:thiagokokada/nix-alien";
-    nix-alien.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-colors.url = "github:misterio77/nix-colors";
+    # nix-alien.url = "github:thiagokokada/nix-alien";
+    # nix-alien.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
