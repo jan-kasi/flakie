@@ -18,6 +18,7 @@
     light.enable = true;
     gamemode.enable = true;
     xwayland.enable = true;
+    ssh.startAgent = true;
 
     bash = {
       interactiveShellInit = ''
@@ -28,8 +29,6 @@
         fi
       '';
     };
-
-    ssh.startAgent = true;
 
     # note: enabling here is for proper support, it won't duplicate package ofc, thanks to hash
     hyprland = {

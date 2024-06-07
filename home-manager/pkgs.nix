@@ -74,7 +74,7 @@
     # de #
     waypaper # gui frontend for swww/feh
     feh
-    lxqt.policykit-agent # start with lxqt-policykit-agent
+    lxqt.lxqt-policykit # start with lxqt-policykit-agent
     gnome.adwaita-icon-theme
     adwaita-qt
     gnome.gnome-screenshot
