@@ -117,5 +117,7 @@
     rawtherapee # photo processing software
     pureref2
     keepassxc # passwords
+    libsForQt5.kleopatra
+    dino
   ];
 }
