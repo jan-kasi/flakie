@@ -9,7 +9,6 @@
     imagemagick
     jq
     ffmpeg
-    chafa # teminal graphics
     mkvtoolnix # edit mkv video files
     appimage-run #run appimages
 
@@ -18,9 +17,6 @@
     cbonsai # fun bonsai
     krabby # fun pokemon
     pfetch
-
-    # nix-alien # run binaries
-    # nix-init # generate nix packages from URLs
 
     # programming #
     (lua.withPackages (ps: with ps; [ fennel luaposix ]))
@@ -47,11 +43,10 @@
     mullvad-vpn
     transmission-gtk
     yt-dlp
-    gnome-decoder # qr codes
     qrcp # send files over internet
 
     # tui/cli #
-    glow # markdown
+    # glow # markdown
     fff # file manager
     ikill # interactive pkill
     # nb # notes
@@ -102,8 +97,15 @@
     multimarkdown
     minder # mindmaps
 
+
     # apps
-    # flatpaks: steam, flatseal, bottles, unofficial homestuck collection, cartridges
+
+    # flatpaks:
+    # flatseal, warehouse, gamescope, protontricks, steamtinkerlaunch
+    # bottles, steam, cartridges, 
+    # unofficial homestuck collection,
+    # decoder, dissent, halftone
+
     blueberry # bluetooth
     uget # download manager
 
@@ -113,7 +115,6 @@
 
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
     gnome.baobab # storage usage
-    loupe # simple gnome image viewer
 
     prismlauncher # minecraft launcher
     rawtherapee # photo processing software

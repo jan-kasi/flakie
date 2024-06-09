@@ -65,7 +65,6 @@
     };
 
     # Display Manager
-    displayManager.defaultSession = "none+awesome";
     displayManager.sddm = {
       enable = false;
       # package = pkgs.libsForQt5.sddm;

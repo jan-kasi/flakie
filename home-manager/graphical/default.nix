@@ -61,7 +61,7 @@
 
   programs.pidgin = {
     # pidgin v2.x.y bad on wayland (gtk2) uses xwayland
-    enable = true;
+    enable = false;
     plugins = with pkgs; [ pidgin-otr pidgin-latex purple-matrix purple-discord purple-xmpp-http-upload ];
   };
 
