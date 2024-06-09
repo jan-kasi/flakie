@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   services.dunst = {
-    enable = true;
+    enable = false;
     iconTheme.package = pkgs.gnome.adwaita-icon-theme;
     iconTheme.name = "Adwaita";
     settings = {
