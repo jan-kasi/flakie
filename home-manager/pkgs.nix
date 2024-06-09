@@ -76,7 +76,6 @@
     feh
     lxqt.lxqt-policykit # start with lxqt-policykit-agent
     gnome.adwaita-icon-theme
-    adwaita-qt
     gnome.gnome-screenshot
     wl-clipboard
 
@@ -106,16 +105,20 @@
     # apps
     # flatpaks: steam, flatseal, bottles, unofficial homestuck collection, cartridges
     blueberry # bluetooth
+    uget # download manager
+
     anki # flashcards
     zotero # citation manager
     foliate # read ebooks
+
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
     gnome.baobab # storage usage
     loupe # simple gnome image viewer
-    uget # download manager
+
     prismlauncher # minecraft launcher
     rawtherapee # photo processing software
     pureref2
+
     keepassxc # passwords
     libsForQt5.kleopatra
     dino

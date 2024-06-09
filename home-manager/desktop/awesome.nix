@@ -7,7 +7,7 @@
     ];
   };
 
-  services.picom.enable = true;
+  services.picom.enable = false;
 
   home.file.".xprofile".text = ''
     #!/usr/bin/env dash

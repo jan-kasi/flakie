@@ -48,7 +48,8 @@
   ###############
   # FONTS/STYLE #
   ###############
-  qt.style = "adwaita";
+  qt.style = "gnome";
+  qt.platformTheme = "gnome";
 
   fonts = {
     fontDir.enable = true;

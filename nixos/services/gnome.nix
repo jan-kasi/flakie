@@ -15,5 +15,4 @@
     totem
     gnome-software
   ]);
-
 }

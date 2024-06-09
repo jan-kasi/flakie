@@ -53,6 +53,7 @@
 
       desktopManager.gnome.enable = true;
       displayManager.gdm.enable = true;
+      displayManager.gdm.wayland = true;
 
       windowManager.awesome = {
         enable = true;
