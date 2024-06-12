@@ -14,6 +14,7 @@
   programs = {
     nnn.enable = true;
     vim.enable = true;
+    bash.enable = true; # source and update .profile approriately
 
     tmux = {
       enable = false;

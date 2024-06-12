@@ -35,13 +35,11 @@
         export QT_SCALE_FACTOR=1
         export QT_QPA_PLATFORM=wayland
         export MOZ_ENABLE_WAYLAND=1
-        dbus-update-activation-environment --systemd --all
-      elif [ $XDG_SESSION_TYPE=xcb ]; then
-        export QT_QPA_PLATFORM=xcb
-        export MOZ_ENABLE_WAYLAND=0
+        export GDK_SCALE=1
+        export GDK_DPI_SCALE=1
         dbus-update-activation-environment --systemd --all
       elif [ $XDG_SESSION_TYPE=x11 ]; then
-        export QT_QPA_PLATFORM=x11
+        export QT_QPA_PLATFORM=xcb
         export MOZ_ENABLE_WAYLAND=0
         dbus-update-activation-environment --systemd --all
       fi

@@ -117,6 +117,8 @@
     gnome.baobab # storage usage
 
     prismlauncher # minecraft launcher
+    mindustry
+
     rawtherapee # photo processing software
     pureref2
 
