@@ -1,4 +1,10 @@
 { pkgs, ... }: {
+
+  home.packages = with pkgs; [
+    python311Packages.requests # fetchart plugin
+    python311Packages.pylast # lastgenre plugin
+  ];
+
   programs.beets = {
     enable = true;
     package = pkgs.beets-unstable;

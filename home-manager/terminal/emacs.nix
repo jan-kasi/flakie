@@ -11,19 +11,45 @@
   };
   home.packages = with pkgs; [
     # EMACS #
+    # org
     sqlite # org-roam
     graphviz # org-roam
-    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ])) # spellcheck
-    languagetool # grammar check
-    cmake # vterm
-    gnumake # vterm
-    gcc # vterm
-    gnuplot # gnuplot org
-    unoconv # doc-view
-    ghostscript # doc-view
+    gnuplot #
+    ditaa # diagrams
     zip # export odt
     unzip # export odt
-    ditaa # diagrams
+
+    unoconv # doc-view
+    ghostscript # doc-view
+
+    # spell
+    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ])) # spellcheck
+    languagetool # grammar check
+
+    # vterm
+    cmake
+    gnumake
+    gcc
+
+    # languages
+    nil
+    nixpkgs-fmt
+    nixfmt
     python311Packages.grip # preview markdown
+    marksman
+    haskell-language-server
+    lua-language-server
+    fennel-ls
+    shellcheck
+    shfmt
+    semgrep
+    fnlfmt
+    libxml2
+    stylelint
+    html-tidy
+
+    # everywhere
+    xorg.xwininfo
+    xdotool
   ];
 }

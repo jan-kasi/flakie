@@ -18,26 +18,14 @@
     krabby # fun pokemon
     pfetch
 
-    # programming #
+    # languages #
     (lua.withPackages (ps: with ps; [ fennel luaposix ]))
     ghc #haskell
+    cabal-install
     racket
     guile
     sbcl
     jdk17
-
-    # lsp #
-    nil
-    nixpkgs-fmt
-    nixfmt
-    shellcheck
-    shfmt
-    marksman
-    haskell-language-server
-    lua-language-server
-    semgrep
-    fennel-ls
-    fnlfmt
 
     # internet #
     mullvad-vpn
@@ -61,8 +49,6 @@
     mpd-notification
     playerctl
     cava
-    python311Packages.requests # fetchart plugin
-    python311Packages.pylast # lastgenre plugin
     songrec # recognise songs
     cider
 
@@ -96,7 +82,6 @@
     texliveFull
     multimarkdown
     minder # mindmaps
-
 
     # apps
 
