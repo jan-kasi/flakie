@@ -57,18 +57,20 @@
     enableGhostscriptFonts = true;
     packages = with pkgs; [
       # fonts #
-      jetbrains-mono
+      alegreya
+      alegreya-sans
+      cozette
+
+      libertinus
       noto-fonts
       noto-fonts-emoji
       noto-fonts-cjk
-      libertinus
-      cozette
       # icons
       symbola
       font-awesome
       feather-icon-font # custom
       # nerdfonts
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Iosevka" "IosevkaTerm" "Mononoki" ]; })
+      (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "Mononoki" ]; })
       meslo-lgs-nf
     ];
 
