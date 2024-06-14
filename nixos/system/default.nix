@@ -58,7 +58,6 @@
     packages = with pkgs; [
       # fonts #
       alegreya
-      alegreya-sans
       cozette
 
       libertinus
