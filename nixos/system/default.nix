@@ -19,7 +19,7 @@
     bluetooth.enable = true;
     uinput.enable = true;
 
-    opengl = {
+    graphics = {
       enable = true;
       extraPackages = with pkgs; [
         intel-media-driver # LIBVA_DRIVER_NAME=iHD
@@ -27,8 +27,6 @@
         libvdpau-va-gl
         mesa.drivers
       ];
-      driSupport = true;
-      driSupport32Bit = true;
     };
 
     # scanners
@@ -103,6 +101,13 @@
     DefaultLimitNOFILE=1048576
     DefaultTimeoutStopSec=10s
   '';
+
+  # Disble suspend
+  # systemd.sleep.extraConfig = ''
+  #  AllowSuspend=no
+  #  AllowHybridSleep=no
+  #  AllowSuspendThenHibernate=no
+  #'';
 
   # update path (flatpak stuff) 
   systemd.user.extraConfig = ''

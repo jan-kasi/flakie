@@ -4,16 +4,14 @@
     sushi.enable = true;
   };
 
+  services.xserver.displayManager.gdm.autoSuspend = false;
+
   # EXCLUDE
-  environment.gnome.excludePackages = (with pkgs; [
-    # for packages that are <pkgs.***>
+  environment.gnome.excludePackages = with pkgs; [
     gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    # for packages that are <pkgs.gnome.***>
     eog
     epiphany
-    gnome-music
     totem
-    gnome-software
-  ]);
+    gnome.gnome-software
+  ];
 }

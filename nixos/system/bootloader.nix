@@ -6,7 +6,7 @@
     # initrd.kernelModules = [  ];
 
     # use the latest kernel
-    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
 
 
     # potential reason and solution for freezes/crashes

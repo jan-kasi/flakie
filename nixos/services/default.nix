@@ -8,7 +8,7 @@
     ################
     # Just enabled #
     ################
-    tlp.enable = false; # can cause bluetooth issues sometimes
+    tlp.enable = false; # can cause bluetooth issues sometimes, conflicts with gnome power-profiles-daemon
     fstrim.enable = true;
     printing.enable = true; # Enable CUPS to print documents
     flatpak.enable = true;
@@ -28,7 +28,7 @@
 
     dbus.packages = [ pkgs.gcr ];
 
-    auto-cpufreq.enable = true;
+    auto-cpufreq.enable = false; #conflicts with gnome power-profiles-daemon
     auto-cpufreq.settings = {
       battery = {
         governor = "powersave";
@@ -65,6 +65,9 @@
     };
 
     # Display Manager
+    displayManager.defaultSession = "gnome";
+
+    # SDDM
     displayManager.sddm = {
       enable = false;
       # package = pkgs.libsForQt5.sddm;

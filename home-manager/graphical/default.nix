@@ -23,10 +23,10 @@
       font = {
         normal = { family = "CozetteVector"; style = "Regular"; };
       };
-      shell = {
-        program = "zellij";
-        args = [ "-l" "welcome" ];
-      };
+      # shell = {
+      #  program = "zellij";
+      #  args = [ "-l" "welcome" ];
+      # };
     };
   };
   programs.mpv = {

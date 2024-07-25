@@ -56,8 +56,8 @@
     waypaper # gui frontend for swww/feh
     feh
     lxqt.lxqt-policykit # start with lxqt-policykit-agent
-    gnome.adwaita-icon-theme
-    gnome.gnome-screenshot
+    adwaita-icon-theme
+    gnome-screenshot
     wl-clipboard
 
     # xserver wms#
@@ -89,7 +89,7 @@
     # flatseal, warehouse, gamescope, protontricks, steamtinkerlaunch
     # bottles, steam, cartridges, 
     # unofficial homestuck collection,
-    # decoder, dissent, halftone
+    # decoder, halftone
 
     blueberry # bluetooth
     uget # download manager
@@ -99,7 +99,7 @@
     foliate # read ebooks
 
     gnome.gnome-boxes # gui stuff for virtualisation (qemu)
-    gnome.baobab # storage usage
+    baobab # storage usage
 
     prismlauncher # minecraft launcher
     mindustry
@@ -107,7 +107,7 @@
     rawtherapee # photo processing software
     pureref2
 
-    keepassxc # passwords
+    keepassxc
     libsForQt5.kleopatra
     dino
   ];
