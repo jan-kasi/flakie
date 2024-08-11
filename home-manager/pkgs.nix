@@ -29,9 +29,10 @@
 
     # internet #
     mullvad-vpn
-    transmission-gtk
+    transmission_4-gtk
     yt-dlp
     qrcp # send files over internet
+    hexchat #irc
 
     # tui/cli #
     # glow # markdown
@@ -39,7 +40,7 @@
     ikill # interactive pkill
     # nb # notes
     # catgirl # RSS
-    mangal # download manga
+    # mangal # download manga
     # gnugo # gnu Go AI
     # qrtool # qrtool encode -t terminal "<text data here>"
 
@@ -82,12 +83,14 @@
     texliveFull
     multimarkdown
     minder # mindmaps
+    komikku
+    calibre
 
     # apps
 
     # flatpaks:
-    # flatseal, warehouse, gamescope, protontricks, steamtinkerlaunch
-    # bottles, steam, cartridges, 
+    # flatseal, warehouse, gamescope, protontricks, steamtinkerlaunch,
+    # bottles, steam, cartridges, koreader, 
     # unofficial homestuck collection,
     # decoder, halftone
 
@@ -110,5 +113,6 @@
     keepassxc
     libsForQt5.kleopatra
     dino
+
   ];
 }

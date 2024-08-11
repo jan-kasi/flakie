@@ -31,8 +31,8 @@
 
     zellij = {
       enable = true;
-      enableFishIntegration = true;
-      enableBashIntegration = true;
+      enableFishIntegration = false;
+      enableBashIntegration = false;
     };
   };
 }

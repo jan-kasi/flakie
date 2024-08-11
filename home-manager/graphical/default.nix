@@ -21,6 +21,7 @@
     enable = true;
     settings = {
       font = {
+        size = 16;
         normal = { family = "CozetteVector"; style = "Regular"; };
       };
       # shell = {

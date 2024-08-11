@@ -32,7 +32,7 @@
         {
           name = "nix";
           # use nixpkgs-fmt when :format
-          auto-format = true;
+          auto-format = false;
           formatter = { command = "nixpkgs-fmt"; };
         }
         {
