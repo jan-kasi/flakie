@@ -30,6 +30,8 @@
       touchpad.naturalScrolling = true;
     };
 
+    cloudflare-warp.enable = true;
+
     dbus.packages = [ pkgs.gcr ];
 
     auto-cpufreq.enable = false; #conflicts with gnome power-profiles-daemon

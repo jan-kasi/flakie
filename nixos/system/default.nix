@@ -89,7 +89,8 @@
   networking = {
     hostName = "snow";
     networkmanager.enable = true; # via Network Manager
-    networkmanager.insertNameservers = [ "1.1.1.1" ];
+    # networkmanager.insertNameservers = [ "1.1.1.1" ];
+
     firewall.enable = false; # Disable the firewall altogether (lazy option instead of only opening specific ports)
   };
 

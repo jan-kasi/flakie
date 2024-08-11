@@ -33,6 +33,7 @@
     yt-dlp
     qrcp # send files over internet
     hexchat #irc
+    irssi
 
     # tui/cli #
     # glow # markdown
