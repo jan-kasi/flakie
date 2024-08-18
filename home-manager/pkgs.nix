@@ -42,7 +42,7 @@
     ikill # interactive pkill
     # nb # notes
     # catgirl # RSS
-    # mangal # download manga
+    mangal # download manga
     # gnugo # gnu Go AI
     # qrtool # qrtool encode -t terminal "<text data here>"
 
