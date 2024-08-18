@@ -34,6 +34,7 @@
     qrcp # send files over internet
     hexchat #irc
     irssi
+    # nyxt # not easy useable atm
 
     # tui/cli #
     # glow # markdown
@@ -91,9 +92,9 @@
 
     # flatpaks:
     # flatseal, warehouse, gamescope, protontricks, steamtinkerlaunch,
-    # bottles, steam, cartridges, koreader, 
+    # bottles, steam, cartridges, copyq, armcord 
     # unofficial homestuck collection,
-    # decoder, halftone
+    # decoder, halftone, calligraphy,
 
     blueberry # bluetooth
     uget # download manager
@@ -112,6 +113,7 @@
     pureref2
 
     keepassxc
+    gnome-secrets
     libsForQt5.kleopatra
     dino
 
