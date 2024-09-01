@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   programs.ncmpcpp = {
-    # package = pkgs.ncmpcpp.override { visualizerSupport = true; };
-    enable = true;
-    mpdMusicDir = "/home/jankasi/Music";
+    package = pkgs.ncmpcpp.override { visualizerSupport = true; }; # this makes it build from source
+    enable = false;
+    # mpdMusicDir = "/home/jankasi/Music"; # On Linux platforms the services.mpd.musicDirectory is used as the default if services.mpd.enable is true
 
     settings = {
       visualizer_data_source = "/tmp/mpd.fifo";
@@ -33,8 +33,8 @@
       current_item_suffix = "$/r$(end)";
       current_item_inactive_column_prefix = "$(green)$r";
       current_item_inactive_column_suffix = "$/r$(end)";
-      now_playing_prefix = "$b $(blue)";
-      now_playing_suffix = "  $/b$(end)";
+      now_playing_prefix = "$b$(blue)";
+      now_playing_suffix = "$/b$(end)";
       media_library_primary_tag = "album_artist";
       media_library_albums_split_by_date = "no";
       cyclic_scrolling = "no";
@@ -51,10 +51,9 @@
       { key = "N"; command = "previous_found_item"; }
       { key = "J"; command = [ "select_item" "scroll_down" ]; }
       { key = "K"; command = [ "select_item" "scroll_up" ]; }
-      { key = "ctrl-b"; command = "page_up"; }
-      { key = "ctrl-u"; command = "page_up"; }
-      { key = "ctrl-f"; command = "page_down"; }
-      { key = "ctrl-d"; command = "page_down"; }
+      { key = "ctrl-k"; command = "page_up"; }
+      { key = "ctrl-j"; command = "page_down"; }
+      { key = "ctrl-l"; command = "show_lyrics"; }
     ];
   };
 }

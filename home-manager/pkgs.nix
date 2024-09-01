@@ -11,6 +11,9 @@
     ffmpeg
     mkvtoolnix # edit mkv video files
     appimage-run #run appimages
+    spek # analyse audio spectogram
+    flac # Free Lossless Audio Codec tools
+    lrcget # official client for lrclib database
 
     acpi # battery stuff
 
@@ -32,9 +35,11 @@
     transmission_4-gtk
     yt-dlp
     qrcp # send files over internet
-    hexchat #irc
-    irssi
-    # nyxt # not easy useable atm
+    hexchat # irc gui
+    irssi # irc terminal
+    # (nyxt.override (x: { sbclPackages = sbcl_2_4_6.pkgs; })) # https://github.com/NixOS/nixpkgs/issues/332862
+    nicotine-plus # SoulSeek client
+
 
     # tui/cli #
     # glow # markdown
@@ -48,12 +53,16 @@
 
     # music #
     # spotify-player
+    amberol
+    cider # apple music
+    cantata # gui for mpd
     mpc-cli
+    pms # practical music search for mpd
     mpd-notification
     playerctl
     cava
     songrec # recognise songs
-    cider
+    eartag
 
     # de #
     waypaper # gui frontend for swww/feh
@@ -92,12 +101,13 @@
 
     # flatpaks:
     # flatseal, warehouse, gamescope, protontricks, steamtinkerlaunch,
-    # bottles, steam, cartridges, copyq, armcord 
+    # bottles, steam, cartridges, armcord 
     # unofficial homestuck collection,
     # decoder, halftone, calligraphy,
 
     blueberry # bluetooth
     uget # download manager
+    copyq # clipboard manager
 
     anki # flashcards
     zotero # citation manager

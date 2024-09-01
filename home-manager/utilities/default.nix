@@ -5,6 +5,7 @@
     ./bat.nix
     ./gpg.nix
     ./autorandr.nix
+    ./listenbrainz-mpd.nix
   ];
 
   programs.git = {

@@ -13,5 +13,6 @@
     epiphany
     totem
     gnome.gnome-software
+    gnome.gnome-music
   ];
 }

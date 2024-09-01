@@ -95,6 +95,7 @@
       enable = true;
       openFirewall = true;
       settings = {
+        wide_links = "yes"; # allow symlinks that point outside media_dir
         log_level = "error";
         inotify = "yes";
         friendly_name = "minidlna";
