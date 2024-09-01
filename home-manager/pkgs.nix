@@ -113,14 +113,15 @@
     zotero # citation manager
     foliate # read ebooks
 
-    gnome.gnome-boxes # gui stuff for virtualisation (qemu)
+    gnome-boxes # gui stuff for virtualisation (qemu)
     baobab # storage usage
 
     prismlauncher # minecraft launcher
     mindustry
 
     rawtherapee # photo processing software
-    pureref2
+    gimp 
+    libresprite
 
     keepassxc
     gnome-secrets
