@@ -12,7 +12,7 @@
     eog
     epiphany
     totem
-    gnome.gnome-software
-    gnome.gnome-music
+    gnome-software
+    gnome-music
   ];
 }

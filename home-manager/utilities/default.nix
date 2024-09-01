@@ -5,7 +5,6 @@
     ./bat.nix
     ./gpg.nix
     ./autorandr.nix
-    ./listenbrainz-mpd.nix
   ];
 
   programs.git = {
@@ -35,4 +34,6 @@
   };
 
   programs.thefuck.enable = true;
+
+  services.listenbrainz-mpd.enable = true;
 }
