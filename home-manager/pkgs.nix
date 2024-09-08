@@ -96,6 +96,7 @@
     minder # mindmaps
     komikku
     calibre
+    anytype
 
     # apps
 
@@ -103,7 +104,7 @@
     # flatseal, warehouse, gamescope, protontricks, steamtinkerlaunch,
     # bottles, steam, cartridges, armcord 
     # unofficial homestuck collection,
-    # decoder, halftone, calligraphy,
+    # decoder, halftone, calligraphy, newsflash
 
     blueberry # bluetooth
     uget # download manager
@@ -127,6 +128,5 @@
     gnome-secrets
     libsForQt5.kleopatra
     dino
-
   ];
 }

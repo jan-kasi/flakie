@@ -6,7 +6,6 @@
   };
   services.emacs = {
     enable = true;
-    socketActivation.enable = true;
     defaultEditor = true;
   };
   home.packages = with pkgs; [

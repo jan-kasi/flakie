@@ -7,6 +7,8 @@
     python311Packages.requests # fetchart plugin
     # python311Packages.pylast # lastgenre plugin
     python311Packages.mpd2 # mpdstats plugin
+    lame
+    ffmpeg
   ];
 
   ###############
@@ -36,12 +38,10 @@
       ###########
       # General #
       ###########
-      directory = "/home/jankasi/Music";
+      directory = "/home/jankasi/Music/02 Archival";
       library = "/home/jankasi/Music/musiclibrary.db";
 
-      # Prevent non ascii characters in paths, but preserve the default tags
-      # Setting languages = "en" is more accurate for the names but changes the tags,
-      # which isn't good.
+      # Prevent non ascii characters in paths
       asciify_paths = true;
 
       import = {
@@ -71,7 +71,7 @@
         # if multiple matches, goes in order in config file.
         # Nix generates the following queries in alphabetical order
 
-        default = "%ifdef{custombucket,$\{custombucket}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/Albums/$album%aunique{}/$track $title,01_Albums/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/$album%aunique{}/$track $title}";
+        default = "%ifdef{custombucket,$\{custombucket}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/Albums/$album%aunique{}/$track $title,Albums/%bucket{%ifdef{alt_albumartist,$alt_albumartist,$albumartist}}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/$album%aunique{}/$track $title}";
 
         ## Explanation of default sort:
         # if `custombucket` field is defined,
@@ -79,25 +79,31 @@
           # albumartist/alt_albumartist, then album folder.
         # otherwise, if $alt_albumartist field is defined,
           # use this instead of $albumartist,
-        # then standard default structure:
-        ###### NOTE: custombucket is returned exactly, so define as "03_RARE" for the folder name, for example. 
+        # then standard default structure, sorted into buckets by artist name:
+        ###### NOTE: custombucket is returned exactly, so define as "RARE" for the folder name, for example. 
 
-        singleton = "%ifdef{custombucket,$\{custombucket}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/Singles/$title%sunique{},02_Non-Album/$albumartist/$title%sunique{}}";
+        singleton = "%ifdef{custombucket,$\{custombucket}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/Singles/$title%sunique{},Non-Album/%bucket{%ifdef{alt_albumartist, $alt_albumartist,$albumartist}}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/$title%sunique{}}";
 
-        # if custombucket is defined, sort into custom bucket, then albumartist/alt_albumartist, then singles, then track.
+        # if custombucket is defined, sort into custom bucket, then into alphabet bucket sorted albumartist/alt_albumartist, then singles, then track.
 
-        comp = "04_Compilations/$album%aunique{}/$track $title";
+        comp = "Compilations/$album%aunique{}/$track $title";
       };
 
       ###########
       # Plugins #
       ###########
 
-      plugins = "lyrics duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdstats mpdupdate fish";
+      plugins = "lyrics duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdstats mpdupdate convert bucket fish";
+
+      playlist = {
+        auto = true; # update playlists when beets moves/removes files
+        relative_to = "~/Music/02 Archival";
+        playlist_dir = "~/Music/00 Playlists";
+      };
 
       lyrics = {
         fallback = "";
-        auto = true;
+        auto = false;
         sources = "lrclib";
         synced = true;
       };
@@ -110,6 +116,27 @@
 
       embedart = {
         maxwidth = 500;
+      };
+
+      convert = {
+        dest = "~/Music/01 Transparent Lossy";        
+
+        never_convert_lossy_files = true;
+        # lossy files aren't transcoded
+        # files that don't need to be transcoded will be copied to destination
+
+        id3v23 = true; # Better compatibility, use id3 v 2.3 instead of 2.4
+
+        command = "/home/jankasi/.config/beets/gaplessmp3.sh \"$source\" \"$dest\"";
+
+        # command = "ffmpeg -i \"$source\" -f wav - | lame -V 3 --noreplaygain - \"$dest\"";
+
+        extension = "mp3";
+
+      };
+
+      bucket = {
+        bucket_alpha = ["0-9" "A-F" "G-M" "N-S" "T-Z"];
       };
     };
   };
