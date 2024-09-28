@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     # utilities #
     fd
@@ -11,9 +11,6 @@
     ffmpeg
     mkvtoolnix # edit mkv video files
     appimage-run #run appimages
-    spek # analyse audio spectogram
-    flac # Free Lossless Audio Codec tools
-    lrcget # official client for lrclib database
 
     acpi # battery stuff
 
@@ -32,14 +29,18 @@
 
     # internet #
     mullvad-vpn
-    transmission_4-gtk
-    yt-dlp
-    qrcp # send files over internet
     hexchat # irc gui
     irssi # irc terminal
     # (nyxt.override (x: { sbclPackages = sbcl_2_4_6.pkgs; })) # https://github.com/NixOS/nixpkgs/issues/332862
-    nicotine-plus # SoulSeek client
 
+    # downloading
+    transmission_4-gtk
+    nicotine-plus # SoulSeek client
+    yt-dlp
+    qrcp # send files over internet
+    lux # fast and simple video download library and CLI tool written in go
+    inputs.lobster.packages.x86_64-linux.lobster
+    mangal # download manga
 
     # tui/cli #
     # glow # markdown
@@ -47,7 +48,6 @@
     ikill # interactive pkill
     # nb # notes
     # catgirl # RSS
-    mangal # download manga
     # gnugo # gnu Go AI
     # qrtool # qrtool encode -t terminal "<text data here>"
 
@@ -63,6 +63,9 @@
     cava
     songrec # recognise songs
     eartag
+    spek # analyse audio spectogram
+    flac # Free Lossless Audio Codec tools
+    lrcget # official client for lrclib database
 
     # de #
     waypaper # gui frontend for swww/feh
@@ -94,7 +97,6 @@
     texliveFull
     multimarkdown
     minder # mindmaps
-    komikku
     calibre
     anytype
 
@@ -106,9 +108,11 @@
     # unofficial homestuck collection,
     # decoder, halftone, calligraphy, newsflash
 
+    komikku
+    animdl
+
     blueberry # bluetooth
     uget # download manager
-    copyq # clipboard manager
 
     anki # flashcards
     zotero # citation manager
@@ -119,6 +123,7 @@
 
     prismlauncher # minecraft launcher
     mindustry
+    dosbox-x
 
     rawtherapee # photo processing software
     gimp 

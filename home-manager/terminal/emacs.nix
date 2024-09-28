@@ -7,6 +7,7 @@
   services.emacs = {
     enable = true;
     defaultEditor = true;
+    startWithUserSession = true;
   };
   home.packages = with pkgs; [
     # EMACS #

@@ -38,7 +38,7 @@
       ###########
       # General #
       ###########
-      directory = "/home/jankasi/Music/02 Archival";
+      directory = "/home/jankasi/Music/01 Transparent Lossy";
       library = "/home/jankasi/Music/musiclibrary.db";
 
       # Prevent non ascii characters in paths
@@ -71,7 +71,7 @@
         # if multiple matches, goes in order in config file.
         # Nix generates the following queries in alphabetical order
 
-        default = "%ifdef{custombucket,$\{custombucket}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/Albums/$album%aunique{}/$track $title,Albums/%bucket{%ifdef{alt_albumartist,$alt_albumartist,$albumartist}}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/$album%aunique{}/$track $title}";
+        default = "%ifdef{custombucket,$\{custombucket}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/Albums/$album%aunique{}/$track $title,Albums/%bucket{%asciify{%ifdef{alt_albumartist,$alt_albumartist,$albumartist}}}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/$album%aunique{}/$track $title}";
 
         ## Explanation of default sort:
         # if `custombucket` field is defined,
@@ -82,7 +82,7 @@
         # then standard default structure, sorted into buckets by artist name:
         ###### NOTE: custombucket is returned exactly, so define as "RARE" for the folder name, for example. 
 
-        singleton = "%ifdef{custombucket,$\{custombucket}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/Singles/$title%sunique{},Non-Album/%bucket{%ifdef{alt_albumartist, $alt_albumartist,$albumartist}}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/$title%sunique{}}";
+        singleton = "%ifdef{custombucket,$\{custombucket}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/Singles/$title%sunique{},Non-Album/%bucket{%asciify{%ifdef{alt_albumartist, $alt_albumartist,$albumartist}}}/%ifdef{alt_albumartist,$alt_albumartist,$albumartist}/$title%sunique{}}";
 
         # if custombucket is defined, sort into custom bucket, then into alphabet bucket sorted albumartist/alt_albumartist, then singles, then track.
 
@@ -93,20 +93,20 @@
       # Plugins #
       ###########
 
-      plugins = "lyrics duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdstats mpdupdate convert bucket fish";
+      plugins = "duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdstats mpdupdate convert bucket fish";
 
       playlist = {
         auto = true; # update playlists when beets moves/removes files
-        relative_to = "~/Music/02 Archival";
-        playlist_dir = "~/Music/00 Playlists";
+        relative_to = "~/Music/01 Transparent Lossy";
+        playlist_dir = "~/Music/00 Playlists/beets";
       };
 
-      lyrics = {
-        fallback = "";
-        auto = false;
-        sources = "lrclib";
-        synced = true;
-      };
+      # Remember to add lyrics to plugins if using this
+      # lyrics = {
+      #   fallback = "";
+      #   auto = false;
+      #   sources = "lrclib";
+      # };
 
       fetchart = {
         cover_format = "jpeg";
@@ -119,7 +119,7 @@
       };
 
       convert = {
-        dest = "~/Music/01 Transparent Lossy";        
+        dest = "~/Music/Converted";        
 
         never_convert_lossy_files = true;
         # lossy files aren't transcoded
@@ -129,7 +129,7 @@
 
         command = "/home/jankasi/.config/beets/gaplessmp3.sh \"$source\" \"$dest\"";
 
-        # command = "ffmpeg -i \"$source\" -f wav - | lame -V 3 --noreplaygain - \"$dest\"";
+        # command = "ffmpeg -i \"$source\" -f wav - | lame -V 2 --noreplaygain - \"$dest\"";
 
         extension = "mp3";
 

@@ -2,7 +2,7 @@
   services.mpd = {
     enable = true;
     musicDirectory = "/home/jankasi/Music/02 Archival/";
-    playlistDirectory = "/home/jankasi/Music/00 Playlists/";
+    playlistDirectory = "/home/jankasi/Music/00 Playlists/mpd/";
     network.startWhenNeeded = true;
     extraConfig = ''
       audio_output {
