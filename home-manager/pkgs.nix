@@ -26,7 +26,6 @@
     guile
     sbcl
     jdk17
-    nodejs
 
     # internet #
     mullvad-vpn
