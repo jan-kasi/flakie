@@ -21,8 +21,6 @@
 
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
-    lobster.url = "github:justchokingaround/lobster";
-
     # hyprland.url = "github:hyprwm/Hyprland";
     # don't override hyprland nixpkgs follows, this would make hyprland cachix useless
 

@@ -93,7 +93,7 @@
       # Plugins #
       ###########
 
-      plugins = "duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdstats mpdupdate convert bucket fish";
+      plugins = "duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdstats mpdupdate convert bucket lyrics fish";
 
       playlist = {
         auto = true; # update playlists when beets moves/removes files
@@ -102,11 +102,11 @@
       };
 
       # Remember to add lyrics to plugins if using this
-      # lyrics = {
-      #   fallback = "";
-      #   auto = false;
-      #   sources = "lrclib";
-      # };
+      lyrics = {
+        fallback = "";
+        auto = false;
+        sources = "lrclib";
+      };
 
       fetchart = {
         cover_format = "jpeg";
@@ -119,7 +119,9 @@
       };
 
       convert = {
-        dest = "~/Music/Converted";        
+        auto = true;
+        copy_album_art = true;
+        dest = "~/Music/convertplugin";        
 
         never_convert_lossy_files = true;
         # lossy files aren't transcoded

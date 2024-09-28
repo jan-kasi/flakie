@@ -26,6 +26,7 @@
     guile
     sbcl
     jdk17
+    nodejs
 
     # internet #
     mullvad-vpn
@@ -39,7 +40,6 @@
     yt-dlp
     qrcp # send files over internet
     lux # fast and simple video download library and CLI tool written in go
-    inputs.lobster.packages.x86_64-linux.lobster
     mangal # download manga
 
     # tui/cli #
