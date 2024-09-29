@@ -1,7 +1,7 @@
 {
   services.mpd = {
     enable = true;
-    musicDirectory = "/home/jankasi/Music/02 Archival/";
+    musicDirectory = "/home/jankasi/Music/01 Transparent Lossy/";
     playlistDirectory = "/home/jankasi/Music/00 Playlists/mpd/";
     network.startWhenNeeded = true;
     extraConfig = ''
