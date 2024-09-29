@@ -3,7 +3,6 @@
   imports = [
     ./fish.nix
     ./helix.nix
-    ./emacs.nix
 
     ./ncmpcpp.nix
     ./newsboat.nix

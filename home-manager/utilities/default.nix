@@ -1,5 +1,6 @@
 {
   imports = [
+    ./emacs.nix
     ./mpd.nix
     ./beets.nix
     ./bat.nix
