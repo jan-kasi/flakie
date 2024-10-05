@@ -93,7 +93,7 @@
       # Plugins #
       ###########
 
-      plugins = "duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdstats mpdupdate convert bucket lyrics fish";
+      plugins = "duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdstats mpdupdate convert bucket lyrics fromfilename fish";
 
       playlist = {
         auto = true; # update playlists when beets moves/removes files
