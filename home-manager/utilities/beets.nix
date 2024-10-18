@@ -43,6 +43,7 @@
 
       # Prevent non ascii characters in paths
       asciify_paths = true;
+      id3v23 = true;
 
       import = {
         move = true; # you can use `beet import -m|-c /music/to/import` to move/copy too
