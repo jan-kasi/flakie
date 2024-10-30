@@ -61,7 +61,7 @@
       libertinus
       noto-fonts
       noto-fonts-emoji
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       # icons
       symbola
       font-awesome

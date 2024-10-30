@@ -7,7 +7,8 @@
   services.emacs = {
     enable = true;
     defaultEditor = true;
-    startWithUserSession = "graphical";
+    # startWithUserSession = "graphical";
+    socketActivation.enable = true;
   };
   home.packages = with pkgs; [
     # EMACS #
@@ -37,7 +38,7 @@
     nixfmt
     python311Packages.grip # preview markdown
     marksman
-    haskell-language-server
+    # haskell-language-server
     lua-language-server
     fennel-ls
     shellcheck

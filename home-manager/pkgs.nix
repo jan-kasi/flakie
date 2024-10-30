@@ -20,10 +20,10 @@
 
     # languages #
     (lua.withPackages (ps: with ps; [ fennel luaposix ]))
-    ghc #haskell
-    cabal-install
-    racket
-    guile
+    # ghc #haskell
+    # cabal-install
+    # racket
+    # guile
     sbcl
     jdk17
 
@@ -35,7 +35,7 @@
 
     # downloading
     transmission_4-gtk
-    nicotine-plus # SoulSeek client
+    stable.nicotine-plus # SoulSeek client
     yt-dlp
     qrcp # send files over internet
     lux # fast and simple video download library and CLI tool written in go
@@ -53,18 +53,15 @@
     # music #
     # spotify-player
     amberol
-    cider # apple music
-    cantata # gui for mpd
+    stable.cantata # gui for mpd
     mpc-cli
     pms # practical music search for mpd
     mpd-notification
     playerctl
-    cava
     songrec # recognise songs
     eartag
     spek # analyse audio spectogram
     flac # Free Lossless Audio Codec tools
-    lrcget # official client for lrclib database
 
     # de #
     waypaper # gui frontend for swww/feh
@@ -72,7 +69,6 @@
     lxqt.lxqt-policykit # start with lxqt-policykit-agent
     adwaita-icon-theme
     gnome-screenshot
-    wl-clipboard
 
     # xserver wms#
     xcalib
@@ -126,11 +122,10 @@
 
     rawtherapee # photo processing software
     gimp 
-    libresprite
+    # libresprite
 
     keepassxc
     gnome-secrets
     libsForQt5.kleopatra
-    dino
   ];
 }
