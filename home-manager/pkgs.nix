@@ -14,8 +14,8 @@
 
     acpi # battery stuff
 
-    cbonsai # fun bonsai
-    krabby # fun pokemon
+    # cbonsai # fun bonsai
+    # krabby # fun pokemon
     pfetch
 
     # languages #
@@ -37,8 +37,8 @@
     transmission_4-gtk
     stable.nicotine-plus # SoulSeek client
     yt-dlp
-    qrcp # send files over internet
     lux # fast and simple video download library and CLI tool written in go
+    qrcp # send files over internet
     mangal # download manga
 
     # tui/cli #
@@ -93,7 +93,7 @@
     multimarkdown
     minder # mindmaps
     calibre
-    anytype
+    # anytype
 
     # apps
 
@@ -118,14 +118,12 @@
 
     prismlauncher # minecraft launcher
     mindustry
-    dosbox-x
 
     rawtherapee # photo processing software
     gimp 
     # libresprite
 
     keepassxc
-    gnome-secrets
     libsForQt5.kleopatra
   ];
 }

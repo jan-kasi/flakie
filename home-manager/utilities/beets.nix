@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     python311Packages.requests # fetchart plugin
     # python311Packages.pylast # lastgenre plugin
-    python311Packages.mpd2 # mpdstats plugin
+    # python311Packages.mpd2 # mpdstats plugin
     lame
     ffmpeg
   ];
@@ -15,15 +15,15 @@
   ## mpd stats ## 
   ###############
   # make a systemd user service that starts `beets mpdstats` 
-  systemd.user.services."beets-mpdstats" = {
-    Unit = {
-      Description = "Beets MPDStats daemon";
-      After = [ "mpd.service"] ;
-      Requires = "mpd.service";
-      };
-    Service.ExecStart = "${config.programs.beets.package}/bin/beet mpdstats";
-    Install.WantedBy = [ "default.target" ];
-  };
+  # systemd.user.services."beets-mpdstats" = {
+  #   Unit = {
+  #     Description = "Beets MPDStats daemon";
+  #     After = [ "mpd.service"] ;
+  #     Requires = "mpd.service";
+  #    };
+  #   Service.ExecStart = "${config.programs.beets.package}/bin/beet mpdstats";
+  #   Install.WantedBy = [ "default.target" ];
+  # };
 
   ##########################
   ## Beets configurataion ##
@@ -94,7 +94,7 @@
       # Plugins #
       ###########
 
-      plugins = "duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdstats mpdupdate convert bucket lyrics fromfilename fish";
+      plugins = "duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdupdate convert bucket lyrics fromfilename fish";
 
       playlist = {
         auto = true; # update playlists when beets moves/removes files
