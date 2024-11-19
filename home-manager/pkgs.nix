@@ -92,7 +92,7 @@
     texliveFull
     multimarkdown
     minder # mindmaps
-    calibre
+    stable.calibre
     # anytype
 
     # apps
