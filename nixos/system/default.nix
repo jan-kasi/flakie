@@ -67,8 +67,10 @@
       font-awesome
       feather-icon-font # custom
       # nerdfonts
-      (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "Mononoki" ]; })
-      meslo-lgs-nf
+      nerdfonts.fira-code
+      nerdfonts.iosevka
+      nerdfonts.mononoki
+      nerdfonts.meslo-lg
     ];
 
     fontconfig.enable = true;
