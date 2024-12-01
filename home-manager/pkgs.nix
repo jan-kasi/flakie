@@ -109,6 +109,7 @@
     blueberry # bluetooth
     uget # download manager
 
+    vlc
     anki # flashcards
     zotero # citation manager
     foliate # read ebooks
@@ -123,7 +124,7 @@
     gimp 
     # libresprite
 
-    keepassxc
     libsForQt5.kleopatra
+    keepassxc
   ];
 }
