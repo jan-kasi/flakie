@@ -67,10 +67,10 @@
       font-awesome
       feather-icon-font # custom
       # nerdfonts
-      nerdfonts.fira-code
-      nerdfonts.iosevka
-      nerdfonts.mononoki
-      nerdfonts.meslo-lg
+      nerd-fonts.fira-code
+      nerd-fonts.iosevka
+      nerd-fonts.mononoki
+      nerd-fonts.meslo-lg
     ];
 
     fontconfig.enable = true;
