@@ -19,6 +19,7 @@
     ditaa # diagrams
     zip # export odt
     unzip # export odt
+    wl-clipboard # org-download-clipboard
 
     unoconv # doc-view
     ghostscript # doc-view
