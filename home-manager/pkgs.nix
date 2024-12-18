@@ -39,7 +39,6 @@
     yt-dlp
     lux # fast and simple video download library and CLI tool written in go
     qrcp # send files over internet
-    mangal # download manga
 
     # tui/cli #
     # glow # markdown
@@ -104,6 +103,7 @@
     # decoder, halftone, calligraphy, newsflash
 
     komikku
+    mangal # download manga
     animdl
 
     blueberry # bluetooth
@@ -121,7 +121,8 @@
     mindustry
 
     rawtherapee # photo processing software
-    gimp 
+    # gimp 
+    # stable.aseprite
     # libresprite
 
     libsForQt5.kleopatra

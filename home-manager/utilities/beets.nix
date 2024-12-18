@@ -94,7 +94,7 @@
       # Plugins #
       ###########
 
-      plugins = "duplicates missing edit info badfiles fetchart embedart fuzzy random playlist smartplaylist mbsync mpdupdate convert bucket lyrics fromfilename fish";
+      plugins = "duplicates missing edit info fetchart embedart fuzzy random playlist smartplaylist mbsync mpdupdate convert bucket lyrics fromfilename discogs lastgenre";
 
       playlist = {
         auto = true; # update playlists when beets moves/removes files
@@ -141,6 +141,110 @@
       bucket = {
         bucket_alpha = ["0-9" "A-F" "G-M" "N-S" "T-Z"];
       };
+
+      lastgenre = {
+        fallback = "''";
+        prefer_specific = true;
+        canonical = true;
+        whitelist = "~/.config/beets/genrelist.yaml";
+      };
     };
   };
+  home.file.".config/beets/genrelist.yaml".text = ''
+    african
+    asian
+    east asian
+    c-pop
+    j-pop
+    k-pop
+    south and southeast asian
+    avant-garde
+    experimental music
+    lo-fi
+    musique concrète
+    blues
+    blues rock
+    contemporary r&b
+    country blues
+    gospel blues
+    jazz blues
+    piano blues
+    soul blues
+    caribbean and latin american
+    reggaeton
+    salsa
+    bachata
+    bolero
+    cumbia
+    mariachi
+    ranchera
+    tejano
+    classical
+    baroque
+    contemporary classical
+    opera
+    mass
+    gregorian chant
+    country
+    alternative country
+    easy listening
+    background music
+    electronic
+    ambient
+    breakbeat
+    acid breaks
+    breakbeat hardcore
+    video game music
+    disco
+    acid jazz
+    trip hop
+    drum and bass
+    electronic rock
+    synthpop
+    electronic dance music
+    glitch
+    hardcore
+    house
+    industrial
+    noise
+    techno
+    folk
+    anti-folk
+    freak folk
+    psychedelic folk
+    hip hop
+    alternative hip hop
+    east coast hip hop
+    gansta rap
+    midwest hip hop
+    southern hip hop
+    underground hip hop
+    west coast hip hop
+    jazz
+    bebop
+    pop
+    bubblegum pop
+    mexican pop
+    psychedelic pop
+    rhythm and blues
+    soul
+    rock
+    glam rock
+    hard rock
+    heavy metal
+    stoner rock
+    math rock
+    pop rock
+    post-punk
+    psychedelic rock
+    acid rock
+    punk rock
+    pop punk
+    psychobilly
+    riot grrrl
+    rock and roll
+    reggae
+    dancehaall
+    other   
+  '';
 }
