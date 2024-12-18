@@ -5,7 +5,7 @@
   ###########################
   home.packages = with pkgs; [
     python311Packages.requests # fetchart plugin
-    # python311Packages.pylast # lastgenre plugin
+    python311Packages.pylast # lastgenre plugin
     # python311Packages.mpd2 # mpdstats plugin
     lame
     ffmpeg
@@ -144,7 +144,6 @@
 
       lastgenre = {
         fallback = "''";
-        prefer_specific = true;
         canonical = true;
         whitelist = "~/.config/beets/genrelist.yaml";
       };
@@ -232,10 +231,12 @@
     glam rock
     hard rock
     heavy metal
+    indie rock
     stoner rock
     math rock
     pop rock
     post-punk
+    gothic rock
     psychedelic rock
     acid rock
     punk rock
