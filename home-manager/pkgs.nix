@@ -52,10 +52,10 @@
     # music #
     # spotify-player
     amberol
-    stable.cantata # gui for mpd
-    mpc-cli
-    pms # practical music search for mpd
-    mpd-notification
+    # stable.cantata # gui for mpd
+    # mpc-cli
+    # pms # practical music search for mpd
+    # mpd-notification
     playerctl
     songrec # recognise songs
     eartag

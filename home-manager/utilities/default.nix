@@ -36,5 +36,5 @@
 
   programs.thefuck.enable = true;
 
-  services.listenbrainz-mpd.enable = true;
+  services.listenbrainz-mpd.enable = false;
 }

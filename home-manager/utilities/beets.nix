@@ -38,8 +38,8 @@
       ###########
       # General #
       ###########
-      directory = "/home/jankasi/Music/01 Transparent Lossy";
-      library = "/home/jankasi/Music/musiclibrary.db";
+      directory = "/run/media/jankasi/780C-16F4/Music";
+      library = "/home/jankasi/Music/beetsmusiclibrary.db";
 
       # Prevent non ascii characters in paths
       asciify_paths = true;
@@ -94,12 +94,13 @@
       # Plugins #
       ###########
 
-      plugins = "duplicates missing edit info fetchart embedart fuzzy random playlist smartplaylist mbsync mpdupdate convert bucket lyrics fromfilename discogs lastgenre";
+      plugins = "duplicates missing edit info fetchart embedart fuzzy random playlist smartplaylist mbsync convert bucket lyrics fromfilename discogs lastgenre";
+      # mpdupdate plugin to update mpd database too
 
       playlist = {
         auto = true; # update playlists when beets moves/removes files
-        relative_to = "~/Music/01 Transparent Lossy";
-        playlist_dir = "~/Music/00 Playlists/beets";
+        relative_to = "/run/media/jankasi/780C-16F4/Music";
+        playlist_dir = "/run/media/jankasi/780C-16F4/Music/Playlists/beets";
       };
 
       # Remember to add lyrics to plugins if using this

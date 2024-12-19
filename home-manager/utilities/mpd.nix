@@ -1,6 +1,6 @@
 {
   services.mpd = {
-    enable = true;
+    enable = false;
     musicDirectory = "/home/jankasi/Music/01 Transparent Lossy/";
     playlistDirectory = "/home/jankasi/Music/00 Playlists/mpd/";
     network.startWhenNeeded = true;
@@ -18,9 +18,9 @@
     '';
   };
 
-  services.mpdris2.enable = true;
+  services.mpdris2.enable = false;
 
-  xdg.configFile."mpd-notification.conf".text = ''
-    music-dir = /home/jankasi/Music/
-  '';
+  # xdg.configFile."mpd-notification.conf".text = ''
+  #   music-dir = /home/jankasi/Music/
+  # '';
 }
