@@ -61,6 +61,7 @@
     eartag
     spek # analyse audio spectogram
     flac # Free Lossless Audio Codec tools
+    audacity
 
     # de #
     waypaper # gui frontend for swww/feh
@@ -127,5 +128,6 @@
 
     libsForQt5.kleopatra
     keepassxc
+    discord
   ];
 }
