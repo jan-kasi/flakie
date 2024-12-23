@@ -37,7 +37,6 @@
     transmission_4-gtk
     stable.nicotine-plus # SoulSeek client
     yt-dlp
-    lux # fast and simple video download library and CLI tool written in go
     qrcp # send files over internet
 
     # tui/cli #
@@ -121,13 +120,13 @@
     prismlauncher # minecraft launcher
     mindustry
 
-    rawtherapee # photo processing software
-    # gimp 
-    # stable.aseprite
+    stable.rawtherapee # photo processing software
+    stable.gimp 
+    stable.aseprite
     # libresprite
 
     libsForQt5.kleopatra
-    keepassxc
-    discord
+    stable.keepassxc
+    stable.discord
   ];
 }
