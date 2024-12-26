@@ -106,7 +106,7 @@
     mangal # download manga
     animdl
 
-    blueberry # bluetooth
+    blueman # bluetooth
     uget # download manager
 
     vlc
@@ -122,7 +122,6 @@
 
     stable.rawtherapee # photo processing software
     stable.gimp 
-    stable.aseprite
     # libresprite
 
     libsForQt5.kleopatra
