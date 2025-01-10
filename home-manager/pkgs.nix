@@ -11,6 +11,7 @@
     ffmpeg
     mkvtoolnix # edit mkv video files
     appimage-run #run appimages
+    steam-run
 
     acpi # battery stuff
 
