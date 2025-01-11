@@ -13,6 +13,7 @@
     # https://discourse.nixos.org/t/why-does-my-root-mount-suddenly-remount-as-read-only-after-a-while/33595/11
     kernelParams = [
       "nvme_core.default_ps_max_latency_us=0"
+      "quiet"  # for silent boot
     ];
 
     # Should probably manually disable this
