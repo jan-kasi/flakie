@@ -46,9 +46,9 @@
     '';
 
     shellAliases = {
-      l = "eza --icons";
-      ll = "eza --icons -lagh";
-      lt = "eza --icons -TL";
+      l = "eza";
+      ll = "eza -lagh";
+      lt = "eza -TL";
     };
 
     pointerCursor = {

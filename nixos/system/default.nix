@@ -55,21 +55,25 @@
     enableGhostscriptFonts = true;
     packages = with pkgs; [
       # fonts #
+      etBook
+      scientifica
+      ia-writer-duospace
+      
       alegreya
       cozette
 
       libertinus
       noto-fonts
-      noto-fonts-emoji
-      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+
       # icons
       symbola
       font-awesome
       feather-icon-font # custom
+
       # nerdfonts
       nerd-fonts.fira-code
       nerd-fonts.iosevka
-      nerd-fonts.mononoki
       nerd-fonts.meslo-lg
     ];
 

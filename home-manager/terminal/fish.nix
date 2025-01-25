@@ -22,11 +22,11 @@
     };
     interactiveShellInit = ''
       set PATH "$HOME/.config/emacs/bin:$PATH"
-      set FZF_ALT_C_OPTS "--preview 'eza --icons -LT3 {}'"
+      set FZF_ALT_C_OPTS "--preview 'eza -LT3 {}'"
       set FZF_CTRL_R_OPTS "--preview 'echo {}' --preview-window up:3:hidden:wrap --bind 'ctrl-/:toggle-preview' --color header:italic --header 'Press CTRL-Y to copy command into clipboard'"
     '';
     shellInit = ''
-      set fzf_preview_dir_cmd "eza --icons -LT3"
+      set fzf_preview_dir_cmd "eza -LT3"
       set fzf_directory_opts --bind "ctrl-o:execute($EDITOR {} &> /dev/tty)"
     '';
 
