@@ -94,8 +94,12 @@
       # Plugins #
       ###########
 
-      plugins = "duplicates missing edit info fetchart embedart fuzzy random playlist smartplaylist mbsync convert bucket lyrics fromfilename discogs lastgenre";
+      plugins = "duplicates missing edit info fetchart embedart bareasc random playlist smartplaylist mbsync convert bucket lyrics fromfilename discogs lastgenre";
       # mpdupdate plugin to update mpd database too
+
+      bareasc = {
+        prefix = "#";
+      };
 
       playlist = {
         auto = true; # update playlists when beets moves/removes files

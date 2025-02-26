@@ -3,7 +3,6 @@
     enable = true;
     shellAbbrs = {
       nurl = "nix run nixpkgs#nurl ";
-      "7zz" = "nix run nixpkgs#_7zz --";
       hmsw = "home-manager switch --flake .#jankasi@snow";
       nrsw = "sudo nixos-rebuild switch --flake .#snow";
       cleanboot = "sudo /run/current-system/bin/switch-to-configuration boot";

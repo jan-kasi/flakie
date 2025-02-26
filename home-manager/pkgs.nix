@@ -12,6 +12,7 @@
     mkvtoolnix # edit mkv video files
     appimage-run #run appimages
     steam-run
+    _7zz
 
     acpi # battery stuff
 
@@ -36,7 +37,7 @@
 
     # downloading
     transmission_4-gtk
-    stable.nicotine-plus # SoulSeek client
+    nicotine-plus # SoulSeek client
     yt-dlp
     qrcp # send files over internet
 
@@ -58,7 +59,7 @@
     # mpd-notification
     playerctl
     songrec # recognise songs
-    eartag
+    stable.eartag
     spek # analyse audio spectogram
     flac # Free Lossless Audio Codec tools
     audacity
@@ -73,7 +74,7 @@
     # xserver wms#
     xcalib
     xbindkeys
-    maim
+    stable.maim
     xclip
 
     # wayland #

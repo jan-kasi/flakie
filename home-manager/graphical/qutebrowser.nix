@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: {
   programs.qutebrowser = {
     package = pkgs.qutebrowser.override { enableWideVine = true; };
-    enable = false;
+    enable = true;
     greasemonkey = [
       (pkgs.fetchurl {
         url = "https://raw.githubusercontent.com/parchd-1/qutebrowser-zotero/master/qute-zotero";
