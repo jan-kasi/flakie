@@ -5,6 +5,10 @@
   ];
 
   services = {
+
+  #########
+  # AUDIO #
+  #########
     ################
     # Just enabled #
     ################
@@ -83,6 +87,7 @@
     };
 
     # Audio via pipewire
+    pulseaudio.enable = false;
     pipewire = {
       enable = true;
       alsa.enable = true;

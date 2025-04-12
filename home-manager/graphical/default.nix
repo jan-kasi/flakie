@@ -32,7 +32,6 @@
   };
   programs.mpv = {
     enable = true;
-    scripts = [ pkgs.mpvScripts.sponsorblock ];
   };
 
   programs.password-store = {

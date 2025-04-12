@@ -1,5 +1,9 @@
 { pkgs, inputs, ... }: {
   home.packages = with pkgs; [
+    imagej
+    stable.google-chrome
+
+  
     # utilities #
     fd
     libnotify
@@ -47,7 +51,7 @@
     ikill # interactive pkill
     # nb # notes
     # catgirl # RSS
-    # gnugo # gnu Go AI
+    gnugo # gnu Go AI
     # qrtool # qrtool encode -t terminal "<text data here>"
 
     # music #
