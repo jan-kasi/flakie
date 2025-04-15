@@ -110,10 +110,11 @@
 
     komikku
     mangal # download manga
+    stable.hakuneko
     animdl
 
-    blueman # bluetooth
-    uget # download manager
+    stable.blueman # bluetooth
+    stable.uget # download manager
 
     vlc
     anki # flashcards
@@ -127,6 +128,7 @@
     mindustry
 
     stable.rawtherapee # photo processing software
+    stable.darktable   # photo processing software
     stable.gimp 
     # libresprite
 
