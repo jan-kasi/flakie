@@ -127,8 +127,8 @@
     prismlauncher # minecraft launcher
     mindustry
 
-    stable.rawtherapee # photo processing software
-    stable.darktable   # photo processing software
+    rawtherapee # photo processing software
+    darktable   # photo processing software
     stable.gimp 
     # libresprite
 
