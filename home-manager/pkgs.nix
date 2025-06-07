@@ -35,6 +35,7 @@
 
     # internet #
     mullvad-vpn
+    protonvpn-gui
     hexchat # irc gui
     irssi # irc terminal
     # (nyxt.override (x: { sbclPackages = sbcl_2_4_6.pkgs; })) # https://github.com/NixOS/nixpkgs/issues/332862
@@ -110,8 +111,7 @@
 
     komikku
     mangal # download manga
-    stable.hakuneko
-    animdl
+    hakuneko
 
     stable.blueman # bluetooth
     stable.uget # download manager
@@ -129,7 +129,6 @@
 
     rawtherapee # photo processing software
     darktable   # photo processing software
-    stable.gimp 
     # libresprite
 
     libsForQt5.kleopatra

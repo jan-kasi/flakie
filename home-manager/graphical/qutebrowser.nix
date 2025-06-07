@@ -7,10 +7,10 @@
         url = "https://raw.githubusercontent.com/parchd-1/qutebrowser-zotero/master/qute-zotero";
         sha256 = "sha256-QmhO/ejP1Uj4m2+uVG/FjR/UTr/UqmaDecfHLUDkPJg=";
       })
-      (pkgs.fetchurl {
-        url = "https://raw.githubusercontent.com/afreakk/greasemonkeyscripts/master/youtube_sponsorblock.js";
-        sha256 = "sha256-nwNade1oHP+w5LGUPJSgAX1+nQZli4Rhe8FFUoF5mLE=";
-      })
+      # (pkgs.fetchurl {
+      #  url = "https://raw.githubusercontent.com/afreakk/greasemonkeyscripts/master/youtube_sponsorblock.js";
+      #  sha256 = "sha256-nwNade1oHP+w5LGUPJSgAX1+nQZli4Rhe8FFUoF5mLE=";
+      # })
     ];
 
     keyBindings = {
