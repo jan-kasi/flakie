@@ -18,6 +18,7 @@
     '';
   };
 
+  services.listenbrainz-mpd.enable = false;
   services.mpdris2.enable = false;
 
   # xdg.configFile."mpd-notification.conf".text = ''

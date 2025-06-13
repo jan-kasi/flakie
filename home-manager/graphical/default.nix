@@ -9,10 +9,8 @@
 
     # apps
     # ./kitty.nix
-    # ./foot.nix
     ./qutebrowser.nix
     ./nautilus.nix
-    ./zathura.nix
   ];
 
   programs.imv.enable = true;
@@ -30,17 +28,12 @@
       # };
     };
   };
-  programs.mpv = {
+
+  programs.sioyek = {
     enable = true;
   };
 
-  programs.password-store = {
-    enable = false;
-    package = pkgs.pass.withExtensions
-      (exts: [ exts.pass-update exts.pass-import exts.pass-genphrase ]);
-  };
-
-  programs.sioyek = {
+  programs.mpv = {
     enable = true;
   };
 
@@ -56,5 +49,12 @@
     enable = false;
     plugins = with pkgs; [ pidgin-otr pidgin-latex purple-matrix purple-discord purple-xmpp-http-upload ];
   };
+
+  programs.password-store = {
+    enable = false;
+    package = pkgs.pass.withExtensions
+      (exts: [ exts.pass-update exts.pass-import exts.pass-genphrase ]);
+  };
+
 
 }

@@ -3,7 +3,6 @@
     ./emacs.nix
     ./mpd.nix
     ./beets.nix
-    ./bat.nix
     ./gpg.nix
     ./autorandr.nix
   ];
@@ -14,7 +13,7 @@
     extraConfig = {
       init.defaultBranch = "main";
       core = {
-        editor = "emacsclient -nw";
+        editor = "hx";
       };
     };
   };
@@ -34,7 +33,8 @@
     ];
   };
 
-  programs.thefuck.enable = true;
-
-  services.listenbrainz-mpd.enable = false;
+  programs.bat = {
+    enable = true;
+    config = { theme = "ansi"; };
+  };
 }

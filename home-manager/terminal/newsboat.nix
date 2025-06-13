@@ -1,6 +1,6 @@
 {
   programs.newsboat = {
-    enable = true;
+    enable = false;
     extraConfig = ''
       color listnormal         color15 default
       color listnormal_unread  color2  default
