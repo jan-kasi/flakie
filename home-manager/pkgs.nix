@@ -1,88 +1,64 @@
 { pkgs, inputs, ... }: {
   home.packages = with pkgs; [
-    imagej
-    stable.google-chrome
 
-  
+    #############  
     # utilities #
+    #############
+    # pretty important stuff #
     fd
     libnotify
-    eza
     grc
     (ripgrep.override { withPCRE2 = true; })
     imagemagick
     jq
     ffmpeg
-    mkvtoolnix # edit mkv video files
-    appimage-run #run appimages
-    steam-run
+    acpi
+
+    # useful stuff #
+    qrcp
+    fff
     _7zz
-
-    acpi # battery stuff
-
-    # cbonsai # fun bonsai
-    # krabby # fun pokemon
+    ikill
+    eza
+    mkvtoolnix
     pfetch
+    gnugo
+    qrtool # qrtool encode -t terminal "<text data here>"
+    # glow # preview markdown in terminal
+    # catgirl # RSS
 
+
+    #############
     # languages #
+    #############
+
     (lua.withPackages (ps: with ps; [ fennel luaposix ]))
+    sbcl
+    jdk17
+
     # ghc #haskell
     # cabal-install
     # racket
     # guile
-    sbcl
-    jdk17
 
-    # internet #
-    mullvad-vpn
-    protonvpn-gui
-    hexchat # irc gui
-    irssi # irc terminal
-    # (nyxt.override (x: { sbclPackages = sbcl_2_4_6.pkgs; })) # https://github.com/NixOS/nixpkgs/issues/332862
+    #######################
+    # desktop environment #
+    #######################
 
-    # downloading
-    transmission_4-gtk
-    nicotine-plus # SoulSeek client
-    yt-dlp
-    qrcp # send files over internet
-
-    # tui/cli #
-    # glow # markdown
-    fff # file manager
-    ikill # interactive pkill
-    # nb # notes
-    # catgirl # RSS
-    gnugo # gnu Go AI
-    # qrtool # qrtool encode -t terminal "<text data here>"
-
-    # music #
-    # spotify-player
-    amberol
-    # stable.cantata # gui for mpd
-    # mpc-cli
-    # pms # practical music search for mpd
-    # mpd-notification
-    playerctl
-    songrec # recognise songs
-    stable.eartag
-    spek # analyse audio spectogram
-    flac # Free Lossless Audio Codec tools
-    audacity
-
-    # de #
     waypaper # gui frontend for swww/feh
     feh
+    stable.blueman # gui bluetooth
     lxqt.lxqt-policykit # start with lxqt-policykit-agent
     adwaita-icon-theme
     gnome-screenshot
 
-    # xserver wms#
+    # xserver window managers #
     xcalib
     xbindkeys
     stable.maim
     xclip
 
-    # wayland #
+    # wayland compositors #
     # wl-clipboard
     # wl-clip-persist
     # cliphist
@@ -91,17 +67,62 @@
     # hyprshade
     # hyprcursor
     # grimblast
-    # gtklock # lock screen
+    # gtklock
 
-    # documents #
+    ########
+    # apps #
+    ######## 
+
+    # vpn #
+    mullvad-vpn
+    protonvpn-gui
+
+    # communication #
+    hexchat # irc gui
+    irssi # irc terminal
+    stable.discord
+
+    # downloading # 
+    transmission_4-gtk
+    nicotine-plus # SoulSeek client
+    yt-dlp
+    stable.uget # download manager
+
+    # music #
+    amberol
+    audacity
+    playerctl
+    flac 
+    stable.eartag
+    songrec
+    spek
+
+    # spotify-player
+    # stable.cantata 
+    # mpc-cli
+    # pms
+    # mpd-notification
+    
+    # media # 
+    komikku
+    mangal
+    vlc
+    foliate
+    stable.calibre
+
+    # documents/office/study # 
     libreoffice-fresh
     texliveFull
+    zotero
+    anki
+    minder
     multimarkdown
-    minder # mindmaps
-    stable.calibre
-    # anytype
 
-    # apps
+    # graphics #
+    darktable
+    # rawtherapee
+    # libresprite
+
 
     # flatpaks:
     # flatseal, warehouse, gamescope, protontricks, steamtinkerlaunch,
@@ -109,30 +130,15 @@
     # unofficial homestuck collection,
     # decoder, halftone, calligraphy, newsflash
 
-    komikku
-    mangal # download manga
-    hakuneko
-
-    stable.blueman # bluetooth
-    stable.uget # download manager
-
-    vlc
-    anki # flashcards
-    zotero # citation manager
-    foliate # read ebooks
+    # others #
+    stable.keepassxc
+    stable.google-chrome
+    libsForQt5.kleopatra
 
     gnome-boxes # gui stuff for virtualisation (qemu)
     baobab # storage usage
 
     prismlauncher # minecraft launcher
     mindustry
-
-    rawtherapee # photo processing software
-    darktable   # photo processing software
-    # libresprite
-
-    libsForQt5.kleopatra
-    stable.keepassxc
-    stable.discord
   ];
 }
