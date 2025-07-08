@@ -3,7 +3,7 @@
     jankasi = {
       description = "jan kasi";
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" "libvirtd" ];
+      extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" "libvirtd" "kvm" ];
       openssh.authorizedKeys.keys = [
         # Add public key(s) here if you plan on using SSH to connect
       ];

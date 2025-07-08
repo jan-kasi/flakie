@@ -20,6 +20,7 @@
     gamemode.enable = true;
     xwayland.enable = true;
     ssh.startAgent = true;
+    virt-manager.enable = true;
 
     bash = {
       interactiveShellInit = ''
@@ -52,9 +53,18 @@
   };
 
   fonts.enableDefaultPackages = true;
-  virtualisation.libvirtd.enable = true;
-  virtualisation.virtualbox.host = {
+  virtualisation.libvirtd= {
     enable = true;
-    enableExtensionPack = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      swtpm.enable = true;
+      ovmf = {
+        enable = true;
+        packages = [(pkgs.OVMF.override {
+          secureBoot = true;
+          tpmSupport = true;
+        }).fd];
+      };
+    };
   };
 }

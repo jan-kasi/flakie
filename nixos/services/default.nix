@@ -20,6 +20,9 @@
     gvfs.enable = true; # gnome nautilus 
     fwupd.enable = true;
     thermald.enable = true; # prevent overheating on intel CPUs, works with other tools
+    spice-vdagentd.enable = true; # for virtualisation, enable spice client
+    spice-autorandr.enable = true; # for virtualisation, resize display automatically
+    spice-webdavd.enable = true; # for virtualisation, file sharing
 
     ##############
     # Configured #
