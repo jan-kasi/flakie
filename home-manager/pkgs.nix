@@ -135,7 +135,6 @@
     stable.google-chrome
     libsForQt5.kleopatra
 
-    gnome-boxes # gui stuff for virtualisation (qemu)
     baobab # storage usage
 
     prismlauncher # minecraft launcher

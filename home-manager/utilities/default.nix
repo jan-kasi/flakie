@@ -18,6 +18,10 @@
     };
   };
 
+  services.syncthing = {
+    enable = true;
+  };
+
   programs.fzf = {
     enable = true;
     enableFishIntegration = false;
