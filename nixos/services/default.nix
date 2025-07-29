@@ -6,15 +6,11 @@
 
   services = {
 
-  #########
-  # AUDIO #
-  #########
     ################
     # Just enabled #
     ################
     tlp.enable = false; # can cause bluetooth issues sometimes, conflicts with gnome power-profiles-daemon
     fstrim.enable = true;
-    printing.enable = true; # Enable CUPS to print documents
     flatpak.enable = true;
     mullvad-vpn.enable = true; # VPN
     gvfs.enable = true; # gnome nautilus 
@@ -27,6 +23,13 @@
     ##############
     # Configured #
     ##############
+
+
+    printing.enable = true; # Enable CUPS to print documents
+    printing.drivers = [ pkgs.gutenprint pkgs.gutenprintBin pkgs.hplip pkgs.cnijifilter2 ];
+    avahi.enable = true;
+    avahi.openFirewall = true;
+    avahi.nssmdns4 = true;
 
     logind = {
       lidSwitch = "ignore";
