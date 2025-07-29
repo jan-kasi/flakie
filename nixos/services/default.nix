@@ -26,7 +26,7 @@
 
 
     printing.enable = true; # Enable CUPS to print documents
-    printing.drivers = [ pkgs.gutenprint pkgs.gutenprintBin pkgs.hplip pkgs.cnijifilter2 ];
+    printing.drivers = [ pkgs.gutenprint pkgs.gutenprintBin pkgs.hplip pkgs.cnijfilter2 ];
     avahi.enable = true;
     avahi.openFirewall = true;
     avahi.nssmdns4 = true;
