@@ -100,10 +100,10 @@
   ###########
   # NOFILE for Steam Proton games
   # timeoutstop so you don't need to wait 90s on poweroff stop jobs
-  systemd.extraConfig = ''
-    DefaultLimitNOFILE=1048576
-    DefaultTimeoutStopSec=10s
-  '';
+  systemd.settings.Manager = { 
+    DefaultLimitNOFILE = "1048576";
+    DefaultTimeoutStopSec = "10s";
+  };
 
   # Disble suspend
   # systemd.sleep.extraConfig = ''

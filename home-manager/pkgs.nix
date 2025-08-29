@@ -7,6 +7,7 @@
     # pretty important stuff #
     fd
     libnotify
+    libimobiledevice
     grc
     (ripgrep.override { withPCRE2 = true; })
     imagemagick
@@ -24,7 +25,7 @@
     pfetch
     gnugo
     qrtool # qrtool encode -t terminal "<text data here>"
-    # glow # preview markdown in terminal
+    glow # preview markdown in terminal
     # catgirl # RSS
 
 
@@ -47,7 +48,7 @@
 
     waypaper # gui frontend for swww/feh
     feh
-    stable.blueman # gui bluetooth
+    blueman # gui bluetooth
     lxqt.lxqt-policykit # start with lxqt-policykit-agent
     adwaita-icon-theme
     gnome-screenshot
@@ -115,7 +116,7 @@
     texliveFull
     zotero
     anki
-    minder
+    freeplane
     multimarkdown
 
     # graphics #
@@ -131,13 +132,12 @@
     # decoder, halftone, calligraphy, newsflash
 
     # others #
-    stable.keepassxc
+    keepassxc
     stable.google-chrome
     libsForQt5.kleopatra
 
     baobab # storage usage
 
     prismlauncher # minecraft launcher
-    mindustry
   ];
 }

@@ -19,7 +19,7 @@
     light.enable = true;
     gamemode.enable = true;
     xwayland.enable = true;
-    ssh.startAgent = true;
+    # ssh.startAgent = true; # conflict with gnome gcr ssh agent
     virt-manager.enable = true;
 
     bash = {
@@ -53,6 +53,9 @@
   };
 
   fonts.enableDefaultPackages = true;
+
+  virtualisation.podman.enable = true;
+  
   virtualisation.spiceUSBRedirection.enable = true;
   virtualisation.libvirtd= {
     enable = true;

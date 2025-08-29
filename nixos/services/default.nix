@@ -19,6 +19,7 @@
     spice-vdagentd.enable = true; # for virtualisation, enable spice client
     spice-autorandr.enable = true; # for virtualisation, resize display automatically
     spice-webdavd.enable = true; # for virtualisation, file sharing
+    usbmuxd.enable = true; # multiplexing connections to iOS device
 
     ##############
     # Configured #
