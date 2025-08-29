@@ -21,6 +21,7 @@
     xwayland.enable = true;
     # ssh.startAgent = true; # conflict with gnome gcr ssh agent
     virt-manager.enable = true;
+    localsend.enable = true;
 
     bash = {
       interactiveShellInit = ''
