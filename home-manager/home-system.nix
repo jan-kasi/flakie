@@ -1,4 +1,4 @@
-{ inputs, outputs, pkgs, ... }: {
+{ inputs, outputs, config, pkgs, lib, ... }: {
   nixpkgs = {
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
@@ -28,6 +28,17 @@
       TERMINAL = "alacritty";
       TERM = "alacritty";
     };
+
+    # update icons for gnome? https://github.com/NixOS/nixpkgs/issues/12757#issuecomment-2605654661
+    activation.linkDesktopFiles = lib.hm.dag.entryAfter ["installPackages"] ''
+      if [ -d "${config.home.profileDirectory}/share/applications" ]; then
+        rm -rf ${config.home.homeDirectory}/.local/share/applications
+        mkdir -p ${config.home.homeDirectory}/.local/share/applications
+        for file in ${config.home.profileDirectory}/share/applications/*; do
+          ln -sf "$file" ${config.home.homeDirectory}/.local/share/applications/
+        done
+      fi
+    '';
 
     file.".profile".text = ''
       #!/usr/bin/env dash
