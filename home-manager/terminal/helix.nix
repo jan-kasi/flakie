@@ -41,7 +41,6 @@
           injection-regex = "(fennel|fnl)";
           file-types = [ "fnl" ];
           shebangs = [ "fnl" ];
-          comment-tokens = ";";
           auto-format = false;
           formatter = { command = "fnlfmt"; args = [ "-" ]; };
           indent = { tab-width = 2; unit = "  "; };
