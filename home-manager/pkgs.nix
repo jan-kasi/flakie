@@ -121,7 +121,7 @@
 
     # graphics #
     darktable
-    # rawtherapee
+    rawtherapee
     # libresprite
 
 
@@ -130,6 +130,7 @@
     # bottles, steam, cartridges, armcord 
     # unofficial homestuck collection,
     # decoder, halftone, calligraphy, newsflash
+    # darktable
 
     # others #
     keepassxc
