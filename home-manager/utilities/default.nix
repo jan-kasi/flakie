@@ -8,9 +8,9 @@
   ];
 
   programs.git = {
-    userName = "jan-kasi";
-    userEmail = "77466026+jan-kasi@users.noreply.github.com";
-    extraConfig = {
+    settings.userName = "jan-kasi";
+    settings.userEmail = "77466026+jan-kasi@users.noreply.github.com";
+    settings.extraConfig = {
       init.defaultBranch = "main";
       core = {
         editor = "hx";

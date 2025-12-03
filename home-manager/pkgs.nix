@@ -76,7 +76,6 @@
 
     # vpn #
     mullvad-vpn
-    protonvpn-gui
 
     # communication #
     hexchat # irc gui
@@ -120,7 +119,6 @@
     multimarkdown
 
     # graphics #
-    darktable
     rawtherapee
     # libresprite
 
@@ -135,7 +133,7 @@
     # others #
     keepassxc
     stable.google-chrome
-    libsForQt5.kleopatra
+    kdePackages.kleopatra
 
     baobab # storage usage
 

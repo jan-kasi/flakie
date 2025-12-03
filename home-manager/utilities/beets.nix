@@ -31,7 +31,7 @@
 
   programs.beets = {
     enable = true;
-    package = pkgs.beets-unstable;
+    package = pkgs.beets;
 
     settings = {
 
