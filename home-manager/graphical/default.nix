@@ -10,7 +10,6 @@
     # apps
     # ./kitty.nix
     ./qutebrowser.nix
-    ./nautilus.nix
   ];
 
   programs.imv.enable = true;
