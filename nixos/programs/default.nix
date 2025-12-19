@@ -36,7 +36,7 @@
     # note: enabling here is for proper support, it won't duplicate package ofc, thanks to hash
     hyprland = {
       # uncomment if changing to flake instead of nixpkgs release. Also in home-manager/desktop/hyprland.nix
-      # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       enable = false;
       xwayland.enable = true;
     };

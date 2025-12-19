@@ -7,7 +7,7 @@
   wayland.windowManager.hyprland = {
     # not using flake for hyprland, only nixpkgs release
     # if using flake again also uncomment in nixos/programs/default.nix
-    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
     # also enabled in nixos/programs/default to add proper support
     # desktop entry, xdg portals, target, polkit, etc.
