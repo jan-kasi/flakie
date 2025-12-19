@@ -16,15 +16,16 @@
 
   programs.alacritty = {
     enable = true;
+    theme = "gruvbox_dark";
     settings = {
       font = {
         size = 16;
         normal = { family = "CozetteVector"; style = "Regular"; };
       };
-      # shell = {
-      #  program = "zellij";
-      #  args = [ "-l" "welcome" ];
-      # };
+    # shell = {
+    #  program = "zellij";
+    #  args = [ "-l" "welcome" ];
+    # };
     };
   };
 

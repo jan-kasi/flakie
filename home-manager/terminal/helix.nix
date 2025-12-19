@@ -3,13 +3,14 @@
     enable = true;
     extraPackages = [
       pkgs.marksman
+      pkgs.markdown-oxide
       pkgs.fennel-ls
       pkgs.nil
       pkgs.fnlfmt
     ];
     # General Helix settings
     settings = {
-      theme = "base16_default";
+      theme = "gruvbox-material";
       keys = { normal.esc = [ "collapse_selection" "keep_primary_selection" ]; };
       editor = {
         mouse = false;

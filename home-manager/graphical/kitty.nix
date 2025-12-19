@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.kitty = {
-    enable = true;
+    enable = false;
     font.name = "MesloLGS NF";
     font.size = 16.0;
     font.package = pkgs.meslo-lgs-nf;
