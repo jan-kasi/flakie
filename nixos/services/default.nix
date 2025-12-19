@@ -33,7 +33,7 @@
     avahi.nssmdns4 = true;
 
     logind = {
-      lidSwitch = "ignore";
+      settings.Login.HandleLidSwitch = "ignore";
     };
 
     libinput = {

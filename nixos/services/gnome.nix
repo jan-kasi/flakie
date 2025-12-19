@@ -4,7 +4,7 @@
     sushi.enable = true;
   };
 
-  services.xserver.displayManager.gdm.autoSuspend = false;
+  services.displayManager.gdm.autoSuspend = false;
 
   # EXCLUDE
   environment.gnome.excludePackages = with pkgs; [
