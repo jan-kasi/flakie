@@ -1,6 +1,6 @@
 {
-  services.autorandr.enable = true;
+  services.autorandr.enable = false;
   programs.autorandr = {
-    enable = true;
+    enable = false;
   };
 }

@@ -94,7 +94,7 @@
       # Plugins #
       ###########
 
-      plugins = "duplicates missing edit info fetchart embedart bareasc random playlist smartplaylist mbsync convert bucket lyrics fromfilename discogs lastgenre";
+      plugins = "duplicates missing edit info fetchart embedart bareasc random playlist smartplaylist mbsync convert bucket lyrics fromfilename musicbrainz discogs lastgenre";
       # mpdupdate plugin to update mpd database too
 
       bareasc = {
