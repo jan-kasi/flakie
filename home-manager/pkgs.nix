@@ -117,6 +117,7 @@
     anki
     freeplane
     multimarkdown
+    sioyek 
 
     # graphics #
     rawtherapee

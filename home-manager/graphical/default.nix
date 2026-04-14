@@ -29,10 +29,6 @@
     };
   };
 
-  programs.sioyek = {
-    enable = true;
-  };
-
   programs.mpv = {
     enable = true;
   };
