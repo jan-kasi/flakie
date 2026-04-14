@@ -8,12 +8,10 @@
     ./terminal
     ./graphical
 
-    # ./desktop/hyprland.nix
     ./desktop/awesome.nix
     # ./desktop/newm-atha.nix
 
     # Modules exported from other flakes
-    # inputs.hyprland.homeManagerModules.default DISABLED because no settings option, only extraConfig
 
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example

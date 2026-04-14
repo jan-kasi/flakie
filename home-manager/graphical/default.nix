@@ -3,9 +3,6 @@
     # desktop environment
     ./dunst.nix
     ./rofi
-    # ./waybar.nix
-    # ./wlsunset.nix
-    # ./swaylock.nix
 
     # apps
     # ./kitty.nix

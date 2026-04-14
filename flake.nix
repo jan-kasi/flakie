@@ -3,11 +3,9 @@
 
   nixConfig = {
     extra-substituters = [
-      "https://hyprland.cachix.org"
       "https://nix-community.cachix.org"
     ];
     extra-trusted-public-keys = [
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
@@ -20,9 +18,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
-
-    # hyprland.url = "github:hyprwm/Hyprland";
-    # don't override hyprland nixpkgs follows, this would make hyprland cachix useless
 
     # newm-atha.url = "sourcehut:~atha/newm-atha";
     # newm-atha.inputs.nixpkgs.follows = "nixpkgs";

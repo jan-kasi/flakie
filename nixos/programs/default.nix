@@ -5,7 +5,7 @@
     curl
     libevdev # bluetooth gamepad?
     game-devices-udev-rules # bluetooth gamepad?
-    python311
+    python314
     # stable.where-is-my-sddm-theme
     adwaita-qt
     adwaita-icon-theme
@@ -16,7 +16,6 @@
     git.enable = true;
     fish.enable = true;
     dconf.enable = true;
-    light.enable = true;
     gamemode.enable = true;
     xwayland.enable = true;
     # ssh.startAgent = true; # conflict with gnome gcr ssh agent
@@ -31,14 +30,6 @@
           exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
         fi
       '';
-    };
-
-    # note: enabling here is for proper support, it won't duplicate package ofc, thanks to hash
-    hyprland = {
-      # uncomment if changing to flake instead of nixpkgs release. Also in home-manager/desktop/hyprland.nix
-      # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      enable = false;
-      xwayland.enable = true;
     };
   };
 

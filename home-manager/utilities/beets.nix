@@ -4,9 +4,9 @@
   ## Extra packages needed ##
   ###########################
   home.packages = with pkgs; [
-    python311Packages.requests # fetchart plugin
-    python311Packages.pylast # lastgenre plugin
-    # python311Packages.mpd2 # mpdstats plugin
+    python314Packages.requests # fetchart plugin
+    python314Packages.pylast # lastgenre plugin
+    # python314Packages.mpd2 # mpdstats plugin
     lame
     ffmpeg
   ];

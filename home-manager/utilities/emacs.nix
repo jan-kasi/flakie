@@ -37,7 +37,7 @@
     nil
     nixpkgs-fmt
     nixfmt
-    python311Packages.grip # preview markdown
+    python314Packages.grip # preview markdown
     marksman
     # haskell-language-server
     lua-language-server
@@ -51,7 +51,7 @@
     html-tidy
 
     # everywhere
-    xorg.xwininfo
+    xwininfo
     xdotool
   ];
 }

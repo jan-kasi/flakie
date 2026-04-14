@@ -50,7 +50,7 @@
     enableGhostscriptFonts = true;
     packages = with pkgs; [
       # fonts #
-      etBook
+      et-book
       scientifica
       ia-writer-duospace
       
