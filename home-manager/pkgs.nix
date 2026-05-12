@@ -75,7 +75,7 @@
     ######## 
 
     # vpn #
-    mullvad-vpn
+    stable.mullvad-vpn
 
     # communication #
     hexchat # irc gui
