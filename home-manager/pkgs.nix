@@ -14,6 +14,8 @@
     jq
     ffmpeg
     acpi
+    stable.usbmuxd
+    # inputs.iloader.packages."${pkgs.stdenv.hostPlatform.system}".iloader
 
     # useful stuff #
     qrcp

@@ -63,6 +63,7 @@
     };
 
     pointerCursor = {
+      enable = true;
       # name = "material_light_cursors";
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
