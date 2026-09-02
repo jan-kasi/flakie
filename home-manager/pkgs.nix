@@ -16,7 +16,8 @@
     acpi
     stable.usbmuxd
     # inputs.iloader.packages."${pkgs.stdenv.hostPlatform.system}".iloader
-
+    iloader # for sideloading on ipad
+    
     # useful stuff #
     qrcp
     fff

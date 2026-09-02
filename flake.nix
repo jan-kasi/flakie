@@ -24,7 +24,7 @@
 
     # nix-alien.url = "github:thiagokokada/nix-alien";
     # nix-alien.inputs.nixpkgs.follows = "nixpkgs";
-    iloader.url = "github:nab138/iloader";
+    # iloader.url = "github:nab138/iloader";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
