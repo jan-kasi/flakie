@@ -8,7 +8,7 @@
     ./terminal
     ./graphical
 
-    ./desktop/awesome.nix
+    # ./desktop/awesome.nix # no longer works, smth with fennel not loading i think
     # ./desktop/newm-atha.nix
 
     # Modules exported from other flakes
