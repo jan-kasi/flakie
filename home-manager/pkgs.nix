@@ -36,7 +36,7 @@
 
     (lua.withPackages (ps: with ps; [ fennel luaposix ]))
     sbcl
-    jdk17
+    jdk
 
     # ghc #haskell
     # cabal-install
@@ -113,7 +113,7 @@
     # documents/office/study # 
     libreoffice-stable
     texliveFull
-    zotero
+    # zotero # until update no longer relies on firefox-esr it is broken 
     anki
     freeplane
     multimarkdown

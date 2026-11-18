@@ -25,7 +25,7 @@
     ghostscript # doc-view
 
     # spell
-    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ])) # spellcheck
+    (aspellWithDicts (dicts: with dicts; [ en ])) # spellcheck
     languagetool # grammar check
 
     # vterm
