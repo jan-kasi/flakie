@@ -14,15 +14,13 @@
     jq
     ffmpeg
     acpi
-    stable.usbmuxd
-    # inputs.iloader.packages."${pkgs.stdenv.hostPlatform.system}".iloader
-    iloader # for sideloading on ipad
-    
+   inputs.iloader.packages."${pkgs.stdenv.hostPlatform.system}".iloader
+
     # useful stuff #
     qrcp
+    net-tools # `netstat -lnp` to see ports listened to
     fff
     _7zz
-    ikill
     eza
     mkvtoolnix
     pfetch
@@ -81,7 +79,6 @@
     stable.mullvad-vpn
 
     # communication #
-    hexchat # irc gui
     irssi # irc terminal
     stable.discord
 
@@ -114,13 +111,15 @@
     stable.calibre
 
     # documents/office/study # 
-    libreoffice-fresh
+    libreoffice-stable
     texliveFull
     zotero
     anki
     freeplane
     multimarkdown
     sioyek 
+    tinymist
+    typst
 
     # graphics #
     rawtherapee

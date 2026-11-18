@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  home.packages = with pkgs; [ rofi-bluetooth rofi-pass rofi-mpd ];
+  home.packages = with pkgs; [ rofi-bluetooth rofi-mpd ];
 
   imports = [ ./theme.nix ];
 
@@ -9,7 +9,6 @@
     # terminal = "${pkgs.kitty}/bin/kitty";
     terminal = "${pkgs.alacritty}/bin/alacritty";
     font = "CozetteVector 14";
-    pass.enable = true;
     plugins = with pkgs; [ rofi-calc rofi-top ];
     extraConfig = {
       show-icons = true;

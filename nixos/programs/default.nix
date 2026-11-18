@@ -10,6 +10,7 @@
     adwaita-qt
     adwaita-icon-theme
     dash
+    iloader
   ];
 
   programs = {

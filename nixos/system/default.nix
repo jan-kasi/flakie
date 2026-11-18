@@ -92,7 +92,16 @@
     networkmanager.enable = true; # via Network Manager
     # networkmanager.insertNameservers = [ "1.1.1.1" ];
 
-    firewall.enable = false; # Disable the firewall altogether (lazy option instead of only opening specific ports)
+    # firewall.enable = false; # Disable the firewall altogether (lazy option instead of only opening specific ports)
+    firewall.enable = true;
+    nftables.enable = true;
+    firewall = {
+      allowedTCPPorts = [ 80 443 ];
+      allowedUDPPortRanges = [
+        { from = 49152; to = 65535; }
+      ];
+    };
+    
   };
 
   ###########

@@ -43,7 +43,7 @@
 
     cloudflare-warp.enable = true;
 
-    dbus.packages = [ pkgs.gcr ];
+    dbus.packages = [ pkgs.gcr_4 ];
 
     auto-cpufreq.enable = false; #conflicts with gnome power-profiles-daemon
     auto-cpufreq.settings = {
