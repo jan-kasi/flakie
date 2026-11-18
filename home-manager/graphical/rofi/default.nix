@@ -6,17 +6,19 @@
 
   programs.rofi = {
     enable = true;
-    # terminal = "${pkgs.kitty}/bin/kitty";
-    terminal = "${pkgs.alacritty}/bin/alacritty";
-    font = "CozetteVector 14";
     plugins = with pkgs; [ rofi-calc rofi-top ];
-    extraConfig = {
-      show-icons = true;
-      drun-display-format = "{icon} {name}";
-      display-drun = "⌕ ";
-      show-match = true;
-      dpi = 0;
-      modes = "window,drun,run,ssh,filebrowser,top,calc";
+    settings = {
+      # terminal = "${pkgs.kitty}/bin/kitty";
+      terminal = "${pkgs.alacritty}/bin/alacritty";
+      font = "CozetteVector 14";
+      extraConfig = {
+        show-icons = true;
+        drun-display-format = "{icon} {name}";
+        display-drun = "⌕ ";
+        show-match = true;
+        dpi = 0;
+        modes = "window,drun,run,ssh,filebrowser,top,calc";
+      };
     };
   };
 
